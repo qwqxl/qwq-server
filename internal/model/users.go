@@ -7,7 +7,7 @@ import (
 
 type User struct {
 	gorm.Model
-	//ID       uint64 `gorm:"primaryKey;autoIncrement;comment:用户唯一标识符" json:"id"`
+	//ID       uint   `gorm:"primaryKey;autoIncrement;comment:用户唯一标识符" json:"id"`
 	Username string `gorm:"type:varchar(128);uniqueIndex;not null;comment:用户名" json:"username"`
 	Nickname string `gorm:"type:varchar(1024);default:'新用户';comment:用户昵称" json:"nickname"`
 	Email    string `gorm:"type:varchar(128);uniqueIndex;comment:邮箱地址" json:"email"`

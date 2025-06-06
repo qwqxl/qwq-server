@@ -13,7 +13,9 @@ type UserRepository interface {
 	Update(ctx context.Context, user *model.User) error
 	Delete(ctx context.Context, id uint) error
 	WithTransaction(ctx context.Context, fn func(repo UserRepository) error) error
-	// User 相关操作
+
+	// ---------- User 相关操作 ----------- //
+
 	FindByEmail(ctx context.Context, email string) (*model.User, error)
 	FindByUsername(ctx context.Context, username string) (*model.User, error)
 	ExistEmail(ctx context.Context, email string) (bool, error)

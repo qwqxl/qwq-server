@@ -1,0 +1,34 @@
+database:
+  driver: "mysql" # 数据库类型
+  dsn: "goserver:goserver@tcp(139.159.145.78:3306)/goserver?charset=utf8mb4&parseTime=True&loc=Local"
+  # "user:pwd@tcp(139.159.145.78:3306)/dbname?charset=utf8mb4&parseTime=True&loc=Local"
+  max_open_conns: 25 # 最大打开连接数
+  max_idle_conns: 10 # 最大空闲连接数
+  conn_max_lifetime: 5m # 连接最大生命周期
+  conn_max_idle_time: 1m # 连接最大空闲时间
+  log_level: "warn" # 日志级别
+  auto_migrate: true  # 自动迁移
+#  connect_timeout: 15s
+
+listen:
+  host: "0.0.0.0"
+  port: 2333
+  log_level: "info"
+
+admin_user:
+  username: "admin"
+  password: "123456"
+  nickname: "管理员"
+  email: "admin@example.com"
+
+redis:
+  addr: "139.159.145.78:6379"
+  password: "redis_KF26xN"
+  db: 0
+  pool_size: 10
+  min_idle_conns: 5
+  max_retries: 3
+  dial_timeout: "5s"
+  read_timeout: "3s"
+  write_timeout: "3s"
+  idle_timeout: "5m"

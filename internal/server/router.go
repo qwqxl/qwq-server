@@ -47,6 +47,20 @@ func RouterApiV1() {
 			res := handler.Logout(c)
 			c.JSON(res.Code, res)
 		})
+		// --------- 用户 --------- //
+		// 删除用户
+		userGroup.DELETE("/del", func(c *gin.Context) {
+			res := handler.UserDeleteID(c)
+			c.JSON(res.Code, res)
+		})
+	}
+
+	postGroup := apiV1Group.Group("/post")
+	{
+		postGroup.POST("/create", func(c *gin.Context) {
+			res := handler.PostCreate(c)
+			c.JSON(res.Code, res)
+		})
 	}
 
 }

@@ -7,12 +7,23 @@ import (
 )
 
 // 最大并发连接数
-var maxConcurrent = config.New().Listen.MaxConcurrent
+var maxConcurrent int
 
 // 信号量控制器
-var semaphore = make(chan struct{}, maxConcurrent)
+var semaphore chan struct{}
 
-// 请求中间件：队列限制
+func init() {
+	// 设置最大并发连接数
+	cfg := config.New()
+	if cfg.Listen.QueueLimitMaxConcurrent > 0 {
+		maxConcurrent = cfg.Listen.QueueLimitMaxConcurrent
+	} else {
+		maxConcurrent = 1
+	}
+	semaphore = make(chan struct{}, maxConcurrent)
+}
+
+// QueueLimitMiddleware 请求中间件：队列限制
 func QueueLimitMiddleware() gin.HandlerFunc {
 	return func(c *gin.Context) {
 		select {
