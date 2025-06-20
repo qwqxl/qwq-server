@@ -4,9 +4,10 @@ import (
 	"context"
 	"fmt"
 	"log"
+	"testing"
+
 	"qwqserver/internal/model"
 	"qwqserver/pkg/database"
-	"testing"
 )
 
 func TestPostRepoRun(t *testing.T) {
@@ -33,7 +34,7 @@ func TestPostRepoRun(t *testing.T) {
 		newPost := &model.Post{
 			Title:     "Go语言最佳实践",
 			Content:   "本文介绍Go语言开发中的最佳实践...",
-			AuthorUID: 1,
+			AuthorID: 1,
 			//CategoryID: 2,
 		}
 
@@ -48,7 +49,7 @@ func TestPostRepoRun(t *testing.T) {
 			log.Fatal(err)
 		}
 		if post != nil {
-			fmt.Printf("获取帖子: %s (作者ID: %d)\n", post.Title, post.AuthorUID)
+			fmt.Printf("获取帖子: %s (作者ID: %d)\n", post.Title, post.AuthorID)
 		}
 
 		// 增加浏览量

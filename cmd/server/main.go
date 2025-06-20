@@ -41,14 +41,14 @@ func (q qwqLog) Panic(msg string, args ...any) {
 func main() {
 	l := qwqLog{}
 	cfg := config.New()
-	apps := app.New(&app.Config{
+	a := app.New(&app.Config{
 		L:      l,
 		Config: cfg,
 	})
 
-	defer apps.Close()
+	defer a.Close()
 
 	// 启动服务
-	apps.Listen()
+	a.Listen()
 
 }

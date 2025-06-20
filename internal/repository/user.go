@@ -2,6 +2,7 @@ package repository
 
 import (
 	"context"
+	"fmt"
 	"gorm.io/gorm"
 	"qwqserver/internal/model"
 )
@@ -30,6 +31,12 @@ type userRepository struct {
 
 // FindByEmail 根据邮箱查找用户
 func (r userRepository) FindByEmail(ctx context.Context, email string) (*model.User, error) {
+	defer func() {
+		rec := recover()
+		if rec != nil {
+			fmt.Println("email err", rec)
+		}
+	}()
 	u, err := r.First(ctx, func(db *gorm.DB) *gorm.DB {
 		return db.Where("email = ?", email)
 	})

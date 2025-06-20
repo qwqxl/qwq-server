@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>大文件上传示例</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .upload-container {
+            border: 2px dashed #ccc;
+            border-radius: 5px;
+            padding: 30px;
+            text-align: center;
+            margin-bottom: 20px;
+            position: relative;
+        }
+        .progress-container {
+            margin-top: 20px;
+        }
+        .progress-bar {
+            height: 20px;
+            background-color: #f0f0f0;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 10px;
+        }
+        .progress-fill {
+            height: 100%;
+            background-color: #4CAF50;
+            width: 0%;
+            transition: width 0.3s;
+        }
+        .progress-info {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+        .btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .btn:hover {
+            background-color: #45a049;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<h1>大文件上传示例</h1>
+
+<div class="upload-container">
+    <input type="file" id="fileInput" style="display: none;">
+    <button id="selectFileBtn" class="btn">选择文件</button>
+    <p>或拖放文件到此处</p>
+    <div id="fileInfo"></div>
+</div>
+
+<div id="progressSection" class="hidden">
+    <div class="progress-container">
+        <div class="progress-info">
+            <span id="fileName"></span>
+            <span id="percentage">0%</span>
+        </div>
+        <div class="progress-bar">
+            <div id="progressFill" class="progress-fill"></div>
+        </div>
+        <div class="progress-info">
+            <span id="uploadedSize">0 B</span>
+            <span id="totalSize">0 B</span>
+        </div>
+        <div class="progress-info">
+            <span id="speed">0 KB/s</span>
+            <span id="timeRemaining">--</span>
+        </div>
+    </div>
+    <button id="uploadBtn" class="btn">开始上传</button>
+</div>
+
+<div id="resultSection" class="hidden">
+    <h2>上传结果</h2>
+    <p id="resultMessage"></p>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const fileInput = document.getElementById('fileInput');
+        const selectFileBtn = document.getElementById('selectFileBtn');
+        const fileInfo = document.getElementById('fileInfo');
+        const progressSection = document.getElementById('progressSection');
+        const fileName = document.getElementById('fileName');
+        const percentage = document.getElementById('percentage');
+        const progressFill = document.getElementById('progressFill');
+        const uploadedSize = document.getElementById('uploadedSize');
+        const totalSize = document.getElementById('totalSize');
+        const speed = document.getElementById('speed');
+        const timeRemaining = document.getElementById('timeRemaining');
+        const uploadBtn = document.getElementById('uploadBtn');
+        const resultSection = document.getElementById('resultSection');
+        const resultMessage = document.getElementById('resultMessage');
+
+        let currentFile = null;
+        let fileId = null;
+        let chunkSize = 5 * 1024 * 1024; // 5MB 分片大小
+        let uploadStartTime = null;
+
+        // 选择文件按钮点击事件
+        selectFileBtn.addEventListener('click', () => {
+            fileInput.click();
+        });
+
+        // 文件选择事件
+        fileInput.addEventListener('change', handleFileSelect);
+
+        // 拖放事件
+        const dropArea = document.querySelector('.upload-container');
+        ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+            dropArea.addEventListener(eventName, preventDefaults, false);
+        });
+
+        function preventDefaults(e) {
+            e.preventDefault();
+            e.stopPropagation();
+        }
+
+        ['dragenter', 'dragover'].forEach(eventName => {
+            dropArea.addEventListener(eventName, highlight, false);
+        });
+
+        ['dragleave', 'drop'].forEach(eventName => {
+            dropArea.addEventListener(eventName, unhighlight, false);
+        });
+
+        function highlight() {
+            dropArea.style.borderColor = '#4CAF50';
+            dropArea.style.backgroundColor = '#f9f9f9';
+        }
+
+        function unhighlight() {
+            dropArea.style.borderColor = '#ccc';
+            dropArea.style.backgroundColor = '';
+        }
+
+        dropArea.addEventListener('drop', handleDrop, false);
+
+        function handleDrop(e) {
+            const dt = e.dataTransfer;
+            const files = dt.files;
+
+            if (files.length) {
+                handleFiles(files[0]);
+            }
+        }
+
+        function handleFileSelect(e) {
+            if (e.target.files.length) {
+                handleFiles(e.target.files[0]);
+            }
+        }
+
+        function handleFiles(file) {
+            currentFile = file;
+            fileId = 'file_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
+
+            // 显示文件信息
+            fileInfo.innerHTML = `
+                    <p>已选择文件: <strong>${file.name}</strong></p>
+                    <p>文件大小: ${formatFileSize(file.size)}</p>
+                `;
+
+            // 显示进度区域
+            progressSection.classList.remove('hidden');
+            fileName.textContent = file.name;
+            totalSize.textContent = formatFileSize(file.size);
+
+            // 检查已有进度
+            checkExistingProgress();
+        }
+
+        // 检查已有上传进度（断点续传）
+        function checkExistingProgress() {
+            if (!fileId || !currentFile) return;
+
+            // 获取总块数
+            const totalChunks = Math.ceil(currentFile.size / chunkSize);
+
+            // 检查每个分片是否已上传
+            let uploadedChunks = 0;
+            let checksCompleted = 0;
+
+            for (let i = 0; i < totalChunks; i++) {
+                checkChunkExists(i, function(exists) {
+                    if (exists) {
+                        uploadedChunks++;
+                        updateProgress(uploadedChunks * chunkSize, totalChunks);
+                    }
+
+                    checksCompleted++;
+                    if (checksCompleted === totalChunks) {
+                        // 所有检查完成
+                        if (uploadedChunks === totalChunks) {
+                            // 所有分片已上传，准备合并
+                            uploadBtn.textContent = '合并文件';
+                        } else if (uploadedChunks > 0) {
+                            uploadBtn.textContent = '继续上传';
+                        } else {
+                            uploadBtn.textContent = '开始上传';
+                        }
+                    }
+                });
+            }
+        }
+
+        // 检查分片是否存在
+        function checkChunkExists(chunkIndex, callback) {
+            fetch(`/upload/${fileId}/${chunkIndex}`, {
+                method: 'HEAD'
+            })
+                .then(response => {
+                    callback(response.status === 200);
+                })
+                .catch(error => {
+                    console.error('检查分片失败:', error);
+                    callback(false);
+                });
+        }
+
+        // 开始上传按钮点击事件
+        uploadBtn.addEventListener('click', startUpload);
+
+        function startUpload() {
+            if (!currentFile || !fileId) return;
+
+            // 如果是合并文件
+            if (uploadBtn.textContent === '合并文件') {
+                mergeChunks();
+                return;
+            }
+
+            uploadStartTime = Date.now();
+
+            // 计算总块数
+            const totalChunks = Math.ceil(currentFile.size / chunkSize);
+            let uploadedChunks = 0;
+
+            // 上传所有分片
+            for (let i = 0; i < totalChunks; i++) {
+                // 跳过已上传的分片
+                checkChunkExists(i, function(exists) {
+                    if (!exists) {
+                        uploadChunk(i, totalChunks);
+                    } else {
+                        uploadedChunks++;
+                        if (uploadedChunks === totalChunks) {
+                            mergeChunks();
+                        }
+                    }
+                });
+            }
+        }
+
+        // 上传单个分片
+        function uploadChunk(chunkIndex, totalChunks) {
+            const start = chunkIndex * chunkSize;
+            const end = Math.min(start + chunkSize, currentFile.size);
+            const chunk = currentFile.slice(start, end);
+
+            const formData = new FormData();
+            formData.append('file', chunk, currentFile.name);
+            formData.append('chunkIndex', chunkIndex);
+            formData.append('totalChunks', totalChunks);
+            formData.append('chunkSize', chunkSize);
+            formData.append('fileName', currentFile.name);
+
+            fetch(`/upload/${fileId}/${chunkIndex}`, {
+                method: 'POST',
+                body: formData
+            })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.message === '分片上传成功') {
+                        // 更新进度
+                        const uploaded = (chunkIndex + 1) * chunkSize;
+                        if (uploaded > currentFile.size) {
+                            updateProgress(currentFile.size, totalChunks);
+                        } else {
+                            updateProgress(uploaded, totalChunks);
+                        }
+
+                        // 如果是最后一块，合并文件
+                        if (chunkIndex === totalChunks - 1) {
+                            mergeChunks();
+                        }
+                    }
+                })
+                .catch(error => {
+                    console.error(`分片 ${chunkIndex} 上传失败:`, error);
+                });
+        }
+
+        // 合并文件分片
+        function mergeChunks() {
+            const totalChunks = Math.ceil(currentFile.size / chunkSize);
+
+            const formData = new FormData();
+            formData.append('fileName', currentFile.name);
+            formData.append('totalChunks', totalChunks);
+
+            fetch(`/merge/${fileId}`, {
+                method: 'POST',
+                body: formData
+            })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.message === '文件合并成功') {
+                        resultSection.classList.remove('hidden');
+                        resultMessage.textContent = `文件上传成功! 保存路径: ${data.path}`;
+                        uploadBtn.textContent = '上传完成';
+                        uploadBtn.disabled = true;
+                    }
+                })
+                .catch(error => {
+                    console.error('文件合并失败:', error);
+                    resultSection.classList.remove('hidden');
+                    resultMessage.textContent = `文件合并失败: ${error.message}`;
+                });
+        }
+
+        // 更新进度显示
+        function updateProgress(uploadedBytes, totalChunks) {
+            // 计算百分比
+            const percent = Math.min(100, (uploadedBytes / currentFile.size) * 100);
+            percentage.textContent = `${percent.toFixed(1)}%`;
+            progressFill.style.width = `${percent}%`;
+
+            // 更新已上传大小
+            uploadedSize.textContent = formatFileSize(uploadedBytes);
+
+            // 计算上传速度
+            if (uploadStartTime) {
+                const elapsedTime = (Date.now() - uploadStartTime) / 1000; // 秒
+                if (elapsedTime > 0) {
+                    const uploadSpeed = uploadedBytes / elapsedTime; // 字节/秒
+                    speed.textContent = `${formatFileSize(uploadSpeed)}/s`;
+
+                    // 计算剩余时间
+                    if (percent < 100) {
+                        const remainingBytes = currentFile.size - uploadedBytes;
+                        const remainingTime = remainingBytes / uploadSpeed;
+                        timeRemaining.textContent = formatTime(remainingTime);
+                    } else {
+                        timeRemaining.textContent = '完成';
+                    }
+                }
+            }
+        }
+
+        // 格式化文件大小
+        function formatFileSize(bytes) {
+            if (bytes < 1024) return bytes + ' B';
+            else if (bytes < 1024 * 1024) return (bytes / 1024).toFixed(1) + ' KB';
+            else if (bytes < 1024 * 1024 * 1024) return (bytes / (1024 * 1024)).toFixed(1) + ' MB';
+            else return (bytes / (1024 * 1024 * 1024)).toFixed(1) + ' GB';
+        }
+
+        // 格式化时间
+        function formatTime(seconds) {
+            if (isNaN(seconds)) return '--';
+
+            const minutes = Math.floor(seconds / 60);
+            const secs = Math.floor(seconds % 60);
+
+            if (minutes > 0) {
+                return `${minutes}分${secs}秒`;
+            } else {
+                return `${secs}秒`;
+            }
+        }
+
+    });
+</script>
+</body>
+</html>

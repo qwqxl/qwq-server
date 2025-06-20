@@ -17,7 +17,7 @@ type PostRepository interface {
 	Delete(ctx context.Context, id uint) error
 	WithTransaction(ctx context.Context, fn func(repo PostRepository) error) error
 
-	// ------- Post 相关操作 --------- //
+	// --------- Post 相关操作 --------- //
 
 	// ListByUserID 获取用户的所有帖子
 	ListByUserID(ctx context.Context, userID uint, page, pageSize int) ([]*model.Post, int64, error)

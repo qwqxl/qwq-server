@@ -6,9 +6,9 @@ import (
 	"qwqserver/pkg/util/singleton"
 	"time"
 
-	"github.com/go-redis/redis/v8"
 	"gorm.io/gorm"
 
+	"github.com/redis/go-redis/v9"
 	"qwqserver/internal/config"
 	"qwqserver/internal/model"
 	"qwqserver/internal/server"
@@ -132,22 +132,28 @@ func NewApplication(appConfigs ...*Config) *Application {
 	//  初始化Redis缓存
 	var redisClient *redis.Client
 	if cfg.Redis != nil {
-		redisClient, err = cache.InitRedis(&cache.Config{
-			Addr:         cfg.Redis.Addr,
-			Password:     cfg.Redis.Password,
-			DB:           cfg.Redis.DB,
-			PoolSize:     cfg.Redis.PoolSize,
-			MinIdleConns: cfg.Redis.MinIdleConns,
-			DialTimeout:  cfg.Redis.DialTimeout,
-			ReadTimeout:  cfg.Redis.ReadTimeout,
-			WriteTimeout: cfg.Redis.WriteTimeout,
-			IdleTimeout:  cfg.Redis.IdleTimeout,
+		//redisClient = cache.InitRedis(&cache.Config{
+		//	Addr:         cfg.Redis.Addr,
+		//	Password:     cfg.Redis.Password,
+		//	DB:           cfg.Redis.DB,
+		//	PoolSize:     cfg.Redis.PoolSize,
+		//	MinIdleConns: cfg.Redis.MinIdleConns,
+		//	DialTimeout:  cfg.Redis.DialTimeout,
+		//	ReadTimeout:  cfg.Redis.ReadTimeout,
+		//	WriteTimeout: cfg.Redis.WriteTimeout,
+		//	IdleTimeout:  cfg.Redis.IdleTimeout,
+		//})
+		//if err != nil {
+		//	l.Error("Redis初始化失败 Error: %v", err)
+		//} else {
+		//	app.Redis = redisClient
+		//}
+		redisClient = cache.InitRedis(&cache.Config{
+			Addr:     cfg.Redis.Addr,
+			DB:       cfg.Redis.DB,
+			Password: cfg.Redis.Password,
 		})
-		if err != nil {
-			l.Error("Redis初始化失败 Error: %v", err)
-		} else {
-			app.Redis = redisClient
-		}
+		app.Redis = redisClient
 	}
 
 	// 自动迁移模型
@@ -187,10 +193,10 @@ func (app *Application) Close() {
 		app.Log.Error("数据库关闭失败 Error: %v", err)
 	}
 	// 关闭Redis连接
-	err = cache.CloseRedis()
-	if err != nil {
-		app.Log.Error("Redis关闭失败 Error: %v", err)
-	}
+	//err = cache.CloseRedis()
+	//if err != nil {
+	//	app.Log.Error("Redis关闭失败 Error: %v", err)
+	//}
 }
 
 func (app *Application) Listen() {

@@ -1,4 +1,4 @@
-package auth
+package authv2
 
 import (
 	"context"
@@ -10,6 +10,7 @@ import (
 	"qwqserver/pkg/cache"
 	"qwqserver/pkg/util"
 	"qwqserver/pkg/util/network/client"
+	"qwqserver/pkg/util/passsec"
 	"strings"
 )
 
@@ -45,12 +46,20 @@ func Register(c *gin.Context) *model.Result {
 		return res
 	}
 
+	// 密码哈希
+	pwd, err := passsec.Hash(req.Password)
+	if err != nil {
+		res.Code = http.StatusInternalServerError
+		res.Message = "密码哈希失败: " + err.Error()
+		return res
+	}
+
 	// 创建新用户
 	newUser := model.User{
 		Username:     req.Username,
-		Password:     req.Password,
-		PasswordSalt: req.Password,
-		PasswordHash: req.Password,
+		Password:     pwd,
+		PasswordSalt: pwd,
+		PasswordHash: pwd,
 		Nickname:     req.Nickname,
 		Email:        req.Email,
 		Status:       1,
@@ -115,7 +124,14 @@ func Login(c *gin.Context) *model.Result {
 	}
 
 	// 校验密码（应使用安全哈希，略）
-	if userInfo.Password != req.Password {
+	var ok bool
+	if ok, err = passsec.Check(req.Password, userInfo.Password); err != nil {
+		res.Code = http.StatusUnauthorized
+		res.Message = "密码校验出错"
+		return res
+	}
+
+	if !ok {
 		res.Code = http.StatusUnauthorized
 		res.Message = "密码错误"
 		return res

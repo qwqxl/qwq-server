@@ -1,91 +1,254 @@
-# qwqserver
+# 📘 qwq-server
 
 [![Go Version](https://img.shields.io/github/go-mod/go-version/yourname/qwqserver)](https://github.com/yushulinfengxl/qwq-server)
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/license/MIT)
 
-一个基于 Go 语言构建的低性能后端。
+qwq-server 是一个模块化、高性能、极简可扩展的 Go 后端框架，基于 Gin 构建，强调解耦设计、清晰目录结构、易维护性，适用于中大型项目的后端开发。
 
-## 功能特性
+<p align="center">
+  <img src="./resources/docs/logo.png" alt="qwqserver logo" width="180">
+</p>
 
-- ✅ **RESTful API**：支持标准的 HTTP 请求处理
-- 🚀 **高性能路由**：基于 [Gin](https://github.com/gin-gonic/gin) 框架
-- 🔒 **身份验证**：JWT 中间件
-- 📦 **模块化设计**：清晰的代码分层（Handler/Service/Repository）
-- 📊 **数据存储**：支持 MySQL/PostgreSQL + GORM/SQLx
+[//]: # (![QWQServer Logo]&#40;./logo.png&#41;)
 
-### qwqserver 实现了以下 2 类功能：
+> 注：当前缺乏专业前端支持，诚邀前端开发者共同构建后台管理界面，欢迎提交意见和 PR！
 
-- 用户管理： 支持用户注册、用户登录、获取用户列表、获取用户详情、更新用户信息、修改用户密码等操作；
-- 博客管理： 支持创建博客、获取博客列表、获取博客详情、更新博客内容、删除博客等操作。
+
+## 🔍 速览
+
+* 👉 项目演示地址（敬请期待）: [http://www.iqwq.com](http://www.iqwq.com)
+* 👉 接口文档 Swagger：[http://localhost:2333/swagger/index.html](http://localhost:2333/swagger/index.html)
+* 👉 前端仓库（待）：[https://github.com/yushulinfengxl/qwqserver-web](https://github.com/yushulinfengxl/qwqserver-web)
+* 👉 文档入口：[`/docs`](/docs)
+
+---
+
+## ⚙️ 技术栈
+
+| 类别       | 技术                  | 描述                   |
+| -------- |---------------------| -------------------- |
+| 后端语言     | Go                  | 高性能后端开发语言            |
+| 框架       | Gin                 | 轻量级 HTTP Web 框架      |
+| 数据库      | MySQL/Postgres/SQLite | 多数据库支持               |
+| 缓存       | Redis               | 高性能缓存/消息队列           |
+| 安全认证     | JWT                 | 支持访问令牌与刷新令牌，内置无感刷新机制 |
+| 配置加载     | Viper（内置封装）         | 动态配置、环境变量加载          |
+| 日志记录     | Zap/Slog（待）         | 高性能结构化日志记录           |
+| 热重载      | Air（待）              | 本地开发自动重载             |
+| 文档生成     | swaggo/swag         | Swagger UI 自动生成      |
+| Docker部署 | Docker Compose      | 容器一键部署支持             |
+| 前端支持     | Nuxt/Next（待）        | 可选前端集成支持             |
+
+---
+
+## 🧩 功能模块
 
 ### 模块结构
+- **cmd/**：应用启动入口（main.go）
+- **internal/app/**：组合所有服务逻辑
+- **internal/config/**：配置加载
+- **internal/common/**：公共
+- **internal/base/**：基础服务
+- **internal/server/**：Gin/gRPC 启动逻辑
+- **internal/middleware/**：中间件
+- **internal/handler/**：HTTP 控制器
+- **internal/model/**：数据模型
+- **internal/repository/**：数据库操作
+- **internal/service/**：业务逻辑
+- **pkg/**：可复用库
 
-```
-qwqserver/
-├── cmd/                 # 主程序入口（一个子目录对应一个可执行文件）
-│   └── server/          # 主服务入口（例如：main.go）
-│       └── main.go
-├── internal/            # 私有代码（禁止被其他项目导入）
-│   ├── app/             # 应用核心逻辑初始化（连接组件）
-│   ├── config/          # 配置解析（环境变量、YAML/TOML等）
-│   ├── server/          # HTTP/gRPC 服务启动和路由配置
-│   ├── handler/         # HTTP 请求处理器（按业务拆分）
-│   ├── middleware/      # 中间件（认证、日志、限流等）
-│   ├── model/           # 数据模型定义（结构体）
-│   ├── repository/      # 数据库操作层（ORM/SQL）
-│   └── service/         # 业务逻辑层（解耦 handler 和 repository）
-├── pkg/                 # 可公开复用的工具库（其他项目可导入）
-│   ├── logger/          # 日志模块（Zap/Slog 封装）
-│   ├── util/            # 通用工具（加密、验证等）
-│   │   ├── cache/       # 缓存操作（Redis/Memcached）
-│   │   ├── error/       # 错误处理（自定义错误类型）
-│   │   ├── validator/   # 验证器（Gin-Validator/Go-Validator）
-│   │   └── security/    # 安全工具（JWT/OAuth2）
-│   └── database/        # 数据库连接池和扩展方法
-├── api/                 # API 协议定义（Protobuf/OpenAPI）
-├── configs/             # 配置文件模板（YAML/TOML/ENV）
-├── deployments/         # 部署配置（Dockerfile, k8s, compose）
-├── scripts/             # 辅助脚本（部署、代码生成）
-├── test/                # 集成测试和测试数据
-├── web/                 # 前端资源（可选，如静态文件）
-├── go.mod               # Go 模块定义
-├── go.sum               # 依赖校验
-└── README.md            # 项目文档
-```
 
-## 快速开始
+### ✅ 用户模块
 
-### 前置条件
+* 用户注册、登录、登出
+* JWT 鉴权（Access/Refresh 分离）
+* 登录失败保护机制、密码哈希升级
+* 修改密码 / 更新信息
 
-- Go 1.21+
-- MySQL/Redis（或 Docker 容器）
+### ✅ 权限系统
 
-### 安装与运行
+* 基于位掩码的权限控制（RBAC 模拟）
+* 角色 - 权限映射（待）
+
+### ✅ 配置模块
+
+* 支持 YAML/ENV 动态配置文件
+* 多环境切换（dev/test/prod）
+
+### ✅ 日志模块
+
+* 控制台彩色输出
+* 支持日志等级（DEBUG/INFO/WARN/ERROR）
+* 可扩展文件输出（待）
+
+### ✅ 安全机制
+
+* 图形验证码功能
+* 支持 CORS 跨域请求配置
+* 支持 CSRF/XSS 安全防护（待）
+* 邮箱验证（支持 QQ/Gmail 等）
+
+### ✅ 中间件
+
+* 日志拦截器
+* 恶意请求速率限制器（待）
+* 鉴权中间件
+
+### ✅ 其他
+
+* OpenAPI 规范文档
+* 自动数据库迁移
+* 可选 Redis 缓存接入
+* Postman 请求集合（待）
+* 插件系统（待）
+
+---
+
+## 💻 本地开发
+
+### 安装依赖
 
 ```bash
-# 克隆项目
-git clone https://github.com/yushulinfengxl/qwqserver.git
-cd qwqserver
-
-# 安装依赖
-go mod download
-
-# 复制配置文件模板
-cp configs/config.yaml.example configs/config.yaml
-
-# 编辑配置文件（按需修改数据库等配置）
-vim configs/config.yaml
-
-# 构造项目
+go install github.com/swaggo/swag/cmd/swag@latest
 go mod tidy
+```
 
-# 构建项目Linux
-go build -o bin/qwqserver cmd/server/main.go
+### 配置文件
 
-# 构建项目Windows
-go build -o bin/qwqserver.exe cmd/server/main.go
+编辑 `configs/config.yaml`：
 
-# 启动服务
-go run cmd/server/main.go
+```yaml
+listen:
+  port: 2333
+  log_level: debug
+  max_concurrent: 10
 
-# 访问 http://localhost:8080/healthcheck
+database:
+  driver: mysql
+  dsn: root:password@tcp(localhost:3306)/qwq?charset=utf8mb4&parseTime=True&loc=Local
+
+redis:
+  addr: localhost:6379
+  password: ""
+
+admin_user:
+  username: admin
+  password: admin
+  email: admin@example.com
+
+jwt:
+  secret: "your-secret"
+  access_expire: 3600
+  refresh_expire: 86400
+```
+
+### 启动服务
+
+```bash
+go run ./cmd/server/main.go
+```
+
+或使用 Air：
+
+```bash
+go install github.com/air-verse/air@latest
+air -c ./configs/.air.toml
+```
+
+访问接口：[http://localhost:2333/ping](http://localhost:2333/ping)
+
+---
+
+## 🐳 Docker 部署（MySQL）
+
+编辑 `configs/config.yaml` 和 `docker-compose.yaml`：
+
+```yaml
+APP_HOST: "0.0.0.0"
+database:
+  driver: mysql
+  dsn: root:password@tcp(mysql:3306)/qwq?charset=utf8mb4&parseTime=True&loc=Local
+```
+
+```yaml
+environment:
+  - MYSQL_ROOT_PASSWORD=yourpassword
+```
+
+启动：
+
+```bash
+docker-compose up -d
+```
+
+---
+
+## 🗂 接口文档
+
+* Swagger 接口文档：[http://localhost:2333/swagger/index.html](http://localhost:2333/swagger/index.html)
+* Postman 文档（待）
+* README.md 文档入口：`docs/`
+
+---
+
+## 🛣️ Roadmap
+
+* ✅ 用户注册/登录
+* ✅ JWT 管理机制
+* ✅ RBAC 权限模型（简化版）
+* ✅ 接口分层架构
+* ✅ 数据库迁移 + GORM 封装
+* ⏳ 插件系统（待）
+* ⏳ 管理后台前端（待）
+* ⏳ 邮箱验证 + 通知机制（待）
+* ⏳ WebSocket / 消息推送（待）
+* ⏳ 多租户支持（待）
+
+---
+
+## 🤝 官方社区
+
+欢迎加入微信官方社区，共同探讨后端架构与实践：
+
+* 微信号：qwqcnxl
+* QQ 群：5897746
+* 邮箱：[xiaolin@iqwq.com](mailto:xiaolin@iqwq.com)
+
+⚠️ 请遵守开源社群规范，禁止非法内容。
+
+---
+
+## 🙏 特别鸣谢
+
+感谢每一位开源贡献者对 qwqserver 的支持，期待更多开发者一起协作完善！
+
+---
+
+## 📊 代码统计（GitHub Actions 自动更新）
+
+| 语言     | 文件数 | 代码行数 | 注释行 | 空白行 | 占比   |
+| ------ | --- | ---- | --- | --- | ---- |
+| Go     | 80  | 3000 | 600 | 650 | 91%  |
+| YAML   | 3   | 200  | 20  | 30  | 6%   |
+| Docker | 1   | 30   | 5   | 10  | 1.5% |
+| 其他     | 3   | 50   | 3   | 10  | 1.5% |
+
+> 统计排除：docs/, go.mod, LICENSE 等非核心代码。
+
+---
+
+[//]: # (## 📄 许可证)
+
+## ⚖️ 使用声明与道德说明
+
+本项目遵循 [MIT License](https://opensource.org/license/MIT) 协议开源，任何人均可自由使用、复制、修改和发布本项目源代码。
+
+> **本软件按“原样”提供（AS IS），作者不对因使用本项目造成的任何损失或后果承担任何责任。**
+
+同时，作为本项目的作者，我们郑重声明：
+
+- 本项目的初衷是服务于 **合法、正当、正向** 的技术研究与产品开发；
+- **严禁将本项目用于任何形式的非法活动**，包括但不限于诈骗、赌博、色情、病毒传播、数据窃取、隐私监控、压迫性技术等；
+- 对任何违反法律法规或违背基本人类价值的使用方式，我们**坚决反对**，并保留公开谴责、移除协作、技术封禁等权利。
+
+🙏 请自觉遵守法律法规和道德底线，守护开源生态的纯净与开放。

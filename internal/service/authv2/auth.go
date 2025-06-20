@@ -1,4 +1,4 @@
-package auth
+package authv2
 
 import (
 	"context"
@@ -16,6 +16,7 @@ const (
 	RegisterPath = "/register"
 	ProfilePath  = "/profile"
 	LogoutPath   = "/logout"
+	Identity     = "identity"
 )
 
 var (
@@ -63,6 +64,13 @@ const (
 )
 
 var JWTSecretKey = []byte(JWTSecretKeyEnv)
+
+type IdentityResult struct {
+	UserID    string `json:"user_id"`
+	DeviceID  string `json:"device_id"`
+	IPAddress string `json:"ipaddress"`
+	Status    bool   `json:"status"`
+}
 
 // 登录请求结构体
 type LoginRequest struct {

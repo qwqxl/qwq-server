@@ -1,11 +1,13 @@
 package server
 
 import (
+	"fmt"
 	"github.com/gin-gonic/gin"
+	"path/filepath"
+	"qwqserver/internal/auth"
 	"qwqserver/internal/handler"
 	"qwqserver/internal/middleware"
-	"qwqserver/internal/service/auth"
-	"qwqserver/pkg/util/network/client"
+	"qwqserver/pkg/util"
 )
 
 func RouterApiV1() {
@@ -21,44 +23,74 @@ func RouterApiV1() {
 		})
 	})
 
-	apiV1Group := r.Group("/api/v1")
+	mdDir := util.WorkDir("resources/docs")
+	mdTemplateDir := util.WorkDir("resources/templates/markdown")
 
-	apiV1Group.GET("/info", func(c *gin.Context) {
-		deviceInfo := client.JsonDeviceHandler(c.Writer, c.Request)
-		c.JSON(200, deviceInfo)
+	fmt.Println("mdDir: ", mdDir, "mdTemplateDir: ", mdTemplateDir)
+
+	// 添加静态文件服务 - 关键部分
+	r.Static("/docs/img", mdDir)
+
+	// 加载模板
+	r.LoadHTMLGlob(filepath.Join(mdTemplateDir, "*.html"))
+
+	// 获取所有 Markdown 文件
+	r.GET("/docs", func(c *gin.Context) {
+		util.ListMarkdownFiles(mdDir, c)
 	})
 
-	// 认证路由
+	// 渲染 Markdown 文件
+	r.GET("/docs/:filename", func(c *gin.Context) {
+		util.RenderMarkdown(mdDir, c)
+	})
 
-	userGroup := apiV1Group.Group("/user")
+	apiV1Group := r.Group("/api/v1")
+
+	// 认证中间件
+	apiV1Group.Use(middleware.AuthMiddleware())
+
+	// 认证路由
+	authGroup := apiV1Group.Group("/auth")
 	{
 		// 注册
-		userGroup.POST(auth.RegisterPath, func(c *gin.Context) {
-			res := handler.Register(c)
+		authGroup.POST(auth.RegisterPath, func(c *gin.Context) {
+			// get user service handler
+			handle := handler.NewUserHandler()
+			res := handle.Register(c)
 			c.JSON(res.Code, res)
 		})
 		// 登录
-		userGroup.POST(auth.LoginPath, func(c *gin.Context) {
-			res := handler.Login(c)
+		authGroup.POST(auth.LoginPath, func(c *gin.Context) {
+			// get user service handler
+			handle := handler.NewUserHandler()
+			res := handle.Login(c)
 			c.JSON(res.Code, res)
 		})
 		// 登出
-		userGroup.POST(auth.LogoutPath, func(c *gin.Context) {
-			res := handler.Logout(c)
+		authGroup.POST(auth.LogoutPath, func(c *gin.Context) {
+			// get user service handler
+			handle := handler.NewUserHandler()
+			res := handle.Logout(c)
 			c.JSON(res.Code, res)
 		})
-		// --------- 用户 --------- //
+		// --------- 用户操作 --------- //
 		// 删除用户
-		userGroup.DELETE("/del", func(c *gin.Context) {
-			res := handler.UserDeleteID(c)
+		authGroup.DELETE(auth.DelIDPath, func(c *gin.Context) {
+			// get user service handler
+			handle := handler.NewUserHandler()
+			res := handle.DelID(c)
 			c.JSON(res.Code, res)
 		})
+
 	}
 
+	// 文章路由
 	postGroup := apiV1Group.Group("/post")
 	{
+		// 创建文章
 		postGroup.POST("/create", func(c *gin.Context) {
-			res := handler.PostCreate(c)
+			handle := handler.NewPost()
+			res := handle.Create(c)
 			c.JSON(res.Code, res)
 		})
 	}
