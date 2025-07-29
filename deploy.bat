@@ -1,15 +1,16 @@
 @echo off
+:: 设置终端编码为 UTF-8，防止中文乱码
 chcp 65001 >nul
 setlocal ENABLEEXTENSIONS ENABLEDELAYEDEXPANSION
 
-:: 初始化默认值
-set "COMMIT_MSG=更新内容"
+:: 默认参数
+set "COMMIT_MSG=更新"
 set "BRANCH=main"
 set "TAG="
 
 :: 参数解析
-:parse
-if "%~1"=="" goto after_parse
+:parse_args
+if "%~1"=="" goto run
 if /I "%~1"=="-m" (
     shift
     set "COMMIT_MSG=%~1"
@@ -24,30 +25,31 @@ if /I "%~1"=="-m" (
     goto :eof
 )
 shift
-goto parse
+goto parse_args
 
-:after_parse
-
+:: 开始执行 Git 操作
+:run
 echo.
-echo ⚙️ 正在部署到 Git...
-echo 📄 提交信息: %COMMIT_MSG%
-echo 🌿 分支: %BRANCH%
+echo ========== Git 自动发布 ==========
+echo 📄 提交说明：%COMMIT_MSG%
+echo 🌿 分支名称：%BRANCH%
 if not "%TAG%"=="" (
-    echo 🏷️ 标签: %TAG%
+    echo 🏷️ 标签版本：%TAG%
 )
 
-:: Git 操作开始
+:: 开始上传
 git init
 git add .
 git commit -m "%COMMIT_MSG%"
 git branch -M %BRANCH%
 git push -u origin %BRANCH%
 
+:: 添加并推送标签
 if not "%TAG%"=="" (
     git tag %TAG%
     git push origin %TAG%
 )
 
 echo.
-echo ✅ 推送完成！
+echo ✅ 发布完成！
 goto :eof
