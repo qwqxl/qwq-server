@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{.Title}}</title>
+    <style>
+        :root {
+            --primary-color: #3498db;
+            --hover-color: #2980b9;
+            --border-color: #e0e0e0;
+            --text-color: #333;
+            --light-text: #777;
+            --bg-color: #f9f9f9;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 1000px;
+            margin: 20px auto;
+            padding: 0 20px;
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .breadcrumb {
+            margin-bottom: 20px;
+            padding: 10px 15px;
+            background: var(--bg-color);
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+        .breadcrumb a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        .breadcrumb span {
+            margin: 0 5px;
+            color: var(--light-text);
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--border-color);
+            color: var(--text-color);
+        }
+
+        .directory {
+            margin-bottom: 30px;
+            background: white;
+            border-radius: 6px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            overflow: hidden;
+        }
+
+        .directory-header {
+            padding: 12px 15px;
+            background: #f5f7fa;
+            border-bottom: 1px solid var(--border-color);
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+        }
+
+        .directory-header svg {
+            margin-right: 8px;
+            width: 18px;
+            height: 18px;
+            fill: var(--primary-color);
+        }
+
+        .file-list {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+
+        .file-item {
+            padding: 12px 15px;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            transition: background 0.2s;
+        }
+
+        .file-item:last-child {
+            border-bottom: none;
+        }
+
+        .file-item:hover {
+            background: #f8fafd;
+        }
+
+        .file-icon {
+            margin-right: 10px;
+            width: 20px;
+            height: 20px;
+        }
+
+        .file-link {
+            flex: 1;
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .file-link:hover {
+            color: var(--primary-color);
+        }
+
+        .file-date {
+            color: var(--light-text);
+            font-size: 13px;
+            white-space: nowrap;
+        }
+
+        .empty-state {
+            padding: 30px;
+            text-align: center;
+            color: var(--light-text);
+        }
+
+
+        /* new add style 响应式*/
+        /*@media (max-width: 768px) {*/
+        /*    body {*/
+        /*        padding: 0 10px;*/
+        /*        font-size: 15px;*/
+        /*    }*/
+
+        /*    .breadcrumb {*/
+        /*        font-size: 13px;*/
+        /*        padding: 8px 10px;*/
+        /*    }*/
+
+        /*    .directory-header {*/
+        /*        padding: 10px 12px;*/
+        /*        font-size: 15px;*/
+        /*    }*/
+
+        /*    .file-item {*/
+        /*        flex-direction: column;*/
+        /*        align-items: flex-start;*/
+        /*        padding: 10px 12px;*/
+        /*    }*/
+
+        /*    .file-link {*/
+        /*        font-size: 15px;*/
+        /*        margin-bottom: 6px;*/
+        /*    }*/
+
+        /*    .file-date {*/
+        /*        font-size: 12px;*/
+        /*    }*/
+        /*}*/
+
+        /*@media (max-width: 480px) {*/
+        /*    h1 {*/
+        /*        font-size: 20px;*/
+        /*    }*/
+
+        /*    .directory-header {*/
+        /*        font-size: 14px;*/
+        /*    }*/
+
+        /*    .file-link {*/
+        /*        font-size: 14px;*/
+        /*    }*/
+
+        /*    .file-date {*/
+        /*        font-size: 11px;*/
+        /*    }*/
+        /*}*/
+
+    </style>
+</head>
+<body>
+<div class="breadcrumb">
+    {{range $index, $item := .Breadcrumb}}
+    {{if not $item.Last}}
+    <a href="{{$item.Path}}">{{$item.Name}}</a> <span>/</span>
+    {{else}}
+    {{$item.Name}}
+    {{end}}
+    {{end}}
+</div>
+
+<h1>{{.Title}}</h1>
+
+{{if .DirMap}}
+{{range $dir, $files := .DirMap}}
+<div class="directory">
+    <div class="directory-header">
+        <svg viewBox="0 0 24 24">
+            <path d="M10 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2h-8l-2-2z"/>
+        </svg>
+        {{$dir}}
+    </div>
+    <ul class="file-list">
+        {{range $files}}
+        {{if .IsDir}}
+        <li class="file-item">
+            <svg class="file-icon" viewBox="0 0 24 24">
+                <path d="M10 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2h-8l-2-2z"/>
+            </svg>
+            <a class="file-link" href="/docs?dir={{.RelativePath}}">{{.Name}}</a>
+            <div class="file-date">{{.ModTime.Format "2006-01-02"}}</div>
+        </li>
+        {{else}}
+        <li class="file-item">
+            <svg class="file-icon" viewBox="0 0 24 24">
+                <path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/>
+            </svg>
+            <a class="file-link" href="/docs/{{.RelativePath}}">{{.Name}}</a>
+            <div class="file-date">{{.ModTime.Format "2006-01-02"}}</div>
+        </li>
+        {{end}}
+        {{end}}
+    </ul>
+</div>
+{{end}}
+{{else}}
+<div class="empty-state">
+    <h3>没有找到文档</h3>
+    <p>此目录下没有 Markdown 文件</p>
+</div>
+{{end}}
+</body>
+</html>

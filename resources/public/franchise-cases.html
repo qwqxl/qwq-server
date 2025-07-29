@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>加盟案例 - QWQ博客</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .cases-hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 120px 0 80px;
+            text-align: center;
+        }
+        
+        .cases-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+        
+        .cases-hero p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .cases-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 80px 20px;
+        }
+        
+        .cases-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .case-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            border: 1px solid #f0f0f0;
+        }
+        
+        .case-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+        
+        .case-image {
+            height: 200px;
+            background: linear-gradient(45deg, #f093fb 0%, #f5576c 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2rem;
+            font-weight: bold;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .case-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="white" opacity="0.3"/><circle cx="80" cy="40" r="1.5" fill="white" opacity="0.2"/><circle cx="40" cy="80" r="1" fill="white" opacity="0.4"/></svg>');
+        }
+        
+        .case-content {
+            padding: 2rem;
+        }
+        
+        .case-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: #2c3e50;
+        }
+        
+        .case-location {
+            color: #7f8c8d;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .case-description {
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+        
+        .case-stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .stat-item {
+            text-align: center;
+            padding: 1rem;
+            background: #f8f9fa;
+            border-radius: 12px;
+        }
+        
+        .stat-number {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #667eea;
+            display: block;
+        }
+        
+        .stat-label {
+            font-size: 0.8rem;
+            color: #7f8c8d;
+            margin-top: 0.25rem;
+        }
+        
+        .case-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+        
+        .case-tag {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+        
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: #7f8c8d;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .filter-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+        
+        .filter-tab {
+            padding: 0.75rem 1.5rem;
+            border: 2px solid #e9ecef;
+            border-radius: 25px;
+            background: white;
+            color: #6c757d;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+        
+        .filter-tab.active {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            border-color: transparent;
+        }
+        
+        .filter-tab:hover {
+            border-color: #667eea;
+            color: #667eea;
+        }
+        
+        .filter-tab.active:hover {
+            color: white;
+        }
+        
+        @media (max-width: 768px) {
+            .cases-hero h1 {
+                font-size: 2rem;
+            }
+            
+            .cases-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            
+            .case-content {
+                padding: 1.5rem;
+            }
+            
+            .filter-tabs {
+                gap: 0.5rem;
+            }
+            
+            .filter-tab {
+                padding: 0.5rem 1rem;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">QWQ</a>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">首页</a></li>
+                    <li><a href="blog.html">博客</a></li>
+                    <li><a href="about.html">关于</a></li>
+                    <li><a href="contact.html">联系</a></li>
+                    <li><a href="franchise.html">加盟合作</a></li>
+                </ul>
+            </nav>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <section class="cases-hero">
+        <div class="container">
+            <h1>成功案例</h1>
+            <p>看看我们的合作伙伴如何通过加盟合作实现商业成功，这些真实案例将为您的决策提供有力参考</p>
+        </div>
+    </section>
+
+    <section class="cases-container">
+        <div class="section-header">
+            <h2 class="section-title">加盟成功案例</h2>
+            <p class="section-subtitle">从初创到成熟，我们见证了众多合作伙伴的成长历程</p>
+        </div>
+
+        <div class="filter-tabs">
+            <div class="filter-tab active" data-filter="all">全部案例</div>
+            <div class="filter-tab" data-filter="tech">科技类</div>
+            <div class="filter-tab" data-filter="education">教育类</div>
+            <div class="filter-tab" data-filter="business">商业类</div>
+            <div class="filter-tab" data-filter="creative">创意类</div>
+        </div>
+
+        <div class="cases-grid">
+            <div class="case-card" data-category="tech">
+                <div class="case-image">
+                    <span>TechFlow</span>
+                </div>
+                <div class="case-content">
+                    <h3 class="case-title">TechFlow 科技博客</h3>
+                    <div class="case-location">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                        </svg>
+                        深圳市南山区
+                    </div>
+                    <p class="case-description">专注于前端技术分享的科技博客，通过我们的平台模板快速搭建，月访问量突破50万，成为行业知名技术社区。</p>
+                    <div class="case-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">50万+</span>
+                            <span class="stat-label">月访问量</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">2年</span>
+                            <span class="stat-label">合作时长</span>
+                        </div>
+                    </div>
+                    <div class="case-tags">
+                        <span class="case-tag">技术博客</span>
+                        <span class="case-tag">前端开发</span>
+                        <span class="case-tag">社区运营</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="case-card" data-category="education">
+                <div class="case-image">
+                    <span>EduSpace</span>
+                </div>
+                <div class="case-content">
+                    <h3 class="case-title">EduSpace 在线教育</h3>
+                    <div class="case-location">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                        </svg>
+                        北京市海淀区
+                    </div>
+                    <p class="case-description">基于我们的内容管理系统构建的在线教育平台，提供编程、设计等课程，已服务超过10万学员。</p>
+                    <div class="case-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">10万+</span>
+                            <span class="stat-label">注册学员</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">18个月</span>
+                            <span class="stat-label">合作时长</span>
+                        </div>
+                    </div>
+                    <div class="case-tags">
+                        <span class="case-tag">在线教育</span>
+                        <span class="case-tag">课程平台</span>
+                        <span class="case-tag">知识付费</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="case-card" data-category="business">
+                <div class="case-image">
+                    <span>BizHub</span>
+                </div>
+                <div class="case-content">
+                    <h3 class="case-title">BizHub 商业资讯</h3>
+                    <div class="case-location">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                        </svg>
+                        上海市浦东新区
+                    </div>
+                    <p class="case-description">专业的商业资讯和分析平台，为企业决策者提供深度行业洞察，订阅用户超过5万人。</p>
+                    <div class="case-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">5万+</span>
+                            <span class="stat-label">订阅用户</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">3年</span>
+                            <span class="stat-label">合作时长</span>
+                        </div>
+                    </div>
+                    <div class="case-tags">
+                        <span class="case-tag">商业资讯</span>
+                        <span class="case-tag">行业分析</span>
+                        <span class="case-tag">企业服务</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="case-card" data-category="creative">
+                <div class="case-image">
+                    <span>DesignLab</span>
+                </div>
+                <div class="case-content">
+                    <h3 class="case-title">DesignLab 设计工作室</h3>
+                    <div class="case-location">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                        </svg>
+                        广州市天河区
+                    </div>
+                    <p class="case-description">创意设计师的作品展示和交流平台，汇聚了众多优秀设计师，成为设计行业的重要社区。</p>
+                    <div class="case-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">3万+</span>
+                            <span class="stat-label">设计师</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">15个月</span>
+                            <span class="stat-label">合作时长</span>
+                        </div>
+                    </div>
+                    <div class="case-tags">
+                        <span class="case-tag">创意设计</span>
+                        <span class="case-tag">作品展示</span>
+                        <span class="case-tag">设计师社区</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="case-card" data-category="tech">
+                <div class="case-image">
+                    <span>CodeShare</span>
+                </div>
+                <div class="case-content">
+                    <h3 class="case-title">CodeShare 代码分享</h3>
+                    <div class="case-location">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                        </svg>
+                        杭州市西湖区
+                    </div>
+                    <p class="case-description">程序员代码分享和技术交流平台，提供代码片段分享、技术问答等功能，日活跃用户超过2万。</p>
+                    <div class="case-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">2万+</span>
+                            <span class="stat-label">日活用户</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">1年</span>
+                            <span class="stat-label">合作时长</span>
+                        </div>
+                    </div>
+                    <div class="case-tags">
+                        <span class="case-tag">代码分享</span>
+                        <span class="case-tag">技术交流</span>
+                        <span class="case-tag">开发者社区</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="case-card" data-category="education">
+                <div class="case-image">
+                    <span>LearnMore</span>
+                </div>
+                <div class="case-content">
+                    <h3 class="case-title">LearnMore 知识分享</h3>
+                    <div class="case-location">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                        </svg>
+                        成都市高新区
+                    </div>
+                    <p class="case-description">综合性知识分享平台，涵盖科技、文化、生活等多个领域，为用户提供高质量的学习内容。</p>
+                    <div class="case-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">8万+</span>
+                            <span class="stat-label">内容阅读</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">2年</span>
+                            <span class="stat-label">合作时长</span>
+                        </div>
+                    </div>
+                    <div class="case-tags">
+                        <span class="case-tag">知识分享</span>
+                        <span class="case-tag">多领域</span>
+                        <span class="case-tag">学习平台</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="./images/logo.svg" alt="QWQ博客">
+                    <p>QWQ博客 - 专业的内容管理和博客平台</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-links-column">
+                        <h3>导航</h3>
+                        <ul>
+                            <li><a href="index.html">首页</a></li>
+                            <li><a href="blog.html">博客</a></li>
+                            <li><a href="about.html">关于我们</a></li>
+                            <li><a href="contact.html">联系我们</a></li>
+                            <li><a href="franchise.html">加盟合作</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-links-column">
+                        <h3>服务</h3>
+                        <ul>
+                            <li><a href="franchise.html">加盟合作</a></li>
+                            <li><a href="franchise-apply.html">申请加盟</a></li>
+                            <li><a href="franchise-cases.html">成功案例</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-links-column">
+                        <h3>关注我们</h3>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-github"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-weibo"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 QWQ博客. 保留所有权利.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 筛选功能
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterTabs = document.querySelectorAll('.filter-tab');
+            const caseCards = document.querySelectorAll('.case-card');
+
+            filterTabs.forEach(tab => {
+                tab.addEventListener('click', function() {
+                    // 移除所有活跃状态
+                    filterTabs.forEach(t => t.classList.remove('active'));
+                    // 添加当前活跃状态
+                    this.classList.add('active');
+
+                    const filter = this.getAttribute('data-filter');
+
+                    caseCards.forEach(card => {
+                        if (filter === 'all' || card.getAttribute('data-category') === filter) {
+                            card.style.display = 'block';
+                            setTimeout(() => {
+                                card.style.opacity = '1';
+                                card.style.transform = 'translateY(0)';
+                            }, 100);
+                        } else {
+                            card.style.opacity = '0';
+                            card.style.transform = 'translateY(20px)';
+                            setTimeout(() => {
+                                card.style.display = 'none';
+                            }, 300);
+                        }
+                    });
+                });
+            });
+
+            // 初始化动画
+            caseCards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(30px)';
+                setTimeout(() => {
+                    card.style.transition = 'all 0.6s ease';
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, index * 100);
+            });
+        });
+
+        // 导航菜单切换
+        const navToggle = document.querySelector('.nav-toggle');
+        const mainNav = document.querySelector('.main-nav');
+
+        if (navToggle && mainNav) {
+            navToggle.addEventListener('click', function() {
+                mainNav.classList.toggle('active');
+                navToggle.classList.toggle('active');
+            });
+        }
+    </script>
+</body>
+</html>

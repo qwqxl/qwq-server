@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>联系方式 - QWQ博客</title>
+    <meta name="description" content="联系QWQ博客的作者xiaolin，提出问题、建议或合作意向">
+    <meta name="author" content="xiaolin">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="./images/logo.svg" alt="QWQ博客">
+                    <span>QWQ博客</span>
+                </a>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">主页</a></li>
+                    <li><a href="blog.html">博客</a></li>
+                    <li><a href="articles.html">文章列表</a></li>
+                    <li><a href="about.html">关于我</a></li>
+                    <li><a href="contact.html" class="active">联系方式</a></li>
+                    <li><a href="franchise.html">加盟合作</a></li>
+                </ul>
+            </nav>
+            <div class="nav-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            <div class="theme-switch">
+                <i class="fas fa-moon"></i>
+            </div>
+            <div class="search-btn">
+                <i class="fas fa-search"></i>
+            </div>
+        </div>
+    </header>
+
+    <section class="page-header">
+        <div class="container">
+            <h1>联系方式</h1>
+            <div class="breadcrumb">
+                <a href="index.html">首页</a> / <span>联系方式</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-info">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3>电子邮件</h3>
+                    <p>有任何问题或建议，请发送邮件至：</p>
+                    <a href="mailto:contact@qwqblog.com">contact@qwqblog.com</a>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3>地址</h3>
+                    <p>中国广东省广州市天河区</p>
+                    <p>科技园区88号</p>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <h3>电话</h3>
+                    <p>工作日 9:00 - 18:00</p>
+                    <a href="tel:+8602012345678">+86 020-12345678</a>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <h3>社交媒体</h3>
+                    <p>在社交媒体上关注我们：</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-weibo"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-form-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>给我们留言</h2>
+                <p>如果你有任何问题、建议或合作意向，请填写以下表单，我们会尽快回复你。</p>
+            </div>
+            <div class="contact-form-container">
+                <form class="contact-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">姓名 <span class="required">*</span></label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">邮箱 <span class="required">*</span></label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="phone">电话</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">主题 <span class="required">*</span></label>
+                            <select id="subject" name="subject" required>
+                                <option value="" selected disabled>请选择主题</option>
+                                <option value="question">问题咨询</option>
+                                <option value="feedback">意见反馈</option>
+                                <option value="cooperation">商务合作</option>
+                                <option value="other">其他</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">留言内容 <span class="required">*</span></label>
+                        <textarea id="message" name="message" rows="6" required></textarea>
+                    </div>
+                    <div class="form-group checkbox-group">
+                        <input type="checkbox" id="privacy" name="privacy" required>
+                        <label for="privacy">我已阅读并同意<a href="#">隐私政策</a></label>
+                    </div>
+                    <div class="form-submit">
+                        <button type="submit" class="btn primary-btn">提交留言</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-map">
+        <div class="container">
+            <div class="section-header">
+                <h2>我们的位置</h2>
+            </div>
+            <div class="map-container">
+                <!-- 这里放置地图，可以使用iframe嵌入Google Maps或百度地图 -->
+                <div class="map-placeholder">
+                    <img src="./images/map.svg" alt="地图位置">
+                    <div class="map-overlay">
+                        <p>点击加载地图</p>
+                        <button class="btn outline-btn">加载地图</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="faq-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>常见问题</h2>
+                <p>以下是一些用户经常问到的问题，希望对你有所帮助。</p>
+            </div>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>如何订阅QWQ博客的更新？</h3>
+                        <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>你可以通过以下方式订阅我们的更新：</p>
+                        <ul>
+                            <li>在网站底部填写邮箱，订阅我们的电子邮件通讯</li>
+                            <li>关注我们的社交媒体账号</li>
+                            <li>使用RSS订阅功能</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>QWQ博客主题是免费的吗？</h3>
+                        <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>是的，QWQ博客主题是完全免费的开源项目，你可以自由使用、修改和分发，但请保留作者信息。</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>我可以将QWQ博客主题用于商业项目吗？</h3>
+                        <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>可以，QWQ博客主题采用MIT许可证，允许用于商业项目，但请保留原作者的版权信息。</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>如何报告Bug或提出功能建议？</h3>
+                        <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>你可以通过以下方式报告Bug或提出功能建议：</p>
+                        <ul>
+                            <li>在GitHub仓库提交Issue</li>
+                            <li>通过本页面的联系表单联系我们</li>
+                            <li>发送邮件至contact@qwqblog.com</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="./images/logo.svg" alt="QWQ博客">
+                    <p>QWQ博客 - 一个简洁、美观的个人博客模板</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-links-column">
+                        <h3>导航</h3>
+                        <ul>
+                            <li><a href="index.html">首页</a></li>
+                            <li><a href="articles.html">文章列表</a></li>
+                            <li><a href="about.html">关于我</a></li>
+                            <li><a href="contact.html">联系方式</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-links-column">
+                        <h3>分类</h3>
+                        <ul>
+                            <li><a href="#">前端开发</a></li>
+                            <li><a href="#">后端开发</a></li>
+                            <li><a href="#">UI/UX设计</a></li>
+                            <li><a href="#">工具资源</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-links-column">
+                        <h3>关注我</h3>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-github"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-weibo"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>Copyright © 2023 QWQ博客 by xiaolin. All rights reserved.</p>
+                <p>粤ICP备XXXXXXXX号-X | <a href="#">隐私政策</a> | <a href="#">服务条款</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <div class="search-modal">
+        <div class="search-container">
+            <div class="search-header">
+                <h3>搜索</h3>
+                <button class="close-search"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="search-form">
+                <input type="text" placeholder="输入关键词搜索...">
+                <button type="submit"><i class="fas fa-search"></i></button>
+            </div>
+            <div class="search-results">
+                <!-- 搜索结果将在这里动态显示 -->
+            </div>
+        </div>
+    </div>
+
+    <script src="./js/main.js"></script>
+</body>
+</html>

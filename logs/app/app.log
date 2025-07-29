@@ -1,0 +1,438 @@
+2025-07-29 09:35:20.613 [DEBUG] [main] Config is singleton initialized: true proc.go:283
+2025-07-29 09:35:20.613 [DEBUG] [main] app init proc.go:283
+2025-07-29 09:35:28.682 [DEBUG] [main] Config is singleton initialized: true proc.go:283
+2025-07-29 09:35:28.682 [DEBUG] [main] app init proc.go:283
+2025-07-29 16:41:02.363 [DEBUG] [main] Config is singleton initialized: true proc.go:283
+2025-07-29 16:41:02.363 [DEBUG] [main] app init proc.go:283
+2025-07-29 16:41:17.800 [DEBUG] [main] Global 404 handler set router_v1.go:24
+2025-07-29 16:41:17.800 [INFO] [main] Mapped static path: / -> resources/public router_v1.go:38
+2025-07-29 16:41:17.800 [INFO] [main] Gin服务启动中 service_manager.go:113
+2025-07-29 16:41:17.800 [INFO] [main] Starting server at :5000 gin_v1.go:42
+2025-07-29 16:44:19.170 [DEBUG] [main] Shutting down services... proc.go:283
+2025-07-29 16:44:19.170 [INFO] [main] Received signal: interrupt, shutting down server... httpcore.go:385
+2025-07-29 16:44:19.170 [DEBUG] [main] Gracefully shutting down connection pool... httpcore.go:385
+2025-07-29 16:44:19.170 [DEBUG] [main] Shutting down HTTP server... httpcore.go:385
+2025-07-29 16:44:19.170 [INFO] [main] Server gracefully stopped httpcore.go:385
+2025-07-29 19:52:17.204 [DEBUG] [main] Config is singleton initialized: true proc.go:283
+2025-07-29 19:52:17.204 [DEBUG] [main] app init proc.go:283
+2025-07-29 19:52:31.169 [DEBUG] [main] Global 404 handler set router_v1.go:24
+2025-07-29 19:52:31.169 [INFO] [main] Mapped static path: / -> resources/public router_v1.go:38
+2025-07-29 19:52:31.170 [INFO] [main] Gin服务启动中 service_manager.go:113
+2025-07-29 19:52:31.170 [INFO] [main] Starting server at :5000 gin_v1.go:42
+2025-07-29 19:55:31.497 [INFO] [main] Received signal: interrupt, shutting down server... httpcore.go:385
+2025-07-29 19:55:31.497 [DEBUG] [main] Shutting down services... proc.go:283
+2025-07-29 19:55:31.497 [DEBUG] [main] Gracefully shutting down connection pool... httpcore.go:385
+2025-07-29 19:55:31.497 [DEBUG] [main] Shutting down HTTP server... httpcore.go:385
+2025-07-29 19:55:31.498 [INFO] [main] Server gracefully stopped httpcore.go:385
+2025-07-29 19:55:39.788 [DEBUG] [main] Config is singleton initialized: true proc.go:283
+2025-07-29 19:55:39.788 [DEBUG] [main] app init proc.go:283
+2025-07-29 19:55:53.501 [DEBUG] [main] Global 404 handler set router_v1.go:24
+2025-07-29 19:55:53.501 [INFO] [main] Mapped static path: / -> resources/public router_v1.go:38
+2025-07-29 19:55:53.502 [INFO] [main] Gin服务启动中 service_manager.go:113
+2025-07-29 19:55:53.502 [INFO] [main] Starting server at :5000 gin_v1.go:42
+2025-07-29 19:56:36.121 [DEBUG] [main] Request started: [::1] POST /api/v1/user/login httpcore.go:323
+2025-07-29 19:56:36.730 [INFO] [main] [39dca26b-e13a-4988-8b22-ac7575e7a168] [::1] /api/v1/user/login 200 608.811ms httpcore.go:291
+2025-07-29 19:56:47.327 [DEBUG] [main] Request started: [::1] POST /api/v1/user/login httpcore.go:323
+2025-07-29 19:56:47.367 [INFO] [main] [470bf8ed-b56e-47bd-acef-8231b87978d2] [::1] /api/v1/user/login 200 40.5172ms httpcore.go:291
+2025-07-29 19:57:48.502 [DEBUG] [main] Request started: [::1] POST /api/v1/user/register httpcore.go:323
+2025-07-29 19:57:49.362 [INFO] [main] [e4c57028-396f-4e26-80a2-7a802eddaeb1] [::1] /api/v1/user/register 200 860.0005ms httpcore.go:291
+2025-07-29 19:58:00.897 [DEBUG] [main] Request started: [::1] POST /api/v1/user/login httpcore.go:323
+2025-07-29 19:58:01.313 [INFO] [main] [b4092cb3-f5f2-44a1-b7a5-31c3977e0191] [::1] /api/v1/user/login 500 416.6088ms httpcore.go:291
+2025-07-29 19:59:56.850 [DEBUG] [main] Shutting down services... proc.go:283
+2025-07-29 19:59:56.850 [INFO] [main] Received signal: interrupt, shutting down server... httpcore.go:385
+2025-07-29 19:59:56.850 [DEBUG] [main] Gracefully shutting down connection pool... httpcore.go:385
+2025-07-29 19:59:56.850 [DEBUG] [main] Shutting down HTTP server... httpcore.go:385
+2025-07-29 19:59:56.850 [INFO] [main] Server gracefully stopped httpcore.go:385
+2025-07-29 20:00:03.426 [DEBUG] [main] Config is singleton initialized: true proc.go:283
+2025-07-29 20:00:03.426 [DEBUG] [main] app init proc.go:283
+2025-07-29 20:00:15.366 [DEBUG] [main] Global 404 handler set router_v1.go:24
+2025-07-29 20:00:15.367 [INFO] [main] Mapped static path: / -> resources/public router_v1.go:38
+2025-07-29 20:00:15.367 [INFO] [main] Gin服务启动中 service_manager.go:113
+2025-07-29 20:00:15.368 [INFO] [main] Starting server at :5000 gin_v1.go:42
+2025-07-29 20:00:21.757 [DEBUG] [main] Request started: [::1] POST /api/v1/user/login httpcore.go:323
+2025-07-29 20:00:21.921 [INFO] [main] [fc9c3bbd-91d1-4127-9406-136626f03038] [::1] /api/v1/user/login 200 164.2338ms httpcore.go:291
+2025-07-29 20:01:45.377 [INFO] [main] Received signal: interrupt, shutting down server... httpcore.go:385
+2025-07-29 20:01:45.377 [DEBUG] [main] Gracefully shutting down connection pool... httpcore.go:385
+2025-07-29 20:01:45.377 [DEBUG] [main] Shutting down services... proc.go:283
+2025-07-29 20:01:45.377 [DEBUG] [main] Shutting down HTTP server... httpcore.go:385
+2025-07-29 20:01:45.377 [INFO] [main] Server gracefully stopped httpcore.go:385
+2025-07-29 20:02:11.143 [DEBUG] [main] Config is singleton initialized: true proc.go:283
+2025-07-29 20:02:11.143 [DEBUG] [main] app init proc.go:283
+2025-07-29 20:02:24.795 [DEBUG] [main] Global 404 handler set router_v1.go:24
+2025-07-29 20:02:24.795 [INFO] [main] Mapped static path: / -> resources/public router_v1.go:38
+2025-07-29 20:02:24.795 [INFO] [main] Gin服务启动中 service_manager.go:113
+2025-07-29 20:02:24.795 [INFO] [main] Starting server at :5000 gin_v1.go:42
+2025-07-29 20:02:52.961 [DEBUG] [main] Request started: [::1] POST /api/v1/user/login httpcore.go:323
+2025-07-29 20:02:53.118 [INFO] [main] [842c5de8-69d1-46c6-ae62-2c70e0147e16] [::1] /api/v1/user/login 200 156.9593ms httpcore.go:291
+2025-07-29 20:03:07.137 [DEBUG] [main] Shutting down services... proc.go:283
+2025-07-29 20:03:07.137 [INFO] [main] Received signal: interrupt, shutting down server... httpcore.go:385
+2025-07-29 20:03:07.137 [DEBUG] [main] Gracefully shutting down connection pool... httpcore.go:385
+2025-07-29 20:03:07.137 [DEBUG] [main] Shutting down HTTP server... httpcore.go:385
+2025-07-29 20:03:07.137 [INFO] [main] Server gracefully stopped httpcore.go:385
+2025-07-29 20:03:13.879 [DEBUG] [main] Config is singleton initialized: true proc.go:283
+2025-07-29 20:03:13.879 [DEBUG] [main] app init proc.go:283
+2025-07-29 20:03:29.221 [DEBUG] [main] Global 404 handler set router_v1.go:24
+2025-07-29 20:03:29.221 [INFO] [main] Mapped static path: / -> resources/public router_v1.go:38
+2025-07-29 20:03:29.221 [INFO] [main] Gin服务启动中 service_manager.go:113
+2025-07-29 20:03:29.221 [INFO] [main] Starting server at :5000 gin_v1.go:42
+2025-07-29 20:03:33.792 [DEBUG] [main] Request started: [::1] POST /api/v1/user/login httpcore.go:323
+2025-07-29 20:05:26.247 [INFO] [main] [83ae9f9c-9650-4831-af8b-66ddcc399b50] [::1] /api/v1/user/login 200 1m52.4550521s httpcore.go:291
+2025-07-29 20:05:26.274 [DEBUG] [main] Shutting down services... proc.go:283
+2025-07-29 20:05:26.275 [INFO] [main] Received signal: interrupt, shutting down server... httpcore.go:385
+2025-07-29 20:05:26.275 [DEBUG] [main] Gracefully shutting down connection pool... httpcore.go:385
+2025-07-29 20:05:26.275 [DEBUG] [main] Shutting down HTTP server... httpcore.go:385
+2025-07-29 20:05:26.275 [INFO] [main] Server gracefully stopped httpcore.go:385
+2025-07-29 20:06:06.007 [DEBUG] [main] Config is singleton initialized: true proc.go:283
+2025-07-29 20:06:06.007 [DEBUG] [main] app init proc.go:283
+2025-07-29 20:06:18.524 [DEBUG] [main] Global 404 handler set router_v1.go:24
+2025-07-29 20:06:18.524 [INFO] [main] Mapped static path: / -> resources/public router_v1.go:38
+2025-07-29 20:06:18.525 [INFO] [main] Gin服务启动中 service_manager.go:113
+2025-07-29 20:06:18.525 [INFO] [main] Starting server at :5000 gin_v1.go:42
+2025-07-29 20:06:21.475 [DEBUG] [main] Request started: [::1] POST /api/v1/user/register httpcore.go:323
+2025-07-29 20:08:05.098 [INFO] [main] [0f9d7bab-422e-4c2d-8a1b-8a76a76c9f92] [::1] /api/v1/user/register 200 1m43.6224568s httpcore.go:291
+2025-07-29 20:08:15.632 [DEBUG] [main] Request started: [::1] POST /api/v1/user/register httpcore.go:323
+2025-07-29 20:08:19.072 [INFO] [main] [6dde4c0b-8b8b-4038-b0b6-4b545a490ce9] [::1] /api/v1/user/register 200 3.4397881s httpcore.go:291
+2025-07-29 20:08:45.151 [DEBUG] [main] Request started: [::1] POST /api/v1/user/register httpcore.go:323
+2025-07-29 20:10:27.981 [INFO] [main] [0b42d00d-63eb-447b-9e84-a0b64921b435] [::1] /api/v1/user/register 200 1m42.8313181s httpcore.go:291
+2025-07-29 20:10:32.218 [DEBUG] [main] Request started: [::1] POST /api/v1/user/register httpcore.go:323
+2025-07-29 20:12:09.856 [INFO] [main] [d441eea3-bf3b-4c30-a9b6-667e97154e3a] [::1] /api/v1/user/register 200 1m37.6378152s httpcore.go:291
+2025-07-29 20:13:28.477 [DEBUG] [main] Request started: [::1] POST /api/v1/user/login httpcore.go:323
+2025-07-29 20:13:31.600 [INFO] [main] [80c19307-8681-4cb7-bbd3-0d3f96c89d5b] [::1] /api/v1/user/login 500 3.1229038s httpcore.go:291
+2025-07-29 20:14:27.945 [DEBUG] [main] Shutting down services... proc.go:283
+2025-07-29 20:14:27.945 [INFO] [main] Received signal: interrupt, shutting down server... httpcore.go:385
+2025-07-29 20:14:27.945 [DEBUG] [main] Gracefully shutting down connection pool... httpcore.go:385
+2025-07-29 20:14:27.945 [DEBUG] [main] Shutting down HTTP server... httpcore.go:385
+2025-07-29 20:14:27.945 [INFO] [main] Server gracefully stopped httpcore.go:385
+2025-07-29 21:28:02.526 [DEBUG] [main] Config is singleton initialized: true proc.go:283
+2025-07-29 21:28:02.526 [DEBUG] [main] app init proc.go:283
+2025-07-29 21:28:11.847 [DEBUG] [main] Global 404 handler set router_v1.go:24
+2025-07-29 21:28:11.847 [INFO] [main] Mapped static path: / -> resources/public router_v1.go:38
+2025-07-29 21:28:11.847 [INFO] [main] Gin服务启动中 service_manager.go:113
+2025-07-29 21:28:11.847 [INFO] [main] Starting server at :5000 gin_v1.go:42
+2025-07-29 21:30:48.300 [DEBUG] [main] Shutting down services... proc.go:283
+2025-07-29 21:30:48.300 [INFO] [main] Received signal: interrupt, shutting down server... httpcore.go:385
+2025-07-29 21:30:48.300 [DEBUG] [main] Gracefully shutting down connection pool... httpcore.go:385
+2025-07-29 21:30:48.300 [DEBUG] [main] Shutting down HTTP server... httpcore.go:385
+2025-07-29 21:30:48.300 [INFO] [main] Server gracefully stopped httpcore.go:385
+2025-07-29 21:31:01.719 [DEBUG] [main] Config is singleton initialized: true proc.go:283
+2025-07-29 21:31:01.719 [DEBUG] [main] app init proc.go:283
+2025-07-29 21:31:12.543 [DEBUG] [main] Global 404 handler set router_v1.go:24
+2025-07-29 21:31:12.543 [INFO] [main] Mapped static path: / -> resources/public router_v1.go:38
+2025-07-29 21:31:12.543 [INFO] [main] Gin服务启动中 service_manager.go:113
+2025-07-29 21:31:12.543 [INFO] [main] Starting server at :5000 gin_v1.go:42
+2025-07-29 21:33:24.883 [DEBUG] [main] Config is singleton initialized: true proc.go:283
+2025-07-29 21:33:24.883 [DEBUG] [main] app init proc.go:283
+2025-07-29 21:33:27.241 [DEBUG] [main] Global 404 handler set router_v1.go:24
+2025-07-29 21:33:27.241 [INFO] [main] Mapped static path: / -> resources/public router_v1.go:38
+2025-07-29 21:33:27.241 [INFO] [main] Gin服务启动中 service_manager.go:113
+2025-07-29 21:33:27.241 [INFO] [main] Starting server at :5000 gin_v1.go:42
+2025-07-29 21:33:55.549 [DEBUG] [main] Request started: [::1] POST /api/v1/user/register httpcore.go:323
+2025-07-29 21:33:55.550 [INFO] [main] [af569b26-0231-4038-b3b0-4ec8585f27f2] [::1] /api/v1/user/register 200 505µs httpcore.go:291
+2025-07-29 21:36:30.439 [DEBUG] [main] Shutting down services... proc.go:283
+2025-07-29 21:36:30.439 [INFO] [main] Received signal: interrupt, shutting down server... httpcore.go:385
+2025-07-29 21:36:30.439 [DEBUG] [main] Gracefully shutting down connection pool... httpcore.go:385
+2025-07-29 21:36:30.439 [DEBUG] [main] Shutting down HTTP server... httpcore.go:385
+2025-07-29 21:36:30.439 [INFO] [main] Server gracefully stopped httpcore.go:385
+2025-07-29 21:36:44.091 [DEBUG] [main] Config is singleton initialized: true proc.go:283
+2025-07-29 21:36:44.091 [DEBUG] [main] app init proc.go:283
+2025-07-29 21:36:51.369 [DEBUG] [main] Global 404 handler set router_v1.go:24
+2025-07-29 21:36:51.369 [INFO] [main] Mapped static path: / -> resources/public router_v1.go:38
+2025-07-29 21:36:51.369 [INFO] [main] Gin服务启动中 service_manager.go:113
+2025-07-29 21:36:51.370 [INFO] [main] Starting server at :5000 gin_v1.go:42
+2025-07-29 21:37:11.992 [DEBUG] [main] Request started: [::1] POST /api/v1/user/register httpcore.go:323
+2025-07-29 21:37:12.266 [INFO] [main] [c959ad31-f222-4525-ad3f-a381344218ee] [::1] /api/v1/user/register 200 274.678ms httpcore.go:291
+2025-07-29 21:37:23.213 [DEBUG] [main] Request started: [::1] POST /api/v1/user/login httpcore.go:323
+2025-07-29 21:37:23.511 [INFO] [main] [17bea23b-d4a0-43fb-b78d-154bfea08345] [::1] /api/v1/user/login 500 297.9331ms httpcore.go:291
+2025-07-29 21:40:39.375 [DEBUG] [main] Shutting down services... proc.go:283
+2025-07-29 21:40:39.375 [INFO] [main] Received signal: interrupt, shutting down server... httpcore.go:385
+2025-07-29 21:40:39.375 [DEBUG] [main] Gracefully shutting down connection pool... httpcore.go:385
+2025-07-29 21:40:39.375 [DEBUG] [main] Shutting down HTTP server... httpcore.go:385
+2025-07-29 21:40:39.375 [INFO] [main] Server gracefully stopped httpcore.go:385
+2025-07-29 21:40:53.341 [DEBUG] [main] Config is singleton initialized: true proc.go:283
+2025-07-29 21:40:53.341 [DEBUG] [main] app init proc.go:283
+2025-07-29 21:41:02.796 [DEBUG] [main] Global 404 handler set router_v1.go:24
+2025-07-29 21:41:02.796 [INFO] [main] Mapped static path: / -> resources/public router_v1.go:38
+2025-07-29 21:41:02.796 [INFO] [main] Gin服务启动中 service_manager.go:113
+2025-07-29 21:41:02.796 [INFO] [main] Starting server at :5000 gin_v1.go:42
+2025-07-29 21:41:08.885 [DEBUG] [main] Request started: [::1] POST /api/v1/user/login httpcore.go:323
+2025-07-29 21:41:09.076 [INFO] [main] [2ed94514-b9e4-4253-899a-43cab3dd98a4] [::1] /api/v1/user/login 200 191.1812ms httpcore.go:291
+2025-07-29 21:41:27.646 [DEBUG] [main] Shutting down services... proc.go:283
+2025-07-29 21:41:27.646 [INFO] [main] Received signal: interrupt, shutting down server... httpcore.go:385
+2025-07-29 21:41:27.646 [DEBUG] [main] Gracefully shutting down connection pool... httpcore.go:385
+2025-07-29 21:41:27.646 [DEBUG] [main] Shutting down HTTP server... httpcore.go:385
+2025-07-29 21:41:27.646 [INFO] [main] Server gracefully stopped httpcore.go:385
+2025-07-29 21:41:50.833 [DEBUG] [main] Config is singleton initialized: true proc.go:283
+2025-07-29 21:41:50.833 [DEBUG] [main] app init proc.go:283
+2025-07-29 21:41:56.324 [DEBUG] [main] Global 404 handler set router_v1.go:24
+2025-07-29 21:41:56.324 [INFO] [main] Mapped static path: / -> resources/public router_v1.go:38
+2025-07-29 21:41:56.324 [INFO] [main] Gin服务启动中 service_manager.go:113
+2025-07-29 21:41:56.324 [INFO] [main] Starting server at :5000 gin_v1.go:42
+2025-07-29 21:41:59.756 [INFO] [main] Received signal: interrupt, shutting down server... httpcore.go:385
+2025-07-29 21:41:59.756 [DEBUG] [main] Shutting down services... proc.go:283
+2025-07-29 21:41:59.756 [DEBUG] [main] Gracefully shutting down connection pool... httpcore.go:385
+2025-07-29 21:41:59.756 [DEBUG] [main] Shutting down HTTP server... httpcore.go:385
+2025-07-29 21:41:59.756 [INFO] [main] Server gracefully stopped httpcore.go:385
+2025-07-29 21:42:03.466 [DEBUG] [main] Config is singleton initialized: true proc.go:283
+2025-07-29 21:42:03.466 [DEBUG] [main] app init proc.go:283
+2025-07-29 21:42:11.553 [DEBUG] [main] Global 404 handler set router_v1.go:24
+2025-07-29 21:42:11.553 [INFO] [main] Mapped static path: / -> resources/public router_v1.go:38
+2025-07-29 21:42:11.553 [INFO] [main] Gin服务启动中 service_manager.go:113
+2025-07-29 21:42:11.553 [INFO] [main] Starting server at :5000 gin_v1.go:42
+2025-07-29 21:42:51.676 [DEBUG] [main] Request started: [::1] POST /api/v1/user/register httpcore.go:323
+2025-07-29 21:42:51.809 [INFO] [main] [5a3bea52-31b5-4552-bd1d-48ef84b1e9b8] [::1] /api/v1/user/register 200 132.8811ms httpcore.go:291
+2025-07-29 21:43:12.062 [DEBUG] [main] Shutting down services... proc.go:283
+2025-07-29 21:43:12.062 [INFO] [main] Received signal: interrupt, shutting down server... httpcore.go:385
+2025-07-29 21:43:12.062 [DEBUG] [main] Gracefully shutting down connection pool... httpcore.go:385
+2025-07-29 21:43:12.063 [DEBUG] [main] Shutting down HTTP server... httpcore.go:385
+2025-07-29 21:43:12.063 [INFO] [main] Server gracefully stopped httpcore.go:385
+2025-07-29 21:43:19.867 [DEBUG] [main] Config is singleton initialized: true proc.go:283
+2025-07-29 21:43:19.867 [DEBUG] [main] app init proc.go:283
+2025-07-29 21:43:21.196 [DEBUG] [main] Global 404 handler set router_v1.go:24
+2025-07-29 21:43:21.196 [INFO] [main] Mapped static path: / -> resources/public router_v1.go:38
+2025-07-29 21:43:21.196 [INFO] [main] Gin服务启动中 service_manager.go:113
+2025-07-29 21:43:21.196 [INFO] [main] Starting server at :5000 gin_v1.go:42
+2025-07-29 21:43:52.076 [DEBUG] [main] Request started: [::1] POST /api/v1/user/register httpcore.go:323
+2025-07-29 21:43:52.829 [INFO] [main] [c1ebff58-1c0e-4d69-8b0e-0fa8871952df] [::1] /api/v1/user/register 200 753.5941ms httpcore.go:291
+2025-07-29 21:44:03.982 [DEBUG] [main] Request started: [::1] POST /api/v1/user/login httpcore.go:323
+2025-07-29 21:44:04.183 [INFO] [main] [5153d825-6d58-4795-9388-1dbb6957037c] [::1] /api/v1/user/login 200 201.0344ms httpcore.go:291
+2025-07-29 21:44:25.526 [DEBUG] [main] Shutting down services... proc.go:283
+2025-07-29 21:44:25.526 [INFO] [main] Received signal: interrupt, shutting down server... httpcore.go:385
+2025-07-29 21:44:25.526 [DEBUG] [main] Gracefully shutting down connection pool... httpcore.go:385
+2025-07-29 21:44:25.526 [DEBUG] [main] Shutting down HTTP server... httpcore.go:385
+2025-07-29 21:44:25.526 [INFO] [main] Server gracefully stopped httpcore.go:385
+2025-07-29 21:46:30.142 [DEBUG] [main] Config is singleton initialized: true proc.go:283
+2025-07-29 21:46:30.142 [DEBUG] [main] app init proc.go:283
+2025-07-29 21:46:39.653 [DEBUG] [main] Global 404 handler set router_v1.go:24
+2025-07-29 21:46:39.653 [INFO] [main] Mapped static path: / -> resources/public router_v1.go:38
+2025-07-29 21:46:39.653 [INFO] [main] Gin服务启动中 service_manager.go:113
+2025-07-29 21:46:39.653 [INFO] [main] Starting server at :5000 gin_v1.go:42
+2025-07-29 21:46:56.641 [DEBUG] [main] Request started: [::1] POST /api/v1/user/login httpcore.go:323
+2025-07-29 21:46:56.830 [INFO] [main] [9fc6c10a-9543-4d9d-951b-22a19504c5f8] [::1] /api/v1/user/login 200 188.6173ms httpcore.go:291
+2025-07-29 21:48:02.597 [INFO] [main] Received signal: interrupt, shutting down server... httpcore.go:385
+2025-07-29 21:48:02.597 [DEBUG] [main] Gracefully shutting down connection pool... httpcore.go:385
+2025-07-29 21:48:02.597 [DEBUG] [main] Shutting down services... proc.go:283
+2025-07-29 21:48:02.597 [DEBUG] [main] Shutting down HTTP server... httpcore.go:385
+2025-07-29 21:48:02.597 [INFO] [main] Server gracefully stopped httpcore.go:385
+2025-07-29 21:48:13.237 [DEBUG] [main] Config is singleton initialized: true proc.go:283
+2025-07-29 21:48:13.237 [DEBUG] [main] app init proc.go:283
+2025-07-29 21:48:19.000 [DEBUG] [main] Global 404 handler set router_v1.go:24
+2025-07-29 21:48:19.000 [INFO] [main] Mapped static path: / -> resources/public router_v1.go:38
+2025-07-29 21:48:19.011 [INFO] [main] Gin服务启动中 service_manager.go:113
+2025-07-29 21:48:19.011 [INFO] [main] Starting server at :5000 gin_v1.go:42
+2025-07-29 21:48:27.741 [DEBUG] [main] Request started: [::1] POST /api/v1/user/login httpcore.go:323
+2025-07-29 21:48:28.432 [INFO] [main] [a4f74a11-6065-4644-840e-824646eb91a0] [::1] /api/v1/user/login 200 690.5962ms httpcore.go:291
+2025-07-29 21:49:26.691 [DEBUG] [main] Request started: [::1] POST /api/v1/user/login httpcore.go:323
+2025-07-29 21:49:26.739 [INFO] [main] [1214eff9-1103-447e-8c10-728c6c8591ef] [::1] /api/v1/user/login 200 48.0363ms httpcore.go:291
+2025-07-29 21:49:28.246 [DEBUG] [main] Request started: [::1] POST /api/v1/user/login httpcore.go:323
+2025-07-29 21:49:28.293 [INFO] [main] [69e9602d-b1b0-41ac-a98f-1dd98169e8b2] [::1] /api/v1/user/login 200 47.8281ms httpcore.go:291
+2025-07-29 21:49:29.304 [DEBUG] [main] Request started: [::1] POST /api/v1/user/login httpcore.go:323
+2025-07-29 21:49:29.353 [INFO] [main] [69b16dee-9597-4b0a-8a82-386dcb981721] [::1] /api/v1/user/login 200 48.431ms httpcore.go:291
+2025-07-29 21:53:45.432 [DEBUG] [main] Shutting down services... proc.go:283
+2025-07-29 21:53:45.432 [INFO] [main] Received signal: interrupt, shutting down server... httpcore.go:385
+2025-07-29 21:53:45.432 [DEBUG] [main] Gracefully shutting down connection pool... httpcore.go:385
+2025-07-29 21:53:45.432 [DEBUG] [main] Shutting down HTTP server... httpcore.go:385
+2025-07-29 21:53:45.432 [INFO] [main] Server gracefully stopped httpcore.go:385
+2025-07-29 21:53:55.881 [DEBUG] [main] Config is singleton initialized: true proc.go:283
+2025-07-29 21:53:55.881 [DEBUG] [main] app init proc.go:283
+2025-07-29 21:54:06.402 [DEBUG] [main] Global 404 handler set router_v1.go:24
+2025-07-29 21:54:06.402 [INFO] [main] Mapped static path: / -> resources/public router_v1.go:38
+2025-07-29 21:54:06.402 [INFO] [main] Gin服务启动中 service_manager.go:113
+2025-07-29 21:54:06.402 [INFO] [main] Starting server at :5000 gin_v1.go:42
+2025-07-29 21:54:10.291 [DEBUG] [main] Request started: [::1] POST /api/v1/user/login httpcore.go:323
+2025-07-29 21:54:10.502 [INFO] [main] [20fe61c5-0ee5-4e98-a4c5-db9c9a8bd5b2] [::1] /api/v1/user/login 200 210.6298ms httpcore.go:291
+2025-07-29 21:55:24.254 [DEBUG] [main] Shutting down services... proc.go:283
+2025-07-29 21:55:24.254 [INFO] [main] Received signal: interrupt, shutting down server... httpcore.go:385
+2025-07-29 21:55:24.254 [DEBUG] [main] Gracefully shutting down connection pool... httpcore.go:385
+2025-07-29 21:55:24.254 [DEBUG] [main] Shutting down HTTP server... httpcore.go:385
+2025-07-29 21:55:24.254 [INFO] [main] Server gracefully stopped httpcore.go:385
+2025-07-29 21:55:34.935 [DEBUG] [main] Config is singleton initialized: true proc.go:283
+2025-07-29 21:55:34.935 [DEBUG] [main] app init proc.go:283
+2025-07-29 21:55:46.762 [DEBUG] [main] Global 404 handler set router_v1.go:24
+2025-07-29 21:55:46.762 [INFO] [main] Mapped static path: / -> resources/public router_v1.go:38
+2025-07-29 21:55:46.762 [INFO] [main] Gin服务启动中 service_manager.go:113
+2025-07-29 21:55:46.762 [INFO] [main] Starting server at :5000 gin_v1.go:42
+2025-07-29 21:55:49.144 [DEBUG] [main] Request started: [::1] POST /api/v1/user/login httpcore.go:323
+2025-07-29 21:55:49.346 [INFO] [main] [68bffb25-0973-478c-820b-69f02d8f868f] [::1] /api/v1/user/login 200 202.7877ms httpcore.go:291
+2025-07-29 21:56:02.160 [DEBUG] [main] Shutting down services... proc.go:283
+2025-07-29 21:56:02.160 [INFO] [main] Received signal: interrupt, shutting down server... httpcore.go:385
+2025-07-29 21:56:02.160 [DEBUG] [main] Gracefully shutting down connection pool... httpcore.go:385
+2025-07-29 21:56:02.160 [DEBUG] [main] Shutting down HTTP server... httpcore.go:385
+2025-07-29 21:56:02.160 [INFO] [main] Server gracefully stopped httpcore.go:385
+2025-07-29 21:56:12.347 [DEBUG] [main] Config is singleton initialized: true proc.go:283
+2025-07-29 21:56:12.347 [DEBUG] [main] app init proc.go:283
+2025-07-29 21:56:20.884 [DEBUG] [main] Global 404 handler set router_v1.go:24
+2025-07-29 21:56:20.884 [INFO] [main] Mapped static path: / -> resources/public router_v1.go:38
+2025-07-29 21:56:20.884 [INFO] [main] Gin服务启动中 service_manager.go:113
+2025-07-29 21:56:20.884 [INFO] [main] Starting server at :5000 gin_v1.go:42
+2025-07-29 21:56:24.727 [DEBUG] [main] Request started: [::1] POST /api/v1/user/login httpcore.go:323
+2025-07-29 21:56:24.943 [INFO] [main] [0cf0934f-a762-411e-ad87-d5021775f9d9] [::1] /api/v1/user/login 200 216.2569ms httpcore.go:291
+2025-07-29 21:57:48.290 [DEBUG] [main] Shutting down services... proc.go:283
+2025-07-29 21:57:48.290 [INFO] [main] Received signal: interrupt, shutting down server... httpcore.go:385
+2025-07-29 21:57:48.290 [DEBUG] [main] Gracefully shutting down connection pool... httpcore.go:385
+2025-07-29 21:57:48.290 [DEBUG] [main] Shutting down HTTP server... httpcore.go:385
+2025-07-29 21:57:48.290 [INFO] [main] Server gracefully stopped httpcore.go:385
+2025-07-29 21:58:00.601 [DEBUG] [main] Config is singleton initialized: true proc.go:283
+2025-07-29 21:58:00.601 [DEBUG] [main] app init proc.go:283
+2025-07-29 21:58:07.678 [DEBUG] [main] Global 404 handler set router_v1.go:24
+2025-07-29 21:58:07.678 [INFO] [main] Mapped static path: / -> resources/public router_v1.go:38
+2025-07-29 21:58:07.679 [INFO] [main] Gin服务启动中 service_manager.go:113
+2025-07-29 21:58:07.679 [INFO] [main] Starting server at :5000 gin_v1.go:42
+2025-07-29 21:58:12.395 [DEBUG] [main] Request started: [::1] POST /api/v1/user/login httpcore.go:323
+2025-07-29 21:58:12.579 [INFO] [main] [866d64dc-4678-4c08-a6ba-d9c5b3179e7d] [::1] /api/v1/user/login 200 184.6387ms httpcore.go:291
+2025-07-29 21:59:04.901 [DEBUG] [main] Shutting down services... proc.go:283
+2025-07-29 21:59:04.901 [INFO] [main] Received signal: interrupt, shutting down server... httpcore.go:385
+2025-07-29 21:59:04.901 [DEBUG] [main] Gracefully shutting down connection pool... httpcore.go:385
+2025-07-29 21:59:04.901 [DEBUG] [main] Shutting down HTTP server... httpcore.go:385
+2025-07-29 21:59:04.901 [INFO] [main] Server gracefully stopped httpcore.go:385
+2025-07-29 21:59:10.507 [DEBUG] [main] Config is singleton initialized: true proc.go:283
+2025-07-29 21:59:10.507 [DEBUG] [main] app init proc.go:283
+2025-07-29 22:00:09.184 [DEBUG] [main] Config is singleton initialized: true proc.go:283
+2025-07-29 22:00:09.184 [DEBUG] [main] app init proc.go:283
+2025-07-29 22:00:18.323 [DEBUG] [main] Global 404 handler set router_v1.go:24
+2025-07-29 22:00:18.323 [INFO] [main] Mapped static path: / -> resources/public router_v1.go:38
+2025-07-29 22:00:18.324 [INFO] [main] Gin服务启动中 service_manager.go:113
+2025-07-29 22:00:18.324 [INFO] [main] Starting server at :5000 gin_v1.go:42
+2025-07-29 22:00:41.778 [DEBUG] [main] Request started: [::1] POST /api/v1/user/login httpcore.go:323
+2025-07-29 22:01:30.956 [INFO] [main] [e8defca4-4f2e-4d00-9e6c-dab4995c26c1] [::1] /api/v1/user/login 200 49.1775489s httpcore.go:291
+2025-07-29 22:01:39.865 [DEBUG] [main] Request started: [::1] POST /api/v1/user/login httpcore.go:323
+2025-07-29 22:03:05.236 [INFO] [main] [afe0a4ba-8292-47ef-a392-01e3d240b7c1] [::1] /api/v1/user/login 200 1m25.3711025s httpcore.go:291
+2025-07-29 22:03:12.310 [INFO] [main] Received signal: interrupt, shutting down server... httpcore.go:385
+2025-07-29 22:03:12.310 [DEBUG] [main] Shutting down services... proc.go:283
+2025-07-29 22:03:12.310 [DEBUG] [main] Gracefully shutting down connection pool... httpcore.go:385
+2025-07-29 22:03:12.310 [DEBUG] [main] Shutting down HTTP server... httpcore.go:385
+2025-07-29 22:03:12.310 [INFO] [main] Server gracefully stopped httpcore.go:385
+2025-07-29 22:03:17.251 [DEBUG] [main] Config is singleton initialized: true proc.go:283
+2025-07-29 22:03:17.251 [DEBUG] [main] app init proc.go:283
+2025-07-29 22:03:22.511 [DEBUG] [main] Global 404 handler set router_v1.go:24
+2025-07-29 22:03:22.511 [INFO] [main] Mapped static path: / -> resources/public router_v1.go:38
+2025-07-29 22:03:22.511 [INFO] [main] Gin服务启动中 service_manager.go:113
+2025-07-29 22:03:22.511 [INFO] [main] Starting server at :5000 gin_v1.go:42
+2025-07-29 22:03:26.229 [DEBUG] [main] Request started: [::1] POST /api/v1/user/login httpcore.go:323
+2025-07-29 22:03:26.750 [INFO] [main] [4c0d2aec-fb15-457f-81e9-39820841541a] [::1] /api/v1/user/login 200 520.8124ms httpcore.go:291
+2025-07-29 22:03:58.994 [INFO] [main] Received signal: interrupt, shutting down server... httpcore.go:385
+2025-07-29 22:03:58.994 [DEBUG] [main] Shutting down services... proc.go:283
+2025-07-29 22:03:58.994 [DEBUG] [main] Gracefully shutting down connection pool... httpcore.go:385
+2025-07-29 22:03:58.994 [DEBUG] [main] Shutting down HTTP server... httpcore.go:385
+2025-07-29 22:03:58.994 [INFO] [main] Server gracefully stopped httpcore.go:385
+2025-07-29 22:04:02.445 [DEBUG] [main] Config is singleton initialized: true proc.go:283
+2025-07-29 22:04:02.445 [DEBUG] [main] app init proc.go:283
+2025-07-29 22:04:09.976 [DEBUG] [main] Global 404 handler set router_v1.go:24
+2025-07-29 22:04:09.976 [INFO] [main] Mapped static path: / -> resources/public router_v1.go:38
+2025-07-29 22:04:09.976 [INFO] [main] Gin服务启动中 service_manager.go:113
+2025-07-29 22:04:09.976 [INFO] [main] Starting server at :5000 gin_v1.go:42
+2025-07-29 22:04:17.750 [DEBUG] [main] Request started: [::1] POST /api/v1/user/login httpcore.go:323
+2025-07-29 22:04:18.279 [INFO] [main] [4578f92d-c14e-4592-9e8f-f0bd43a30257] [::1] /api/v1/user/login 200 529.2037ms httpcore.go:291
+2025-07-29 22:04:24.467 [DEBUG] [main] Request started: [::1] POST /api/v1/user/login httpcore.go:323
+2025-07-29 22:04:24.933 [INFO] [main] [ad4fdfcf-8be4-43ba-9ba4-5437fc525022] [::1] /api/v1/user/login 200 466.1473ms httpcore.go:291
+2025-07-29 22:04:37.154 [DEBUG] [main] Request started: [::1] POST /api/v1/user/login httpcore.go:323
+2025-07-29 22:04:37.624 [INFO] [main] [0be3da4e-f363-4a5a-a46a-aedb0c9d0517] [::1] /api/v1/user/login 200 469.4518ms httpcore.go:291
+2025-07-29 22:05:01.528 [DEBUG] [main] Shutting down services... proc.go:283
+2025-07-29 22:05:01.528 [INFO] [main] Received signal: interrupt, shutting down server... httpcore.go:385
+2025-07-29 22:05:01.528 [DEBUG] [main] Gracefully shutting down connection pool... httpcore.go:385
+2025-07-29 22:05:01.528 [DEBUG] [main] Shutting down HTTP server... httpcore.go:385
+2025-07-29 22:05:01.528 [INFO] [main] Server gracefully stopped httpcore.go:385
+2025-07-29 22:05:12.282 [DEBUG] [main] Config is singleton initialized: true proc.go:283
+2025-07-29 22:05:12.282 [DEBUG] [main] app init proc.go:283
+2025-07-29 22:05:21.099 [DEBUG] [main] Global 404 handler set router_v1.go:24
+2025-07-29 22:05:21.099 [INFO] [main] Mapped static path: / -> resources/public router_v1.go:38
+2025-07-29 22:05:21.100 [INFO] [main] Gin服务启动中 service_manager.go:113
+2025-07-29 22:05:21.100 [INFO] [main] Starting server at :5000 gin_v1.go:42
+2025-07-29 22:05:40.585 [DEBUG] [main] Request started: [::1] POST /api/v1/user/login httpcore.go:323
+2025-07-29 22:05:41.108 [INFO] [main] [ae3c9eac-cac8-4096-b4c9-a2ce8b7e4a32] [::1] /api/v1/user/login 200 522.3549ms httpcore.go:291
+2025-07-29 22:06:15.716 [DEBUG] [main] Shutting down services... proc.go:283
+2025-07-29 22:06:15.716 [INFO] [main] Received signal: interrupt, shutting down server... httpcore.go:385
+2025-07-29 22:06:15.716 [DEBUG] [main] Gracefully shutting down connection pool... httpcore.go:385
+2025-07-29 22:06:15.716 [DEBUG] [main] Shutting down HTTP server... httpcore.go:385
+2025-07-29 22:06:15.716 [INFO] [main] Server gracefully stopped httpcore.go:385
+2025-07-29 22:06:26.748 [DEBUG] [main] Config is singleton initialized: true proc.go:283
+2025-07-29 22:06:26.748 [DEBUG] [main] app init proc.go:283
+2025-07-29 22:06:33.293 [DEBUG] [main] Global 404 handler set router_v1.go:24
+2025-07-29 22:06:33.293 [INFO] [main] Mapped static path: / -> resources/public router_v1.go:38
+2025-07-29 22:06:33.294 [INFO] [main] Gin服务启动中 service_manager.go:113
+2025-07-29 22:06:33.294 [INFO] [main] Starting server at :5000 gin_v1.go:42
+2025-07-29 22:06:37.550 [DEBUG] [main] Request started: [::1] POST /api/v1/user/login httpcore.go:323
+2025-07-29 22:06:38.077 [INFO] [main] [1bf429d7-d9ea-4988-8c09-6a1df318e674] [::1] /api/v1/user/login 500 527.1141ms httpcore.go:291
+2025-07-29 22:06:57.007 [DEBUG] [main] Shutting down services... proc.go:283
+2025-07-29 22:06:57.007 [INFO] [main] Received signal: interrupt, shutting down server... httpcore.go:385
+2025-07-29 22:06:57.007 [DEBUG] [main] Gracefully shutting down connection pool... httpcore.go:385
+2025-07-29 22:06:57.007 [DEBUG] [main] Shutting down HTTP server... httpcore.go:385
+2025-07-29 22:06:57.007 [INFO] [main] Server gracefully stopped httpcore.go:385
+2025-07-29 22:07:14.551 [DEBUG] [main] Config is singleton initialized: true proc.go:283
+2025-07-29 22:07:14.551 [DEBUG] [main] app init proc.go:283
+2025-07-29 22:07:21.307 [DEBUG] [main] Global 404 handler set router_v1.go:24
+2025-07-29 22:07:21.307 [INFO] [main] Mapped static path: / -> resources/public router_v1.go:38
+2025-07-29 22:07:21.307 [INFO] [main] Gin服务启动中 service_manager.go:113
+2025-07-29 22:07:21.307 [INFO] [main] Starting server at :5000 gin_v1.go:42
+2025-07-29 22:07:42.582 [DEBUG] [main] Request started: [::1] POST /api/v1/user/login httpcore.go:323
+2025-07-29 22:07:43.128 [INFO] [main] [fc7f1f4d-9f74-4762-9cf6-ced275e7b5e8] [::1] /api/v1/user/login 200 545.9996ms httpcore.go:291
+2025-07-29 22:07:48.471 [INFO] [main] Received signal: interrupt, shutting down server... httpcore.go:385
+2025-07-29 22:07:48.471 [DEBUG] [main] Shutting down services... proc.go:283
+2025-07-29 22:07:48.471 [DEBUG] [main] Gracefully shutting down connection pool... httpcore.go:385
+2025-07-29 22:07:48.471 [DEBUG] [main] Shutting down HTTP server... httpcore.go:385
+2025-07-29 22:07:48.471 [INFO] [main] Server gracefully stopped httpcore.go:385
+2025-07-29 22:08:45.965 [DEBUG] [main] Config is singleton initialized: true proc.go:283
+2025-07-29 22:08:45.965 [DEBUG] [main] app init proc.go:283
+2025-07-29 22:08:52.923 [DEBUG] [main] Global 404 handler set router_v1.go:24
+2025-07-29 22:08:52.923 [INFO] [main] Mapped static path: / -> resources/public router_v1.go:38
+2025-07-29 22:08:52.924 [INFO] [main] Gin服务启动中 service_manager.go:113
+2025-07-29 22:08:52.924 [INFO] [main] Starting server at :5000 gin_v1.go:42
+2025-07-29 22:11:05.465 [DEBUG] [main] Shutting down services... proc.go:283
+2025-07-29 22:11:05.465 [INFO] [main] Received signal: interrupt, shutting down server... httpcore.go:385
+2025-07-29 22:11:05.465 [DEBUG] [main] Gracefully shutting down connection pool... httpcore.go:385
+2025-07-29 22:11:05.465 [DEBUG] [main] Shutting down HTTP server... httpcore.go:385
+2025-07-29 22:11:05.465 [INFO] [main] Server gracefully stopped httpcore.go:385
+2025-07-29 22:11:16.909 [DEBUG] [main] Config is singleton initialized: true proc.go:283
+2025-07-29 22:11:16.909 [DEBUG] [main] app init proc.go:283
+2025-07-29 22:11:23.543 [DEBUG] [main] Global 404 handler set router_v1.go:24
+2025-07-29 22:11:23.543 [INFO] [main] Mapped static path: / -> resources/public router_v1.go:38
+2025-07-29 22:11:23.556 [INFO] [main] Gin服务启动中 service_manager.go:113
+2025-07-29 22:11:23.556 [INFO] [main] Starting server at :5000 gin_v1.go:42
+2025-07-29 22:12:17.369 [DEBUG] [main] Request started: [::1] POST /api/v1/user/login httpcore.go:323
+2025-07-29 22:12:18.030 [INFO] [main] [f6cea9e2-5867-4781-ac86-cebe8f5f2e38] [::1] /api/v1/user/login 200 660.6941ms httpcore.go:291
+2025-07-29 22:12:59.174 [DEBUG] [main] Shutting down services... proc.go:283
+2025-07-29 22:12:59.174 [INFO] [main] Received signal: interrupt, shutting down server... httpcore.go:385
+2025-07-29 22:12:59.174 [DEBUG] [main] Gracefully shutting down connection pool... httpcore.go:385
+2025-07-29 22:12:59.174 [DEBUG] [main] Shutting down HTTP server... httpcore.go:385
+2025-07-29 22:12:59.174 [INFO] [main] Server gracefully stopped httpcore.go:385
+2025-07-29 22:13:10.576 [DEBUG] [main] Config is singleton initialized: true proc.go:283
+2025-07-29 22:13:10.576 [DEBUG] [main] app init proc.go:283
+2025-07-29 22:13:17.190 [DEBUG] [main] Global 404 handler set router_v1.go:24
+2025-07-29 22:13:17.190 [INFO] [main] Mapped static path: / -> resources/public router_v1.go:38
+2025-07-29 22:13:17.191 [INFO] [main] Gin服务启动中 service_manager.go:113
+2025-07-29 22:13:17.191 [INFO] [main] Starting server at :5000 gin_v1.go:42
+2025-07-29 22:14:00.877 [DEBUG] [main] Shutting down services... proc.go:283
+2025-07-29 22:14:00.877 [INFO] [main] Received signal: interrupt, shutting down server... httpcore.go:385
+2025-07-29 22:14:00.877 [DEBUG] [main] Gracefully shutting down connection pool... httpcore.go:385
+2025-07-29 22:14:00.877 [DEBUG] [main] Shutting down HTTP server... httpcore.go:385
+2025-07-29 22:14:00.877 [INFO] [main] Server gracefully stopped httpcore.go:385
+2025-07-29 22:15:03.405 [DEBUG] [main] Config is singleton initialized: true proc.go:283
+2025-07-29 22:15:03.405 [DEBUG] [main] app init proc.go:283
+2025-07-29 22:15:09.266 [DEBUG] [main] Global 404 handler set router_v1.go:24
+2025-07-29 22:15:09.266 [INFO] [main] Mapped static path: / -> resources/public router_v1.go:38
+2025-07-29 22:15:09.266 [INFO] [main] Gin服务启动中 service_manager.go:113
+2025-07-29 22:15:09.266 [INFO] [main] Starting server at :5000 gin_v1.go:42
+2025-07-29 22:15:20.307 [DEBUG] [main] Request started: [::1] POST /api/v1/user/login httpcore.go:323
+2025-07-29 22:15:20.743 [INFO] [main] login OK user_id: user-1, platform: qwq, device: web/pc authx.go:58
+2025-07-29 22:15:20.743 [INFO] [main] [1471e2b8-79df-4b45-ae54-69cc1a548536] [::1] /api/v1/user/login 200 435.5139ms httpcore.go:291
+2025-07-29 22:17:16.642 [DEBUG] [main] Shutting down services... proc.go:283
+2025-07-29 22:17:16.642 [INFO] [main] Received signal: interrupt, shutting down server... httpcore.go:385
+2025-07-29 22:17:16.642 [DEBUG] [main] Gracefully shutting down connection pool... httpcore.go:385
+2025-07-29 22:17:16.642 [DEBUG] [main] Shutting down HTTP server... httpcore.go:385
+2025-07-29 22:17:16.642 [INFO] [main] Server gracefully stopped httpcore.go:385
+2025-07-29 22:17:26.734 [DEBUG] [main] Config is singleton initialized: true proc.go:283
+2025-07-29 22:17:26.734 [DEBUG] [main] app init proc.go:283
+2025-07-29 22:17:33.858 [DEBUG] [main] Global 404 handler set router_v1.go:24
+2025-07-29 22:17:33.858 [INFO] [main] Mapped static path: / -> resources/public router_v1.go:38
+2025-07-29 22:17:33.858 [INFO] [main] Gin服务启动中 service_manager.go:113
+2025-07-29 22:17:33.858 [INFO] [main] Starting server at :5000 gin_v1.go:42
+2025-07-29 22:17:47.223 [DEBUG] [main] Request started: [::1] POST /api/v1/user/login httpcore.go:323
+2025-07-29 22:17:47.669 [INFO] [main] login OK user_id: user-1, platform: qwq, device: web/pc authx.go:58
+2025-07-29 22:17:47.669 [INFO] [main] [46d8e349-3d64-4c56-96b5-ff009fc59af3] [::1] /api/v1/user/login 200 445.3868ms httpcore.go:291
+2025-07-29 22:18:42.166 [DEBUG] [main] Request started: [::1] POST /api/v1/user/login httpcore.go:323
+2025-07-29 22:18:42.455 [INFO] [main] login OK user_id: user-1, platform: qwq, device: web/pc authx.go:58
+2025-07-29 22:18:42.455 [INFO] [main] [e57805c3-e662-4179-ad1c-a4e2928c22cf] [::1] /api/v1/user/login 200 288.7966ms httpcore.go:291
+2025-07-29 22:20:06.385 [DEBUG] [main] Shutting down services... proc.go:283
+2025-07-29 22:20:06.385 [INFO] [main] Received signal: interrupt, shutting down server... httpcore.go:385
+2025-07-29 22:20:06.385 [DEBUG] [main] Gracefully shutting down connection pool... httpcore.go:385
+2025-07-29 22:20:06.385 [DEBUG] [main] Shutting down HTTP server... httpcore.go:385
+2025-07-29 22:20:06.385 [INFO] [main] Server gracefully stopped httpcore.go:385

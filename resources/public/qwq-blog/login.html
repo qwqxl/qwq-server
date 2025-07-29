@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登录 - QWQ博客</title>
+    <meta name="description" content="登录QWQ博客管理后台">
+    <meta name="author" content="xiaolin">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="./images/logo.svg" alt="QWQ博客">
+                    <span>QWQ博客</span>
+                </a>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">首页</a></li>
+                    <li><a href="articles.html">文章列表</a></li>
+                    <li><a href="about.html">关于我</a></li>
+                    <li><a href="contact.html">联系方式</a></li>
+                </ul>
+            </nav>
+            <div class="nav-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            <div class="theme-switch">
+                <i class="fas fa-moon"></i>
+            </div>
+            <div class="search-btn">
+                <i class="fas fa-search"></i>
+            </div>
+        </div>
+    </header>
+
+    <section class="login-section">
+        <div class="container">
+            <div class="login-container">
+                <div class="login-welcome">
+                    <h1>Welcome to New Website! <i class="fas fa-hand-peace"></i></h1>
+                    <div class="login-form-group">
+                        <label for="username">用户名/邮箱（可选）</label>
+                        <div class="input-with-icon">
+                            <i class="fas fa-user"></i>
+                            <input type="text" id="username" placeholder="请输入用户名/邮箱">
+                        </div>
+                    </div>
+                    <div class="login-form-group">
+                        <label for="password">密码</label>
+                        <div class="input-with-icon">
+                            <i class="fas fa-lock"></i>
+                            <input type="password" id="password" placeholder="请输入密码">
+                        </div>
+                    </div>
+                    <div class="login-options">
+                        <div class="remember-me">
+                            <input type="checkbox" id="remember">
+                            <label for="remember">记住我的账号</label>
+                        </div>
+                        <a href="#" class="forgot-password">忘记密码？</a>
+                    </div>
+                    <button class="btn primary-btn login-btn">登录账户</button>
+                    <div class="login-divider">
+                        <span>其他登录方式</span>
+                    </div>
+                    <div class="social-login">
+                        <button class="social-btn wechat"><i class="fab fa-weixin"></i></button>
+                        <button class="social-btn qq"><i class="fab fa-qq"></i></button>
+                        <button class="social-btn github"><i class="fab fa-github"></i></button>
+                    </div>
+                </div>
+                <div class="login-image">
+                    <img src="./images/login.svg" alt="登录">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="./images/logo.svg" alt="QWQ博客">
+                    <p>QWQ博客 - 一个简洁、美观的个人博客模板</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-links-column">
+                        <h3>导航</h3>
+                        <ul>
+                            <li><a href="index.html">首页</a></li>
+                            <li><a href="articles.html">文章列表</a></li>
+                            <li><a href="about.html">关于我</a></li>
+                            <li><a href="contact.html">联系方式</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-links-column">
+                        <h3>分类</h3>
+                        <ul>
+                            <li><a href="#">前端开发</a></li>
+                            <li><a href="#">后端开发</a></li>
+                            <li><a href="#">UI/UX设计</a></li>
+                            <li><a href="#">工具资源</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-links-column">
+                        <h3>关注我</h3>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-github"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-weibo"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>Copyright © 2023 QWQ博客 by xiaolin. All rights reserved.</p>
+                <p>粤ICP备XXXXXXXX号-X | <a href="#">隐私政策</a> | <a href="#">服务条款</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <div class="search-modal">
+        <div class="search-container">
+            <div class="search-header">
+                <h3>搜索</h3>
+                <button class="close-search"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="search-form">
+                <input type="text" placeholder="输入关键词搜索...">
+                <button type="submit"><i class="fas fa-search"></i></button>
+            </div>
+            <div class="search-results">
+                <!-- 搜索结果将在这里动态显示 -->
+            </div>
+        </div>
+    </div>
+
+    <script src="./js/main.js"></script>
+</body>
+</html>

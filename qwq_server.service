@@ -1,0 +1,15 @@
+# /etc/systemd/system/go-admin.service
+[Unit]
+Description=Go Admin Server
+After=network.target
+
+[Service]
+User=admin
+Group=admin
+WorkingDirectory=/opt/go-admin
+ExecStart=/opt/go-admin/bin/server
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target

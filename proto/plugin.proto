@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package plugin;
+
+option go_package = "qwqserver/pkg/pb;plugin";
+
+service PluginService {
+  rpc Execute (PluginRequest) returns (PluginResponse) {}
+  rpc HealthCheck (HealthRequest) returns (HealthResponse) {}
+}
+
+message PluginRequest {
+  string action = 1;
+  bytes payload = 2; // 可传递任意数据
+}
+
+message PluginResponse {
+  bool success = 1;
+  string message = 2;
+  bytes data = 3;
+}
+
+message HealthRequest {}
+message HealthResponse {
+  bool alive = 1;
+}

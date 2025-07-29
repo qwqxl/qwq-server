@@ -1,0 +1,166 @@
+basePath: /api/v1
+definitions:
+  common.JWTResult:
+    properties:
+      access_token:
+        type: string
+      createdAt:
+        type: string
+      deletedAt:
+        $ref: '#/definitions/gorm.DeletedAt'
+      device_id:
+        type: string
+      error:
+        type: string
+      id:
+        type: integer
+      platform:
+        type: string
+      refresh_token:
+        type: string
+      updatedAt:
+        type: string
+    type: object
+  gorm.DeletedAt:
+    properties:
+      time:
+        type: string
+      valid:
+        description: Valid is true if Time is not NULL
+        type: boolean
+    type: object
+  model.User:
+    properties:
+      created_at:
+        type: string
+      createdAt:
+        type: string
+      deletedAt:
+        $ref: '#/definitions/gorm.DeletedAt'
+      email:
+        type: string
+      failed_attempts:
+        type: integer
+      id:
+        type: integer
+      ip_address:
+        type: string
+      last_failed_attempt:
+        type: string
+      last_login_at:
+        type: string
+      nickname:
+        type: string
+      perms:
+        type: integer
+      status:
+        type: integer
+      updated_at:
+        type: string
+      updatedAt:
+        type: string
+      username:
+        description: ID       uint   `gorm:"primaryKey;autoIncrement;comment:用户唯一标识符"
+          json:"id"`
+        type: string
+    type: object
+  server.JWTResponse:
+    properties:
+      code:
+        type: integer
+      data:
+        $ref: '#/definitions/common.JWTResult'
+      msg:
+        type: string
+    type: object
+  server.UserRequest:
+    properties:
+      email:
+        type: string
+      nickname:
+        type: string
+      password:
+        type: string
+      username:
+        type: string
+    type: object
+  server.UserResponse:
+    properties:
+      code:
+        type: integer
+      data:
+        $ref: '#/definitions/model.User'
+      msg:
+        type: string
+    type: object
+host: localhost:2333
+info:
+  contact:
+    name: API Support
+    url: http://example.com/support
+  description: Golang Todo 应用 API
+  license:
+    name: MIT
+  title: Todo API
+  version: "1.0"
+paths:
+  /ping:
+    get:
+      consumes:
+      - application/json
+      description: 健康检测
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/server.UserResponse'
+      summary: 健康检测
+      tags:
+      - ping
+  /user/login:
+    post:
+      consumes:
+      - application/json
+      description: 用户登录
+      parameters:
+      - description: 用户信息
+        in: body
+        name: input
+        required: true
+        schema:
+          $ref: '#/definitions/server.UserRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/server.JWTResponse'
+      summary: 用户登录
+      tags:
+      - users
+  /user/register:
+    post:
+      consumes:
+      - application/json
+      description: 注册用户
+      parameters:
+      - description: 用户信息
+        in: body
+        name: input
+        required: true
+        schema:
+          $ref: '#/definitions/server.UserRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/server.UserResponse'
+      summary: 注册用户
+      tags:
+      - users
+swagger: "2.0"

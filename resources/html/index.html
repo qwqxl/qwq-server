@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jank博客系统</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #fff;
+        }
+
+        .header {
+            background: #fff;
+            border-bottom: 1px solid #eee;
+            padding: 0 20px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 64px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            font-size: 20px;
+            font-weight: 600;
+            color: #1a73e8;
+        }
+
+        .logo::before {
+            content: "⚡";
+            margin-right: 8px;
+            font-size: 24px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 32px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #666;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: #1a73e8;
+        }
+
+        .user-actions {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .search-icon, .user-avatar {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: #f5f5f5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .search-icon:hover, .user-avatar:hover {
+            background: #e8f0fe;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .hero {
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .hero-text h1 {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 24px;
+            color: #202124;
+        }
+
+        .hero-text p {
+            font-size: 18px;
+            color: #666;
+            margin-bottom: 32px;
+            line-height: 1.6;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+        }
+
+        .btn {
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.2s;
+            cursor: pointer;
+            border: none;
+            font-size: 14px;
+        }
+
+        .btn-primary {
+            background: #000;
+            color: #fff;
+        }
+
+        .btn-primary:hover {
+            background: #333;
+            transform: translateY(-1px);
+        }
+
+        .btn-secondary {
+            background: #fff;
+            color: #666;
+            border: 1px solid #ddd;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-secondary:hover {
+            background: #f8f9fa;
+            border-color: #999;
+        }
+
+        .hero-demo {
+            position: relative;
+            background: #1a1a1a;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+
+        .demo-header {
+            background: #2a2a2a;
+            padding: 12px 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .demo-dots {
+            display: flex;
+            gap: 6px;
+        }
+
+        .demo-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+
+        .demo-dot:nth-child(1) { background: #ff5f57; }
+        .demo-dot:nth-child(2) { background: #ffbd2e; }
+        .demo-dot:nth-child(3) { background: #28ca42; }
+
+        .demo-content {
+            padding: 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        .demo-card {
+            background: #2a2a2a;
+            border-radius: 8px;
+            padding: 16px;
+            color: #fff;
+            min-height: 120px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .demo-card h3 {
+            font-size: 14px;
+            margin-bottom: 8px;
+            opacity: 0.8;
+        }
+
+        .demo-card .title {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .demo-card .meta {
+            font-size: 12px;
+            opacity: 0.6;
+        }
+
+        .features {
+            padding: 80px 0;
+            background: #f8f9fa;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title {
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            color: #202124;
+        }
+
+        .section-subtitle {
+            font-size: 18px;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+        }
+
+        .feature-card {
+            background: #fff;
+            padding: 32px 24px;
+            border-radius: 12px;
+            text-align: center;
+            border: 1px solid #eee;
+            transition: all 0.2s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 24px;
+            background: #f0f7ff;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+        }
+
+        .feature-card h3 {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: #202124;
+        }
+
+        .feature-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .tech-stack {
+            padding: 80px 0;
+        }
+
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .tech-item {
+            text-align: center;
+        }
+
+        .tech-item h4 {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #202124;
+        }
+
+        .tech-item p {
+            color: #666;
+            font-size: 14px;
+        }
+
+        .cta {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #fff;
+            text-align: center;
+        }
+
+        .cta h2 {
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .cta p {
+            font-size: 18px;
+            opacity: 0.9;
+            margin-bottom: 32px;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+        }
+
+        .btn-cta {
+            background: #fff;
+            color: #667eea;
+            padding: 16px 32px;
+            font-weight: 600;
+        }
+
+        .btn-cta:hover {
+            background: #f0f0f0;
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: #fff;
+            border: 2px solid #fff;
+            padding: 14px 30px;
+        }
+
+        .btn-outline:hover {
+            background: #fff;
+            color: #667eea;
+        }
+
+        .footer {
+            background: #f8f9fa;
+            padding: 40px 0;
+            text-align: center;
+            border-top: 1px solid #eee;
+        }
+
+        .footer p {
+            color: #666;
+            font-size: 14px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 16px;
+            }
+
+            .nav {
+                padding: 0 16px;
+                height: 56px;
+            }
+
+            .logo {
+                font-size: 18px;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .user-actions {
+                gap: 12px;
+            }
+
+            .hero {
+                padding: 40px 0;
+            }
+
+            .hero-content {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+
+            .hero-text {
+                text-align: center;
+            }
+
+            .hero-text h1 {
+                font-size: 32px;
+                margin-bottom: 16px;
+                line-height: 1.2;
+            }
+
+            .hero-text p {
+                font-size: 16px;
+                margin-bottom: 24px;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                gap: 12px;
+                align-items: center;
+            }
+
+            .btn {
+                width: 100%;
+                max-width: 200px;
+                padding: 14px 24px;
+                text-align: center;
+            }
+
+            .demo-content {
+                grid-template-columns: 1fr;
+                gap: 12px;
+                padding: 16px;
+            }
+
+            .demo-card {
+                padding: 12px;
+                min-height: 80px;
+            }
+
+            .demo-card .title {
+                font-size: 14px;
+            }
+
+            .features {
+                padding: 60px 0;
+            }
+
+            .section-title {
+                font-size: 28px;
+                margin-bottom: 12px;
+            }
+
+            .section-subtitle {
+                font-size: 16px;
+                padding: 0 16px;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+                gap: 24px;
+                margin-top: 40px;
+            }
+
+            .feature-card {
+                padding: 24px 20px;
+            }
+
+            .feature-icon {
+                width: 48px;
+                height: 48px;
+                margin-bottom: 16px;
+            }
+
+            .feature-card h3 {
+                font-size: 18px;
+                margin-bottom: 8px;
+            }
+
+            .feature-card p {
+                font-size: 14px;
+            }
+
+            .tech-stack {
+                padding: 60px 0;
+            }
+
+            .tech-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 24px;
+                margin-top: 32px;
+            }
+
+            .tech-item h4 {
+                font-size: 20px;
+                margin-bottom: 4px;
+            }
+
+            .tech-item p {
+                font-size: 12px;
+            }
+
+            .cta {
+                padding: 60px 0;
+            }
+
+            .cta h2 {
+                font-size: 28px;
+                margin-bottom: 12px;
+            }
+
+            .cta p {
+                font-size: 16px;
+                margin-bottom: 24px;
+                padding: 0 16px;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                gap: 12px;
+                align-items: center;
+            }
+
+            .btn-cta, .btn-outline {
+                width: 100%;
+                max-width: 200px;
+                padding: 14px 24px;
+                text-align: center;
+            }
+
+            .footer {
+                padding: 32px 0;
+            }
+
+            .footer p {
+                font-size: 12px;
+                padding: 0 16px;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-text h1 {
+                font-size: 28px;
+            }
+
+            .section-title {
+                font-size: 24px;
+            }
+
+            .hero-demo {
+                margin: 0 8px;
+            }
+
+            .demo-content {
+                padding: 12px;
+            }
+
+            .tech-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .features-grid {
+                gap: 20px;
+            }
+
+            .feature-card {
+                padding: 20px 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+<!-- Header -->
+<header class="header">
+    <nav class="nav">
+        <div class="logo">LOGO</div>
+        <ul class="nav-links">
+            <li><a href="#home">首页</a></li>
+            <li><a href="#docs">文档</a></li>
+            <li><a href="#features">特性</a></li>
+            <li><a href="#about">关于</a></li>
+        </ul>
+        <div class="user-actions">
+            <div class="search-icon">🔍</div>
+            <div class="user-avatar">👤</div>
+        </div>
+    </nav>
+</header>
+
+<!-- Hero Section -->
+<section class="hero" id="home">
+    <div class="container">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>qwq server系统</h1>
+                <p>qwq，基于 Go 语言开发，是一款极简、低占用、自建自主配的博客系统。</p>
+                <div class="hero-buttons">
+                    <a href="#start" class="btn btn-primary">快速开始</a>
+                    <a href="#github" class="btn btn-secondary">
+                        <span>🔗</span> GitHub
+                    </a>
+                </div>
+            </div>
+            <div class="hero-demo">
+                <div class="demo-header">
+                    <div class="demo-dots">
+                        <div class="demo-dot"></div>
+                        <div class="demo-dot"></div>
+                        <div class="demo-dot"></div>
+                    </div>
+                </div>
+                <div class="demo-content">
+                    <div class="demo-card">
+                        <h3>最新文章</h3>
+                        <div class="title">Go语言入门指南</div>
+                        <div class="meta">2024-07-20</div>
+                    </div>
+                    <div class="demo-card">
+                        <h3>技术分享</h3>
+                        <div class="title">构建高性能博客</div>
+                        <div class="meta">2024-07-18</div>
+                    </div>
+                    <div class="demo-card">
+                        <h3>系统优化</h3>
+                        <div class="title">内存管理最佳实践</div>
+                        <div class="meta">2024-07-15</div>
+                    </div>
+                    <div class="demo-card">
+                        <h3>开发笔记</h3>
+                        <div class="title">API设计原则</div>
+                        <div class="meta">2024-07-12</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Features Section -->
+<section class="features" id="features">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">选择 qwq server 的理由</h2>
+            <p class="section-subtitle">专为开发者打造的高性能未来 CMS 系统，性能优越，扩展无限。</p>
+        </div>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">🎨</div>
+                <h3>极简设计</h3>
+                <p>qwq博客系统采用Go语言与Gin框架，与在线验证验、视频自动压缩等功能。</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">⚡</div>
+                <h3>高性能性</h3>
+                <p>qwq博客系统的深度定制系统将提供高性能的开发体验。</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">💻</div>
+                <h3>高性能</h3>
+                <p>qwq博客系统采用Go语言开发的高性能开发支持，在高度系统性能可能需求速度。</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🔒</div>
+                <h3>安全可靠</h3>
+                <p>qwq博客系统提供了JWT身份验证、PostgreSQL数据库数据存方案，确保用户数据高度可靠性全面保护。</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Tech Stack -->
+<section class="tech-stack" id="tech">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">现代技术栈</h2>
+            <p class="section-subtitle">qwq全面使用现代技术本栈，包括Go语言结构、Gin框架、Mysql数据库以及Redis缓存，为博客系统提供了稳定而高规格性能，适应未来技术发展的向导路线。</p>
+        </div>
+        <div class="tech-grid">
+            <div class="tech-item">
+                <h4>Go</h4>
+                <p>编程语言</p>
+            </div>
+            <div class="tech-item">
+                <h4>Gin</h4>
+                <p>Web框架</p>
+            </div>
+            <div class="tech-item">
+                <h4>Mysql</h4>
+                <p>数据库</p>
+            </div>
+            <div class="tech-item">
+                <h4>Redis</h4>
+                <p>缓存</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Call to Action -->
+<section class="cta" id="start">
+    <div class="container">
+        <h2>准备好开始您的博客了吗？</h2>
+        <p>使用 qwq，快速搭建轻量级高效的博客平台。开源免费，易维体体验。</p>
+        <div class="cta-buttons">
+            <a href="#install" class="btn btn-cta">立即开始</a>
+            <a href="#docs" class="btn btn-outline">查看文档</a>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="container">
+        <p>© 2025 qwq. 保留所有权利. &nbsp;&nbsp;&nbsp; 访问滑坡42.0开发时长3-</p>
+    </div>
+</footer>
+
+<script>
+    // 平滑滚动导航
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+
+    // 滚动效果
+    window.addEventListener('scroll', () => {
+        const header = document.querySelector('.header');
+        if (window.scrollY > 50) {
+            header.style.boxShadow = '0 2px 20px rgba(0,0,0,0.1)';
+        } else {
+            header.style.boxShadow = 'none';
+        }
+    });
+
+    // 演示卡片动画
+    const demoCards = document.querySelectorAll('.demo-card');
+    let cardIndex = 0;
+
+    function animateCards() {
+        demoCards.forEach((card, index) => {
+            card.style.transform = index === cardIndex ? 'scale(1.05)' : 'scale(1)';
+            card.style.opacity = index === cardIndex ? '1' : '0.7';
+        });
+        cardIndex = (cardIndex + 1) % demoCards.length;
+    }
+
+    // 启动卡片动画
+    setInterval(animateCards, 2000);
+
+    // 特性卡片悬停效果增强
+    const featureCards = document.querySelectorAll('.feature-card');
+    featureCards.forEach(card => {
+        card.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-8px) scale(1.02)';
+            this.style.boxShadow = '0 15px 35px rgba(0,0,0,0.15)';
+        });
+
+        card.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0) scale(1)';
+            this.style.boxShadow = '0 8px 25px rgba(0,0,0,0.1)';
+        });
+    });
+
+    // 页面加载动画
+    window.addEventListener('load', () => {
+        const heroText = document.querySelector('.hero-text');
+        const heroDemo = document.querySelector('.hero-demo');
+
+        heroText.style.opacity = '0';
+        heroText.style.transform = 'translateY(30px)';
+        heroDemo.style.opacity = '0';
+        heroDemo.style.transform = 'translateX(30px)';
+
+        setTimeout(() => {
+            heroText.style.transition = 'all 0.6s ease';
+            heroText.style.opacity = '1';
+            heroText.style.transform = 'translateY(0)';
+        }, 100);
+
+        setTimeout(() => {
+            heroDemo.style.transition = 'all 0.6s ease';
+            heroDemo.style.opacity = '1';
+            heroDemo.style.transform = 'translateX(0)';
+        }, 300);
+    });
+
+    // 搜索功能模拟
+    document.querySelector('.search-icon').addEventListener('click', () => {
+        alert('搜索功能开发中...');
+    });
+
+    // 用户头像点击
+    document.querySelector('.user-avatar').addEventListener('click', () => {
+        alert('用户功能开发中...');
+    });
+</script>
+</body>
+</html>

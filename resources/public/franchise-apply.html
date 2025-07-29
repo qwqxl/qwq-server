@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>加盟申请 - QWQ</title>
+    <meta name="description" content="QWQ加盟申请 - 填写申请表单，开启合作之旅">
+    <meta name="author" content="xiaolin">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .apply-hero {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            padding: 6rem 0 4rem;
+            text-align: center;
+        }
+        
+        .apply-hero h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        
+        .apply-hero p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        
+        .apply-content {
+            padding: 4rem 0;
+            background: var(--bg-color);
+        }
+        
+        .apply-container {
+            display: grid;
+            grid-template-columns: 1fr 400px;
+            gap: 4rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .apply-form {
+            background: var(--card-bg);
+            padding: 3rem;
+            border-radius: 20px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .form-section {
+            margin-bottom: 2.5rem;
+        }
+        
+        .form-section h3 {
+            color: var(--text-color);
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .form-section h3 i {
+            color: var(--primary-color);
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--text-color);
+            font-weight: 500;
+        }
+        
+        .form-group .required {
+            color: #e74c3c;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 2px solid var(--border-color);
+            border-radius: 10px;
+            background: var(--bg-color);
+            color: var(--text-color);
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(var(--primary-rgb), 0.1);
+        }
+        
+        .form-control::placeholder {
+            color: var(--text-secondary);
+        }
+        
+        textarea.form-control {
+            resize: vertical;
+            min-height: 120px;
+        }
+        
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+        
+        .checkbox-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .checkbox-item input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            accent-color: var(--primary-color);
+        }
+        
+        .file-upload {
+            position: relative;
+            display: inline-block;
+            width: 100%;
+        }
+        
+        .file-upload input[type="file"] {
+            position: absolute;
+            opacity: 0;
+            width: 100%;
+            height: 100%;
+            cursor: pointer;
+        }
+        
+        .file-upload-label {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 2rem;
+            border: 2px dashed var(--border-color);
+            border-radius: 10px;
+            background: var(--bg-color);
+            color: var(--text-secondary);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .file-upload:hover .file-upload-label {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+        }
+        
+        .submit-btn {
+            width: 100%;
+            padding: 1rem 2rem;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .submit-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+        
+        .apply-sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+        
+        .sidebar-card {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 15px;
+            border: 1px solid var(--border-color);
+        }
+        
+        .sidebar-card h4 {
+            color: var(--text-color);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .sidebar-card h4 i {
+            color: var(--primary-color);
+        }
+        
+        .sidebar-card ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .sidebar-card li {
+            padding: 0.5rem 0;
+            color: var(--text-secondary);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .sidebar-card li i {
+            color: var(--primary-color);
+            width: 16px;
+        }
+        
+        .contact-info {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            text-align: center;
+        }
+        
+        .contact-info h4 {
+            color: white;
+        }
+        
+        .contact-info p {
+            margin-bottom: 1rem;
+            opacity: 0.9;
+        }
+        
+        .contact-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            background: white;
+            color: var(--primary-color);
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .contact-btn:hover {
+            background: #f8f9fa;
+            transform: translateY(-2px);
+        }
+        
+        .progress-bar {
+            width: 100%;
+            height: 6px;
+            background: var(--border-color);
+            border-radius: 3px;
+            margin-bottom: 2rem;
+            overflow: hidden;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+        
+        .form-tips {
+            background: #f8f9fa;
+            border-left: 4px solid var(--primary-color);
+            padding: 1rem;
+            margin-bottom: 2rem;
+            border-radius: 0 10px 10px 0;
+        }
+        
+        .form-tips h5 {
+            color: var(--text-color);
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .form-tips p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin: 0;
+        }
+        
+        @media (max-width: 768px) {
+            .apply-hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .apply-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .apply-form {
+                padding: 2rem;
+            }
+            
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+            
+            .checkbox-group {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="./images/logo.svg" alt="QWQ">
+                    <span>QWQ</span>
+                </a>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">主页</a></li>
+                    <li><a href="blog.html">博客</a></li>
+                    <li><a href="about.html">关于我</a></li>
+                    <li><a href="contact.html">联系方式</a></li>
+                    <li><a href="franchise.html">加盟合作</a></li>
+                </ul>
+            </nav>
+            <div class="nav-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            <div class="theme-switch">
+                <i class="fas fa-moon"></i>
+            </div>
+        </div>
+    </header>
+
+    <section class="apply-hero">
+        <div class="container">
+            <h1>加盟申请</h1>
+            <p>填写以下信息，开启与QWQ的合作之旅</p>
+        </div>
+    </section>
+
+    <section class="apply-content">
+        <div class="container">
+            <div class="apply-container">
+                <div class="apply-form">
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progressFill"></div>
+                    </div>
+                    
+                    <div class="form-tips">
+                        <h5><i class="fas fa-info-circle"></i> 申请须知</h5>
+                        <p>请如实填写以下信息，我们将在3个工作日内回复您的申请。标有 <span class="required">*</span> 的为必填项。</p>
+                    </div>
+                    
+                    <form id="franchiseForm">
+                        <div class="form-section">
+                            <h3><i class="fas fa-user"></i> 基本信息</h3>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="name">姓名 <span class="required">*</span></label>
+                                    <input type="text" id="name" name="name" class="form-control" placeholder="请输入您的真实姓名" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="gender">性别</label>
+                                    <select id="gender" name="gender" class="form-control">
+                                        <option value="">请选择</option>
+                                        <option value="male">男</option>
+                                        <option value="female">女</option>
+                                        <option value="other">其他</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="phone">手机号码 <span class="required">*</span></label>
+                                    <input type="tel" id="phone" name="phone" class="form-control" placeholder="请输入手机号码" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">邮箱地址 <span class="required">*</span></label>
+                                    <input type="email" id="email" name="email" class="form-control" placeholder="请输入邮箱地址" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="location">所在地区 <span class="required">*</span></label>
+                                <input type="text" id="location" name="location" class="form-control" placeholder="请输入省市区详细地址" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-section">
+                            <h3><i class="fas fa-briefcase"></i> 专业背景</h3>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="education">学历背景</label>
+                                    <select id="education" name="education" class="form-control">
+                                        <option value="">请选择</option>
+                                        <option value="high_school">高中及以下</option>
+                                        <option value="college">大专</option>
+                                        <option value="bachelor">本科</option>
+                                        <option value="master">硕士</option>
+                                        <option value="doctor">博士</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="experience">工作经验</label>
+                                    <select id="experience" name="experience" class="form-control">
+                                        <option value="">请选择</option>
+                                        <option value="0-1">0-1年</option>
+                                        <option value="1-3">1-3年</option>
+                                        <option value="3-5">3-5年</option>
+                                        <option value="5-10">5-10年</option>
+                                        <option value="10+">10年以上</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="profession">专业领域 <span class="required">*</span></label>
+                                <div class="checkbox-group">
+                                    <div class="checkbox-item">
+                                        <input type="checkbox" id="frontend" name="profession[]" value="frontend">
+                                        <label for="frontend">前端开发</label>
+                                    </div>
+                                    <div class="checkbox-item">
+                                        <input type="checkbox" id="backend" name="profession[]" value="backend">
+                                        <label for="backend">后端开发</label>
+                                    </div>
+                                    <div class="checkbox-item">
+                                        <input type="checkbox" id="design" name="profession[]" value="design">
+                                        <label for="design">UI/UX设计</label>
+                                    </div>
+                                    <div class="checkbox-item">
+                                        <input type="checkbox" id="product" name="profession[]" value="product">
+                                        <label for="product">产品管理</label>
+                                    </div>
+                                    <div class="checkbox-item">
+                                        <input type="checkbox" id="marketing" name="profession[]" value="marketing">
+                                        <label for="marketing">市场营销</label>
+                                    </div>
+                                    <div class="checkbox-item">
+                                        <input type="checkbox" id="other" name="profession[]" value="other">
+                                        <label for="other">其他</label>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="skills">技能特长</label>
+                                <textarea id="skills" name="skills" class="form-control" placeholder="请详细描述您的技能特长、项目经验等"></textarea>
+                            </div>
+                        </div>
+                        
+                        <div class="form-section">
+                            <h3><i class="fas fa-lightbulb"></i> 合作意向</h3>
+                            
+                            <div class="form-group">
+                                <label for="cooperation_type">合作类型 <span class="required">*</span></label>
+                                <select id="cooperation_type" name="cooperation_type" class="form-control" required>
+                                    <option value="">请选择</option>
+                                    <option value="content_creator">内容创作者</option>
+                                    <option value="technical_writer">技术写手</option>
+                                    <option value="course_instructor">课程讲师</option>
+                                    <option value="community_manager">社区管理</option>
+                                    <option value="business_partner">商务合作</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="content_direction">内容方向</label>
+                                <div class="checkbox-group">
+                                    <div class="checkbox-item">
+                                        <input type="checkbox" id="tech_tutorial" name="content_direction[]" value="tech_tutorial">
+                                        <label for="tech_tutorial">技术教程</label>
+                                    </div>
+                                    <div class="checkbox-item">
+                                        <input type="checkbox" id="industry_analysis" name="content_direction[]" value="industry_analysis">
+                                        <label for="industry_analysis">行业分析</label>
+                                    </div>
+                                    <div class="checkbox-item">
+                                        <input type="checkbox" id="tool_review" name="content_direction[]" value="tool_review">
+                                        <label for="tool_review">工具评测</label>
+                                    </div>
+                                    <div class="checkbox-item">
+                                        <input type="checkbox" id="career_guide" name="content_direction[]" value="career_guide">
+                                        <label for="career_guide">职场指南</label>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="motivation">合作动机 <span class="required">*</span></label>
+                                <textarea id="motivation" name="motivation" class="form-control" placeholder="请说明您希望与QWQ合作的原因和期望" required></textarea>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="portfolio">作品展示</label>
+                                <textarea id="portfolio" name="portfolio" class="form-control" placeholder="请提供您的作品链接、个人网站、GitHub等"></textarea>
+                            </div>
+                        </div>
+                        
+                        <div class="form-section">
+                            <h3><i class="fas fa-file-upload"></i> 附件上传</h3>
+                            
+                            <div class="form-group">
+                                <label for="resume">个人简历</label>
+                                <div class="file-upload">
+                                    <input type="file" id="resume" name="resume" accept=".pdf,.doc,.docx">
+                                    <div class="file-upload-label">
+                                        <i class="fas fa-cloud-upload-alt"></i>
+                                        <span>点击上传简历文件 (PDF, DOC, DOCX)</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="portfolio_file">作品集</label>
+                                <div class="file-upload">
+                                    <input type="file" id="portfolio_file" name="portfolio_file" accept=".pdf,.zip,.rar" multiple>
+                                    <div class="file-upload-label">
+                                        <i class="fas fa-folder-open"></i>
+                                        <span>点击上传作品集 (PDF, ZIP, RAR)</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-section">
+                            <div class="form-group">
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="agreement" name="agreement" required>
+                                    <label for="agreement">我已阅读并同意 <a href="#" style="color: var(--primary-color);">《合作协议》</a> 和 <a href="#" style="color: var(--primary-color);">《隐私政策》</a> <span class="required">*</span></label>
+                                </div>
+                            </div>
+                            
+                            <button type="submit" class="submit-btn">
+                                <i class="fas fa-paper-plane"></i>
+                                提交申请
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                
+                <div class="apply-sidebar">
+                    <div class="sidebar-card">
+                        <h4><i class="fas fa-clock"></i> 申请流程</h4>
+                        <ul>
+                            <li><i class="fas fa-check"></i> 提交申请表单</li>
+                            <li><i class="fas fa-search"></i> 资质审核 (3个工作日)</li>
+                            <li><i class="fas fa-comments"></i> 面谈洽谈</li>
+                            <li><i class="fas fa-handshake"></i> 签约合作</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="sidebar-card">
+                        <h4><i class="fas fa-star"></i> 申请要求</h4>
+                        <ul>
+                            <li><i class="fas fa-graduation-cap"></i> 相关专业背景</li>
+                            <li><i class="fas fa-heart"></i> 热爱内容创作</li>
+                            <li><i class="fas fa-users"></i> 良好沟通能力</li>
+                            <li><i class="fas fa-clock"></i> 稳定时间投入</li>
+                            <li><i class="fas fa-trophy"></i> 追求品质excellence</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="sidebar-card contact-info">
+                        <h4><i class="fas fa-headset"></i> 需要帮助？</h4>
+                        <p>如果您在申请过程中遇到任何问题，欢迎随时联系我们。</p>
+                        <a href="contact.html" class="contact-btn">
+                            <i class="fas fa-phone"></i>
+                            联系客服
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="./images/logo.svg" alt="QWQ">
+                    <p>QWQ - xiaolin的个人网站</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-links-column">
+                        <h3>导航</h3>
+                        <ul>
+                            <li><a href="index.html">主页</a></li>
+                            <li><a href="blog.html">博客</a></li>
+                            <li><a href="about.html">关于我</a></li>
+                            <li><a href="contact.html">联系方式</a></li>
+                            <li><a href="franchise.html">加盟合作</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-links-column">
+                        <h3>内容</h3>
+                        <ul>
+                            <li><a href="articles.html">文章列表</a></li>
+                            <li><a href="#">技术分享</a></li>
+                            <li><a href="#">设计思考</a></li>
+                            <li><a href="#">生活感悟</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-links-column">
+                        <h3>关注我</h3>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-github"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-weibo"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>Copyright © 2023 QWQ by xiaolin. All rights reserved.</p>
+                <p>粤ICP备XXXXXXXX号-X | <a href="#">隐私政策</a> | <a href="#">服务条款</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="./js/main.js"></script>
+    <script>
+        // 表单进度条
+        function updateProgress() {
+            const form = document.getElementById('franchiseForm');
+            const inputs = form.querySelectorAll('input[required], select[required], textarea[required]');
+            const filled = Array.from(inputs).filter(input => {
+                if (input.type === 'checkbox') {
+                    return input.checked;
+                }
+                return input.value.trim() !== '';
+            }).length;
+            
+            const progress = (filled / inputs.length) * 100;
+            document.getElementById('progressFill').style.width = progress + '%';
+        }
+        
+        // 监听表单变化
+        document.getElementById('franchiseForm').addEventListener('input', updateProgress);
+        document.getElementById('franchiseForm').addEventListener('change', updateProgress);
+        
+        // 文件上传显示
+        document.querySelectorAll('input[type="file"]').forEach(input => {
+            input.addEventListener('change', function() {
+                const label = this.nextElementSibling.querySelector('span');
+                if (this.files.length > 0) {
+                    const fileNames = Array.from(this.files).map(file => file.name).join(', ');
+                    label.textContent = `已选择: ${fileNames}`;
+                } else {
+                    label.textContent = this.getAttribute('data-original-text') || label.textContent;
+                }
+            });
+        });
+        
+        // 表单提交
+        document.getElementById('franchiseForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const submitBtn = this.querySelector('.submit-btn');
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> 提交中...';
+            
+            // 模拟提交过程
+            setTimeout(() => {
+                alert('申请提交成功！我们将在3个工作日内回复您。');
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> 提交申请';
+            }, 2000);
+        });
+        
+        // 初始化进度条
+        updateProgress();
+    </script>
+</body>
+</html>

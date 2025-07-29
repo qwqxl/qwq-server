@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>关于本主题的一些使用教程 - QWQ博客</title>
+    <meta name="description" content="这是一篇关于如何使用和自定义QWQ博客主题的详细教程，包含了主题的安装、配置和常见问题解答。">
+    <meta name="author" content="xiaolin">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="./css/prism.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="./images/logo.svg" alt="QWQ博客">
+                    <span>QWQ博客</span>
+                </a>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">首页</a></li>
+                    <li><a href="articles.html" class="active">文章列表</a></li>
+                    <li><a href="about.html">关于我</a></li>
+                    <li><a href="contact.html">联系方式</a></li>
+                </ul>
+            </nav>
+            <div class="nav-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            <div class="theme-switch">
+                <i class="fas fa-moon"></i>
+            </div>
+            <div class="search-btn">
+                <i class="fas fa-search"></i>
+            </div>
+        </div>
+    </header>
+
+    <section class="article-header">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="index.html">首页</a> / <a href="articles.html">文章列表</a> / <span>关于本主题的一些使用教程</span>
+            </div>
+            <h1 class="article-title">关于本主题的一些使用教程</h1>
+            <div class="article-meta">
+                <div class="author">
+                    <img src="./images/avatar.svg" alt="xiaolin">
+                    <span>xiaolin</span>
+                </div>
+                <div class="meta-info">
+                    <span class="date"><i class="far fa-calendar-alt"></i> 2023-06-15</span>
+                    <span class="category"><i class="far fa-folder"></i> 前端</span>
+                    <span class="read-time"><i class="far fa-clock"></i> 5 分钟阅读</span>
+                    <span class="views"><i class="far fa-eye"></i> 1024 次阅读</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="article-content">
+        <div class="container">
+            <div class="content-wrapper">
+                <div class="main-content">
+                    <div class="featured-image">
+                        <img src="./images/placeholder.svg" alt="关于本主题的一些使用教程">
+                    </div>
+                    
+                    <div class="article-text">
+                        <h2>环境准备要求</h2>
+                        <p>在开始使用QWQ博客主题之前，请确保你的环境满足以下要求：</p>
+                        <ul>
+                            <li>Node.js 14+ / npm 6+</li>
+                            <li>现代浏览器（Chrome、Firefox、Safari、Edge等）</li>
+                            <li>文本编辑器（VSCode、Sublime Text等）</li>
+                        </ul>
+
+                        <div class="info-box">
+                            <h4>安装提示</h4>
+                            <p>如果你使用的是Windows系统，建议使用WSL或Git Bash来执行命令行操作。</p>
+                        </div>
+
+                        <h2>主题安装</h2>
+                        <p>QWQ博客主题的安装非常简单，只需要按照以下步骤操作：</p>
+                        <ol>
+                            <li>下载主题文件</li>
+                            <li>解压到你的网站根目录</li>
+                            <li>修改配置文件</li>
+                            <li>部署到你的服务器</li>
+                        </ol>
+
+                        <p>如果你使用的是静态网站生成器，可以参考以下代码进行安装：</p>
+
+                        <pre><code class="language-bash">git clone https://github.com/xiaolin/qwq-blog.git
+cd qwq-blog
+npm install
+npm run build</code></pre>
+
+                        <h2>主题配置</h2>
+                        <p>QWQ博客主题提供了丰富的配置选项，你可以通过修改<code>config.js</code>文件来自定义你的博客：</p>
+
+                        <pre><code class="language-javascript">// config.js
+module.exports = {
+  // 基本信息
+  title: 'QWQ博客',
+  description: '一个简洁、美观的个人博客模板',
+  author: 'xiaolin',
+  
+  // 主题配置
+  theme: {
+    primaryColor: '#6366f1',
+    darkMode: true,
+    animation: true,
+    fontFamily: 'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif'
+  },
+  
+  // 社交媒体链接
+  social: {
+    github: 'https://github.com/xiaolin',
+    twitter: 'https://twitter.com/xiaolin',
+    weibo: 'https://weibo.com/xiaolin'
+  }
+};</code></pre>
+
+                        <div class="warning-box">
+                            <h4>注意事项</h4>
+                            <p>修改配置文件后，需要重新构建项目才能看到效果。</p>
+                        </div>
+
+                        <h2>自定义样式</h2>
+                        <p>如果你想进一步自定义主题的样式，可以修改<code>css/custom.css</code>文件：</p>
+
+                        <pre><code class="language-css">/* 自定义CSS */
+:root {
+  --primary-color: #6366f1;
+  --secondary-color: #4f46e5;
+  --text-color: #333;
+  --bg-color: #fff;
+}
+
+/* 暗色模式 */
+.dark-mode {
+  --text-color: #f3f4f6;
+  --bg-color: #1f2937;
+}</code></pre>
+
+                        <h2>常见问题解答</h2>
+                        <h3>1. 如何添加新文章？</h3>
+                        <p>在<code>content/posts</code>目录下创建一个新的Markdown文件，按照以下格式添加文章元数据：</p>
+
+                        <pre><code class="language-markdown">---
+title: 文章标题
+date: 2023-06-15
+category: 前端
+tags: [博客, 教程]
+---
+
+这里是文章内容...</code></pre>
+
+                        <h3>2. 如何自定义导航菜单？</h3>
+                        <p>修改<code>config.js</code>文件中的<code>navigation</code>部分：</p>
+
+                        <pre><code class="language-javascript">navigation: [
+  { name: '首页', url: '/' },
+  { name: '文章', url: '/articles' },
+  { name: '关于', url: '/about' },
+  { name: '联系', url: '/contact' },
+  // 添加更多导航项
+]</code></pre>
+
+                        <h3>3. 如何启用/禁用评论功能？</h3>
+                        <p>在<code>config.js</code>文件中配置评论系统：</p>
+
+                        <pre><code class="language-javascript">comments: {
+  enabled: true,
+  system: 'disqus', // 'disqus', 'gitalk', 'valine'
+  disqusShortname: 'your-disqus-shortname',
+  // 其他评论系统的配置
+}</code></pre>
+
+                        <div class="success-box">
+                            <h4>提示</h4>
+                            <p>QWQ博客主题支持多种评论系统，你可以根据自己的需求选择合适的评论系统。</p>
+                        </div>
+
+                        <h2>总结</h2>
+                        <p>通过本教程，你应该已经了解了如何安装、配置和自定义QWQ博客主题。如果你在使用过程中遇到任何问题，可以通过以下方式获取帮助：</p>
+                        <ul>
+                            <li>查阅<a href="#">官方文档</a></li>
+                            <li>在<a href="#">GitHub</a>上提交Issue</li>
+                            <li>加入<a href="#">社区讨论组</a></li>
+                        </ul>
+                        <p>希望你能喜欢这个主题，祝你使用愉快！</p>
+                    </div>
+
+                    <div class="article-tags">
+                        <span class="tags-title">标签：</span>
+                        <a href="#" class="tag">博客</a>
+                        <a href="#" class="tag">教程</a>
+                        <a href="#" class="tag">前端</a>
+                        <a href="#" class="tag">主题</a>
+                    </div>
+
+                    <div class="article-share">
+                        <span class="share-title">分享：</span>
+                        <div class="share-buttons">
+                            <a href="#" class="share-btn twitter"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="share-btn facebook"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="share-btn weibo"><i class="fab fa-weibo"></i></a>
+                            <a href="#" class="share-btn linkedin"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="article-author">
+                        <div class="author-avatar">
+                            <img src="./images/avatar.svg" alt="xiaolin">
+                        </div>
+                        <div class="author-info">
+                            <h3 class="author-name">xiaolin</h3>
+                            <p class="author-bio">前端开发工程师，热爱设计和编程，喜欢分享技术经验和学习心得。</p>
+                            <div class="author-social">
+                                <a href="#"><i class="fab fa-github"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fab fa-weibo"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="article-navigation">
+                        <a href="#" class="prev-article">
+                            <span class="nav-label"><i class="fas fa-angle-left"></i> 上一篇</span>
+                            <span class="nav-title">如何设计一个有吸引力的博客界面</span>
+                        </a>
+                        <a href="#" class="next-article">
+                            <span class="nav-label">下一篇 <i class="fas fa-angle-right"></i></span>
+                            <span class="nav-title">Strapi：一个强大的无头CMS系统</span>
+                        </a>
+                    </div>
+
+                    <div class="article-comments">
+                        <h3 class="comments-title">评论 (5)</h3>
+                        <div class="comment-form">
+                            <div class="form-header">
+                                <div class="user-avatar">
+                                    <img src="./images/avatar.svg" alt="用户头像">
+                                </div>
+                                <textarea placeholder="写下你的评论..."></textarea>
+                            </div>
+                            <div class="form-footer">
+                                <button class="btn primary-btn">发表评论</button>
+                            </div>
+                        </div>
+
+                        <div class="comments-list">
+                            <div class="comment">
+                                <div class="comment-avatar">
+                                    <img src="./images/avatar.svg" alt="评论者头像">
+                                </div>
+                                <div class="comment-content">
+                                    <div class="comment-header">
+                                        <h4 class="comment-author">张三</h4>
+                                        <span class="comment-date">2023-06-16 10:30</span>
+                                    </div>
+                                    <div class="comment-text">
+                                        <p>非常详细的教程，对我帮助很大！特别是自定义样式的部分，让我能够根据自己的喜好调整主题。</p>
+                                    </div>
+                                    <div class="comment-actions">
+                                        <a href="#" class="reply-btn">回复</a>
+                                        <span class="like-btn"><i class="far fa-heart"></i> 15</span>
+                                    </div>
+
+                                    <div class="comment-replies">
+                                        <div class="comment">
+                                            <div class="comment-avatar">
+                                                <img src="./images/avatar.svg" alt="评论者头像">
+                                            </div>
+                                            <div class="comment-content">
+                                                <div class="comment-header">
+                                                    <h4 class="comment-author">xiaolin</h4>
+                                                    <span class="comment-date">2023-06-16 11:15</span>
+                                                </div>
+                                                <div class="comment-text">
+                                                    <p>谢谢你的反馈！很高兴这篇教程对你有帮助。如果你有任何问题，随时可以提出。</p>
+                                                </div>
+                                                <div class="comment-actions">
+                                                    <a href="#" class="reply-btn">回复</a>
+                                                    <span class="like-btn"><i class="far fa-heart"></i> 8</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="comment">
+                                <div class="comment-avatar">
+                                    <img src="./images/avatar.svg" alt="评论者头像">
+                                </div>
+                                <div class="comment-content">
+                                    <div class="comment-header">
+                                        <h4 class="comment-author">李四</h4>
+                                        <span class="comment-date">2023-06-15 16:45</span>
+                                    </div>
+                                    <div class="comment-text">
+                                        <p>请问这个主题支持响应式设计吗？在移动设备上的表现如何？</p>
+                                    </div>
+                                    <div class="comment-actions">
+                                        <a href="#" class="reply-btn">回复</a>
+                                        <span class="like-btn"><i class="far fa-heart"></i> 6</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="load-more">
+                            <button class="btn outline-btn">加载更多评论</button>
+                        </div>
+                    </div>
+                </div>
+
+                <aside class="sidebar">
+                    <div class="widget toc-widget">
+                        <h3 class="widget-title">目录</h3>
+                        <ul class="toc">
+                            <li><a href="#环境准备要求">环境准备要求</a></li>
+                            <li><a href="#主题安装">主题安装</a></li>
+                            <li><a href="#主题配置">主题配置</a></li>
+                            <li><a href="#自定义样式">自定义样式</a></li>
+                            <li>
+                                <a href="#常见问题解答">常见问题解答</a>
+                                <ul>
+                                    <li><a href="#1-如何添加新文章">1. 如何添加新文章？</a></li>
+                                    <li><a href="#2-如何自定义导航菜单">2. 如何自定义导航菜单？</a></li>
+                                    <li><a href="#3-如何启用禁用评论功能">3. 如何启用/禁用评论功能？</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#总结">总结</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="widget author-widget">
+                        <h3 class="widget-title">关于作者</h3>
+                        <div class="author-card">
+                            <div class="author-avatar">
+                                <img src="./images/avatar.svg" alt="xiaolin">
+                            </div>
+                            <h4 class="author-name">xiaolin</h4>
+                            <p class="author-bio">前端开发工程师，热爱设计和编程，喜欢分享技术经验和学习心得。</p>
+                            <div class="author-social">
+                                <a href="#"><i class="fab fa-github"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fab fa-weibo"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="widget related-widget">
+                        <h3 class="widget-title">相关文章</h3>
+                        <div class="related-posts">
+                            <div class="related-post">
+                                <div class="post-image">
+                                    <img src="./images/placeholder.svg" alt="相关文章">
+                                </div>
+                                <div class="post-info">
+                                    <h4><a href="#">如何设计一个有吸引力的博客界面</a></h4>
+                                    <span class="post-date">2023-06-10</span>
+                                </div>
+                            </div>
+                            <div class="related-post">
+                                <div class="post-image">
+                                    <img src="./images/placeholder.svg" alt="相关文章">
+                                </div>
+                                <div class="post-info">
+                                    <h4><a href="#">WordPress与静态博客生成器的比较</a></h4>
+                                    <span class="post-date">2023-06-05</span>
+                                </div>
+                            </div>
+                            <div class="related-post">
+                                <div class="post-image">
+                                    <img src="./images/placeholder.svg" alt="相关文章">
+                                </div>
+                                <div class="post-info">
+                                    <h4><a href="#">现代CSS技巧：Grid和Flexbox布局详解</a></h4>
+                                    <span class="post-date">2023-06-01</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="widget tags-widget">
+                        <h3 class="widget-title">标签云</h3>
+                        <div class="tag-cloud">
+                            <a href="#" class="tag">博客</a>
+                            <a href="#" class="tag">前端</a>
+                            <a href="#" class="tag">设计</a>
+                            <a href="#" class="tag">JavaScript</a>
+                            <a href="#" class="tag">CSS</a>
+                            <a href="#" class="tag">HTML</a>
+                            <a href="#" class="tag">响应式</a>
+                            <a href="#" class="tag">教程</a>
+                            <a href="#" class="tag">工具</a>
+                            <a href="#" class="tag">资源</a>
+                        </div>
+                    </div>
+
+                    <div class="widget newsletter-widget">
+                        <h3 class="widget-title">订阅更新</h3>
+                        <p>订阅我的博客，获取最新文章和更新通知。</p>
+                        <form class="newsletter-form">
+                            <input type="email" placeholder="你的邮箱地址">
+                            <button type="submit" class="btn primary-btn">订阅</button>
+                        </form>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="./images/logo.svg" alt="QWQ博客">
+                    <p>QWQ博客 - 一个简洁、美观的个人博客模板</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-links-column">
+                        <h3>导航</h3>
+                        <ul>
+                            <li><a href="index.html">首页</a></li>
+                            <li><a href="articles.html">文章列表</a></li>
+                            <li><a href="about.html">关于我</a></li>
+                            <li><a href="contact.html">联系方式</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-links-column">
+                        <h3>分类</h3>
+                        <ul>
+                            <li><a href="#">前端开发</a></li>
+                            <li><a href="#">后端开发</a></li>
+                            <li><a href="#">UI/UX设计</a></li>
+                            <li><a href="#">工具资源</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-links-column">
+                        <h3>关注我</h3>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-github"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-weibo"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>Copyright © 2023 QWQ博客 by xiaolin. All rights reserved.</p>
+                <p>粤ICP备XXXXXXXX号-X | <a href="#">隐私政策</a> | <a href="#">服务条款</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <div class="search-modal">
+        <div class="search-container">
+            <div class="search-header">
+                <h3>搜索</h3>
+                <button class="close-search"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="search-form">
+                <input type="text" placeholder="输入关键词搜索...">
+                <button type="submit"><i class="fas fa-search"></i></button>
+            </div>
+            <div class="search-results">
+                <!-- 搜索结果将在这里动态显示 -->
+            </div>
+        </div>
+    </div>
+
+    <script src="./js/main.js"></script>
+    <script src="./js/prism.js"></script>
+</body>
+</html>

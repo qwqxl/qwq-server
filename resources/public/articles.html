@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QWQ博客 - 文章列表</title>
+    <meta name="description" content="QWQ博客 - 一个简洁、美观的个人博客模板">
+    <meta name="author" content="xiaolin">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="./images/logo.svg" alt="QWQ博客">
+                    <span>QWQ博客</span>
+                </a>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">主页</a></li>
+                    <li><a href="blog.html">博客</a></li>
+                    <li><a href="articles.html" class="active">文章列表</a></li>
+                    <li><a href="about.html">关于我</a></li>
+                    <li><a href="contact.html">联系方式</a></li>
+                    <li><a href="franchise.html">加盟合作</a></li>
+                </ul>
+            </nav>
+            <div class="nav-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            <div class="theme-switch">
+                <i class="fas fa-moon"></i>
+            </div>
+            <div class="search-btn">
+                <i class="fas fa-search"></i>
+            </div>
+        </div>
+    </header>
+
+    <section class="page-header">
+        <div class="container">
+            <h1>文章列表</h1>
+            <div class="breadcrumb">
+                <a href="index.html">首页</a> / <span>文章列表</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="articles-filter">
+        <div class="container">
+            <div class="filter-container">
+                <div class="filter-group">
+                    <label>分类：</label>
+                    <div class="filter-options">
+                        <a href="#" class="active">全部</a>
+                        <a href="#">前端</a>
+                        <a href="#">后端</a>
+                        <a href="#">设计</a>
+                        <a href="#">工具</a>
+                        <a href="#">资源</a>
+                    </div>
+                </div>
+                <div class="filter-group">
+                    <label>排序：</label>
+                    <div class="filter-options">
+                        <a href="#" class="active">最新</a>
+                        <a href="#">最热</a>
+                        <a href="#">推荐</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="articles-list">
+        <div class="container">
+            <div class="articles-grid">
+                <div class="article-card">
+                    <div class="article-image">
+                        <img src="./images/placeholder.svg" alt="文章标题">
+                        <div class="article-category">前端</div>
+                    </div>
+                    <div class="article-content">
+                        <h3 class="article-title"><a href="article.html">关于本主题的一些使用教程</a></h3>
+                        <p class="article-excerpt">这是一篇关于如何使用和自定义QWQ博客主题的详细教程，包含了主题的安装、配置和常见问题解答。</p>
+                        <div class="article-meta">
+                            <div class="meta-left">
+                                <span class="author">xiaolin</span>
+                                <span class="date">2023-06-15</span>
+                            </div>
+                            <div class="meta-right">
+                                <span class="read-time">5 分钟阅读</span>
+                                <span class="views"><i class="fas fa-eye"></i> 1024</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="article-card">
+                    <div class="article-image">
+                        <img src="./images/placeholder.svg" alt="文章标题">
+                        <div class="article-category">工具</div>
+                    </div>
+                    <div class="article-content">
+                        <h3 class="article-title"><a href="article.html">Strapi：一个强大的无头CMS系统</a></h3>
+                        <p class="article-excerpt">探索Strapi作为现代网站和应用的后端解决方案，了解其功能特性和使用方法。</p>
+                        <div class="article-meta">
+                            <div class="meta-left">
+                                <span class="author">xiaolin</span>
+                                <span class="date">2023-06-12</span>
+                            </div>
+                            <div class="meta-right">
+                                <span class="read-time">8 分钟阅读</span>
+                                <span class="views"><i class="fas fa-eye"></i> 856</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="article-card">
+                    <div class="article-image">
+                        <img src="./images/placeholder.svg" alt="文章标题">
+                        <div class="article-category">设计</div>
+                    </div>
+                    <div class="article-content">
+                        <h3 class="article-title"><a href="article.html">如何设计一个有吸引力的博客界面</a></h3>
+                        <p class="article-excerpt">学习设计原则和技巧，打造吸引人的博客界面，提升用户体验和视觉效果。</p>
+                        <div class="article-meta">
+                            <div class="meta-left">
+                                <span class="author">xiaolin</span>
+                                <span class="date">2023-06-10</span>
+                            </div>
+                            <div class="meta-right">
+                                <span class="read-time">6 分钟阅读</span>
+                                <span class="views"><i class="fas fa-eye"></i> 723</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="article-card">
+                    <div class="article-image">
+                        <img src="./images/placeholder.svg" alt="文章标题">
+                        <div class="article-category">后端</div>
+                    </div>
+                    <div class="article-content">
+                        <h3 class="article-title"><a href="article.html">WordPress与静态博客生成器的比较</a></h3>
+                        <p class="article-excerpt">分析WordPress和静态博客生成器的优缺点，帮助你选择适合自己的博客平台。</p>
+                        <div class="article-meta">
+                            <div class="meta-left">
+                                <span class="author">xiaolin</span>
+                                <span class="date">2023-06-05</span>
+                            </div>
+                            <div class="meta-right">
+                                <span class="read-time">7 分钟阅读</span>
+                                <span class="views"><i class="fas fa-eye"></i> 612</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="article-card">
+                    <div class="article-image">
+                        <img src="./images/placeholder.svg" alt="文章标题">
+                        <div class="article-category">前端</div>
+                    </div>
+                    <div class="article-content">
+                        <h3 class="article-title"><a href="article.html">现代CSS技巧：Grid和Flexbox布局详解</a></h3>
+                        <p class="article-excerpt">深入了解CSS Grid和Flexbox布局系统，掌握现代网页布局技术。</p>
+                        <div class="article-meta">
+                            <div class="meta-left">
+                                <span class="author">xiaolin</span>
+                                <span class="date">2023-06-01</span>
+                            </div>
+                            <div class="meta-right">
+                                <span class="read-time">10 分钟阅读</span>
+                                <span class="views"><i class="fas fa-eye"></i> 945</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="article-card">
+                    <div class="article-image">
+                        <img src="./images/placeholder.svg" alt="文章标题">
+                        <div class="article-category">资源</div>
+                    </div>
+                    <div class="article-content">
+                        <h3 class="article-title"><a href="article.html">2023年最佳前端开发工具推荐</a></h3>
+                        <p class="article-excerpt">精选2023年最实用的前端开发工具和资源，提升开发效率和代码质量。</p>
+                        <div class="article-meta">
+                            <div class="meta-left">
+                                <span class="author">xiaolin</span>
+                                <span class="date">2023-05-28</span>
+                            </div>
+                            <div class="meta-right">
+                                <span class="read-time">8 分钟阅读</span>
+                                <span class="views"><i class="fas fa-eye"></i> 1256</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pagination">
+                <a href="#" class="prev disabled"><i class="fas fa-angle-left"></i> 上一页</a>
+                <div class="page-numbers">
+                    <a href="#" class="active">1</a>
+                    <a href="#">2</a>
+                    <a href="#">3</a>
+                    <span>...</span>
+                    <a href="#">10</a>
+                </div>
+                <a href="#" class="next">下一页 <i class="fas fa-angle-right"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="./images/logo.svg" alt="QWQ博客">
+                    <p>QWQ博客 - 一个简洁、美观的个人博客模板</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-links-column">
+                        <h3>导航</h3>
+                        <ul>
+                            <li><a href="index.html">首页</a></li>
+                            <li><a href="articles.html">文章列表</a></li>
+                            <li><a href="about.html">关于我</a></li>
+                            <li><a href="contact.html">联系方式</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-links-column">
+                        <h3>分类</h3>
+                        <ul>
+                            <li><a href="#">前端开发</a></li>
+                            <li><a href="#">后端开发</a></li>
+                            <li><a href="#">UI/UX设计</a></li>
+                            <li><a href="#">工具资源</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-links-column">
+                        <h3>关注我</h3>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-github"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-weibo"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>Copyright © 2023 QWQ博客 by xiaolin. All rights reserved.</p>
+                <p>粤ICP备XXXXXXXX号-X | <a href="#">隐私政策</a> | <a href="#">服务条款</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <div class="search-modal">
+        <div class="search-container">
+            <div class="search-header">
+                <h3>搜索</h3>
+                <button class="close-search"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="search-form">
+                <input type="text" placeholder="输入关键词搜索...">
+                <button type="submit"><i class="fas fa-search"></i></button>
+            </div>
+            <div class="search-results">
+                <!-- 搜索结果将在这里动态显示 -->
+            </div>
+        </div>
+    </div>
+
+    <script src="./js/main.js"></script>
+</body>
+</html>

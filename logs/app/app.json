@@ -1,0 +1,438 @@
+{"time":"2025-07-29T09:35:20.6132482+08:00","level":"DEBUG","group":"main","message":"Config is singleton initialized: true","caller":"proc.go:283"}
+{"time":"2025-07-29T09:35:20.6132482+08:00","level":"DEBUG","group":"main","message":"app init","caller":"proc.go:283"}
+{"time":"2025-07-29T09:35:28.6821688+08:00","level":"DEBUG","group":"main","message":"Config is singleton initialized: true","caller":"proc.go:283"}
+{"time":"2025-07-29T09:35:28.6821688+08:00","level":"DEBUG","group":"main","message":"app init","caller":"proc.go:283"}
+{"time":"2025-07-29T16:41:02.3636686+08:00","level":"DEBUG","group":"main","message":"Config is singleton initialized: true","caller":"proc.go:283"}
+{"time":"2025-07-29T16:41:02.3636686+08:00","level":"DEBUG","group":"main","message":"app init","caller":"proc.go:283"}
+{"time":"2025-07-29T16:41:17.8001457+08:00","level":"DEBUG","group":"main","message":"Global 404 handler set","caller":"router_v1.go:24"}
+{"time":"2025-07-29T16:41:17.8001457+08:00","level":"INFO","group":"main","message":"Mapped static path: / -> resources/public","caller":"router_v1.go:38"}
+{"time":"2025-07-29T16:41:17.8001457+08:00","level":"INFO","group":"main","message":"Gin服务启动中","caller":"service_manager.go:113"}
+{"time":"2025-07-29T16:41:17.8001457+08:00","level":"INFO","group":"main","message":"Starting server at :5000","caller":"gin_v1.go:42"}
+{"time":"2025-07-29T16:44:19.1700667+08:00","level":"DEBUG","group":"main","message":"Shutting down services...","caller":"proc.go:283"}
+{"time":"2025-07-29T16:44:19.1700667+08:00","level":"INFO","group":"main","message":"Received signal: interrupt, shutting down server...","caller":"httpcore.go:385"}
+{"time":"2025-07-29T16:44:19.1700667+08:00","level":"DEBUG","group":"main","message":"Gracefully shutting down connection pool...","caller":"httpcore.go:385"}
+{"time":"2025-07-29T16:44:19.1700667+08:00","level":"DEBUG","group":"main","message":"Shutting down HTTP server...","caller":"httpcore.go:385"}
+{"time":"2025-07-29T16:44:19.170583+08:00","level":"INFO","group":"main","message":"Server gracefully stopped","caller":"httpcore.go:385"}
+{"time":"2025-07-29T19:52:17.204712+08:00","level":"DEBUG","group":"main","message":"Config is singleton initialized: true","caller":"proc.go:283"}
+{"time":"2025-07-29T19:52:17.204712+08:00","level":"DEBUG","group":"main","message":"app init","caller":"proc.go:283"}
+{"time":"2025-07-29T19:52:31.1697275+08:00","level":"DEBUG","group":"main","message":"Global 404 handler set","caller":"router_v1.go:24"}
+{"time":"2025-07-29T19:52:31.1697275+08:00","level":"INFO","group":"main","message":"Mapped static path: / -> resources/public","caller":"router_v1.go:38"}
+{"time":"2025-07-29T19:52:31.1702755+08:00","level":"INFO","group":"main","message":"Gin服务启动中","caller":"service_manager.go:113"}
+{"time":"2025-07-29T19:52:31.1702755+08:00","level":"INFO","group":"main","message":"Starting server at :5000","caller":"gin_v1.go:42"}
+{"time":"2025-07-29T19:55:31.4978391+08:00","level":"INFO","group":"main","message":"Received signal: interrupt, shutting down server...","caller":"httpcore.go:385"}
+{"time":"2025-07-29T19:55:31.4978391+08:00","level":"DEBUG","group":"main","message":"Shutting down services...","caller":"proc.go:283"}
+{"time":"2025-07-29T19:55:31.4978391+08:00","level":"DEBUG","group":"main","message":"Gracefully shutting down connection pool...","caller":"httpcore.go:385"}
+{"time":"2025-07-29T19:55:31.4978391+08:00","level":"DEBUG","group":"main","message":"Shutting down HTTP server...","caller":"httpcore.go:385"}
+{"time":"2025-07-29T19:55:31.4981517+08:00","level":"INFO","group":"main","message":"Server gracefully stopped","caller":"httpcore.go:385"}
+{"time":"2025-07-29T19:55:39.7888513+08:00","level":"DEBUG","group":"main","message":"Config is singleton initialized: true","caller":"proc.go:283"}
+{"time":"2025-07-29T19:55:39.7888513+08:00","level":"DEBUG","group":"main","message":"app init","caller":"proc.go:283"}
+{"time":"2025-07-29T19:55:53.501603+08:00","level":"DEBUG","group":"main","message":"Global 404 handler set","caller":"router_v1.go:24"}
+{"time":"2025-07-29T19:55:53.501603+08:00","level":"INFO","group":"main","message":"Mapped static path: / -> resources/public","caller":"router_v1.go:38"}
+{"time":"2025-07-29T19:55:53.5021095+08:00","level":"INFO","group":"main","message":"Gin服务启动中","caller":"service_manager.go:113"}
+{"time":"2025-07-29T19:55:53.5021095+08:00","level":"INFO","group":"main","message":"Starting server at :5000","caller":"gin_v1.go:42"}
+{"time":"2025-07-29T19:56:36.1219839+08:00","level":"DEBUG","group":"main","message":"Request started: [::1] POST /api/v1/user/login","caller":"httpcore.go:323"}
+{"time":"2025-07-29T19:56:36.7307949+08:00","level":"INFO","group":"main","message":"[39dca26b-e13a-4988-8b22-ac7575e7a168] [::1] /api/v1/user/login 200 608.811ms","caller":"httpcore.go:291"}
+{"time":"2025-07-29T19:56:47.3273992+08:00","level":"DEBUG","group":"main","message":"Request started: [::1] POST /api/v1/user/login","caller":"httpcore.go:323"}
+{"time":"2025-07-29T19:56:47.3679164+08:00","level":"INFO","group":"main","message":"[470bf8ed-b56e-47bd-acef-8231b87978d2] [::1] /api/v1/user/login 200 40.5172ms","caller":"httpcore.go:291"}
+{"time":"2025-07-29T19:57:48.5027321+08:00","level":"DEBUG","group":"main","message":"Request started: [::1] POST /api/v1/user/register","caller":"httpcore.go:323"}
+{"time":"2025-07-29T19:57:49.3627326+08:00","level":"INFO","group":"main","message":"[e4c57028-396f-4e26-80a2-7a802eddaeb1] [::1] /api/v1/user/register 200 860.0005ms","caller":"httpcore.go:291"}
+{"time":"2025-07-29T19:58:00.8971164+08:00","level":"DEBUG","group":"main","message":"Request started: [::1] POST /api/v1/user/login","caller":"httpcore.go:323"}
+{"time":"2025-07-29T19:58:01.3137252+08:00","level":"INFO","group":"main","message":"[b4092cb3-f5f2-44a1-b7a5-31c3977e0191] [::1] /api/v1/user/login 500 416.6088ms","caller":"httpcore.go:291"}
+{"time":"2025-07-29T19:59:56.8506206+08:00","level":"DEBUG","group":"main","message":"Shutting down services...","caller":"proc.go:283"}
+{"time":"2025-07-29T19:59:56.8506206+08:00","level":"INFO","group":"main","message":"Received signal: interrupt, shutting down server...","caller":"httpcore.go:385"}
+{"time":"2025-07-29T19:59:56.8506206+08:00","level":"DEBUG","group":"main","message":"Gracefully shutting down connection pool...","caller":"httpcore.go:385"}
+{"time":"2025-07-29T19:59:56.8506206+08:00","level":"DEBUG","group":"main","message":"Shutting down HTTP server...","caller":"httpcore.go:385"}
+{"time":"2025-07-29T19:59:56.8506206+08:00","level":"INFO","group":"main","message":"Server gracefully stopped","caller":"httpcore.go:385"}
+{"time":"2025-07-29T20:00:03.4266806+08:00","level":"DEBUG","group":"main","message":"Config is singleton initialized: true","caller":"proc.go:283"}
+{"time":"2025-07-29T20:00:03.4266806+08:00","level":"DEBUG","group":"main","message":"app init","caller":"proc.go:283"}
+{"time":"2025-07-29T20:00:15.366866+08:00","level":"DEBUG","group":"main","message":"Global 404 handler set","caller":"router_v1.go:24"}
+{"time":"2025-07-29T20:00:15.3673794+08:00","level":"INFO","group":"main","message":"Mapped static path: / -> resources/public","caller":"router_v1.go:38"}
+{"time":"2025-07-29T20:00:15.3673794+08:00","level":"INFO","group":"main","message":"Gin服务启动中","caller":"service_manager.go:113"}
+{"time":"2025-07-29T20:00:15.3680795+08:00","level":"INFO","group":"main","message":"Starting server at :5000","caller":"gin_v1.go:42"}
+{"time":"2025-07-29T20:00:21.7573328+08:00","level":"DEBUG","group":"main","message":"Request started: [::1] POST /api/v1/user/login","caller":"httpcore.go:323"}
+{"time":"2025-07-29T20:00:21.9215666+08:00","level":"INFO","group":"main","message":"[fc9c3bbd-91d1-4127-9406-136626f03038] [::1] /api/v1/user/login 200 164.2338ms","caller":"httpcore.go:291"}
+{"time":"2025-07-29T20:01:45.3776109+08:00","level":"INFO","group":"main","message":"Received signal: interrupt, shutting down server...","caller":"httpcore.go:385"}
+{"time":"2025-07-29T20:01:45.3776109+08:00","level":"DEBUG","group":"main","message":"Gracefully shutting down connection pool...","caller":"httpcore.go:385"}
+{"time":"2025-07-29T20:01:45.3776109+08:00","level":"DEBUG","group":"main","message":"Shutting down services...","caller":"proc.go:283"}
+{"time":"2025-07-29T20:01:45.3776109+08:00","level":"DEBUG","group":"main","message":"Shutting down HTTP server...","caller":"httpcore.go:385"}
+{"time":"2025-07-29T20:01:45.3776109+08:00","level":"INFO","group":"main","message":"Server gracefully stopped","caller":"httpcore.go:385"}
+{"time":"2025-07-29T20:02:11.143207+08:00","level":"DEBUG","group":"main","message":"Config is singleton initialized: true","caller":"proc.go:283"}
+{"time":"2025-07-29T20:02:11.143207+08:00","level":"DEBUG","group":"main","message":"app init","caller":"proc.go:283"}
+{"time":"2025-07-29T20:02:24.7956946+08:00","level":"DEBUG","group":"main","message":"Global 404 handler set","caller":"router_v1.go:24"}
+{"time":"2025-07-29T20:02:24.7956946+08:00","level":"INFO","group":"main","message":"Mapped static path: / -> resources/public","caller":"router_v1.go:38"}
+{"time":"2025-07-29T20:02:24.7956946+08:00","level":"INFO","group":"main","message":"Gin服务启动中","caller":"service_manager.go:113"}
+{"time":"2025-07-29T20:02:24.7956946+08:00","level":"INFO","group":"main","message":"Starting server at :5000","caller":"gin_v1.go:42"}
+{"time":"2025-07-29T20:02:52.9615643+08:00","level":"DEBUG","group":"main","message":"Request started: [::1] POST /api/v1/user/login","caller":"httpcore.go:323"}
+{"time":"2025-07-29T20:02:53.1185236+08:00","level":"INFO","group":"main","message":"[842c5de8-69d1-46c6-ae62-2c70e0147e16] [::1] /api/v1/user/login 200 156.9593ms","caller":"httpcore.go:291"}
+{"time":"2025-07-29T20:03:07.1378967+08:00","level":"DEBUG","group":"main","message":"Shutting down services...","caller":"proc.go:283"}
+{"time":"2025-07-29T20:03:07.1378967+08:00","level":"INFO","group":"main","message":"Received signal: interrupt, shutting down server...","caller":"httpcore.go:385"}
+{"time":"2025-07-29T20:03:07.1378967+08:00","level":"DEBUG","group":"main","message":"Gracefully shutting down connection pool...","caller":"httpcore.go:385"}
+{"time":"2025-07-29T20:03:07.1378967+08:00","level":"DEBUG","group":"main","message":"Shutting down HTTP server...","caller":"httpcore.go:385"}
+{"time":"2025-07-29T20:03:07.1378967+08:00","level":"INFO","group":"main","message":"Server gracefully stopped","caller":"httpcore.go:385"}
+{"time":"2025-07-29T20:03:13.8794372+08:00","level":"DEBUG","group":"main","message":"Config is singleton initialized: true","caller":"proc.go:283"}
+{"time":"2025-07-29T20:03:13.8794372+08:00","level":"DEBUG","group":"main","message":"app init","caller":"proc.go:283"}
+{"time":"2025-07-29T20:03:29.2216063+08:00","level":"DEBUG","group":"main","message":"Global 404 handler set","caller":"router_v1.go:24"}
+{"time":"2025-07-29T20:03:29.2216063+08:00","level":"INFO","group":"main","message":"Mapped static path: / -> resources/public","caller":"router_v1.go:38"}
+{"time":"2025-07-29T20:03:29.2216063+08:00","level":"INFO","group":"main","message":"Gin服务启动中","caller":"service_manager.go:113"}
+{"time":"2025-07-29T20:03:29.2216063+08:00","level":"INFO","group":"main","message":"Starting server at :5000","caller":"gin_v1.go:42"}
+{"time":"2025-07-29T20:03:33.7927288+08:00","level":"DEBUG","group":"main","message":"Request started: [::1] POST /api/v1/user/login","caller":"httpcore.go:323"}
+{"time":"2025-07-29T20:05:26.2477809+08:00","level":"INFO","group":"main","message":"[83ae9f9c-9650-4831-af8b-66ddcc399b50] [::1] /api/v1/user/login 200 1m52.4550521s","caller":"httpcore.go:291"}
+{"time":"2025-07-29T20:05:26.2747238+08:00","level":"DEBUG","group":"main","message":"Shutting down services...","caller":"proc.go:283"}
+{"time":"2025-07-29T20:05:26.2752317+08:00","level":"INFO","group":"main","message":"Received signal: interrupt, shutting down server...","caller":"httpcore.go:385"}
+{"time":"2025-07-29T20:05:26.2752317+08:00","level":"DEBUG","group":"main","message":"Gracefully shutting down connection pool...","caller":"httpcore.go:385"}
+{"time":"2025-07-29T20:05:26.2752317+08:00","level":"DEBUG","group":"main","message":"Shutting down HTTP server...","caller":"httpcore.go:385"}
+{"time":"2025-07-29T20:05:26.2752317+08:00","level":"INFO","group":"main","message":"Server gracefully stopped","caller":"httpcore.go:385"}
+{"time":"2025-07-29T20:06:06.0078914+08:00","level":"DEBUG","group":"main","message":"Config is singleton initialized: true","caller":"proc.go:283"}
+{"time":"2025-07-29T20:06:06.0078914+08:00","level":"DEBUG","group":"main","message":"app init","caller":"proc.go:283"}
+{"time":"2025-07-29T20:06:18.5242476+08:00","level":"DEBUG","group":"main","message":"Global 404 handler set","caller":"router_v1.go:24"}
+{"time":"2025-07-29T20:06:18.5247577+08:00","level":"INFO","group":"main","message":"Mapped static path: / -> resources/public","caller":"router_v1.go:38"}
+{"time":"2025-07-29T20:06:18.525351+08:00","level":"INFO","group":"main","message":"Gin服务启动中","caller":"service_manager.go:113"}
+{"time":"2025-07-29T20:06:18.525351+08:00","level":"INFO","group":"main","message":"Starting server at :5000","caller":"gin_v1.go:42"}
+{"time":"2025-07-29T20:06:21.4752261+08:00","level":"DEBUG","group":"main","message":"Request started: [::1] POST /api/v1/user/register","caller":"httpcore.go:323"}
+{"time":"2025-07-29T20:08:05.0981885+08:00","level":"INFO","group":"main","message":"[0f9d7bab-422e-4c2d-8a1b-8a76a76c9f92] [::1] /api/v1/user/register 200 1m43.6224568s","caller":"httpcore.go:291"}
+{"time":"2025-07-29T20:08:15.6324417+08:00","level":"DEBUG","group":"main","message":"Request started: [::1] POST /api/v1/user/register","caller":"httpcore.go:323"}
+{"time":"2025-07-29T20:08:19.0722298+08:00","level":"INFO","group":"main","message":"[6dde4c0b-8b8b-4038-b0b6-4b545a490ce9] [::1] /api/v1/user/register 200 3.4397881s","caller":"httpcore.go:291"}
+{"time":"2025-07-29T20:08:45.1511675+08:00","level":"DEBUG","group":"main","message":"Request started: [::1] POST /api/v1/user/register","caller":"httpcore.go:323"}
+{"time":"2025-07-29T20:10:27.9819473+08:00","level":"INFO","group":"main","message":"[0b42d00d-63eb-447b-9e84-a0b64921b435] [::1] /api/v1/user/register 200 1m42.8313181s","caller":"httpcore.go:291"}
+{"time":"2025-07-29T20:10:32.2183837+08:00","level":"DEBUG","group":"main","message":"Request started: [::1] POST /api/v1/user/register","caller":"httpcore.go:323"}
+{"time":"2025-07-29T20:12:09.8561989+08:00","level":"INFO","group":"main","message":"[d441eea3-bf3b-4c30-a9b6-667e97154e3a] [::1] /api/v1/user/register 200 1m37.6378152s","caller":"httpcore.go:291"}
+{"time":"2025-07-29T20:13:28.4771175+08:00","level":"DEBUG","group":"main","message":"Request started: [::1] POST /api/v1/user/login","caller":"httpcore.go:323"}
+{"time":"2025-07-29T20:13:31.6000213+08:00","level":"INFO","group":"main","message":"[80c19307-8681-4cb7-bbd3-0d3f96c89d5b] [::1] /api/v1/user/login 500 3.1229038s","caller":"httpcore.go:291"}
+{"time":"2025-07-29T20:14:27.9451757+08:00","level":"DEBUG","group":"main","message":"Shutting down services...","caller":"proc.go:283"}
+{"time":"2025-07-29T20:14:27.9451757+08:00","level":"INFO","group":"main","message":"Received signal: interrupt, shutting down server...","caller":"httpcore.go:385"}
+{"time":"2025-07-29T20:14:27.9451757+08:00","level":"DEBUG","group":"main","message":"Gracefully shutting down connection pool...","caller":"httpcore.go:385"}
+{"time":"2025-07-29T20:14:27.9451757+08:00","level":"DEBUG","group":"main","message":"Shutting down HTTP server...","caller":"httpcore.go:385"}
+{"time":"2025-07-29T20:14:27.9457798+08:00","level":"INFO","group":"main","message":"Server gracefully stopped","caller":"httpcore.go:385"}
+{"time":"2025-07-29T21:28:02.5266618+08:00","level":"DEBUG","group":"main","message":"Config is singleton initialized: true","caller":"proc.go:283"}
+{"time":"2025-07-29T21:28:02.5266618+08:00","level":"DEBUG","group":"main","message":"app init","caller":"proc.go:283"}
+{"time":"2025-07-29T21:28:11.8471727+08:00","level":"DEBUG","group":"main","message":"Global 404 handler set","caller":"router_v1.go:24"}
+{"time":"2025-07-29T21:28:11.8476942+08:00","level":"INFO","group":"main","message":"Mapped static path: / -> resources/public","caller":"router_v1.go:38"}
+{"time":"2025-07-29T21:28:11.8476942+08:00","level":"INFO","group":"main","message":"Gin服务启动中","caller":"service_manager.go:113"}
+{"time":"2025-07-29T21:28:11.8476942+08:00","level":"INFO","group":"main","message":"Starting server at :5000","caller":"gin_v1.go:42"}
+{"time":"2025-07-29T21:30:48.3003154+08:00","level":"DEBUG","group":"main","message":"Shutting down services...","caller":"proc.go:283"}
+{"time":"2025-07-29T21:30:48.3003154+08:00","level":"INFO","group":"main","message":"Received signal: interrupt, shutting down server...","caller":"httpcore.go:385"}
+{"time":"2025-07-29T21:30:48.3003154+08:00","level":"DEBUG","group":"main","message":"Gracefully shutting down connection pool...","caller":"httpcore.go:385"}
+{"time":"2025-07-29T21:30:48.3003154+08:00","level":"DEBUG","group":"main","message":"Shutting down HTTP server...","caller":"httpcore.go:385"}
+{"time":"2025-07-29T21:30:48.3003154+08:00","level":"INFO","group":"main","message":"Server gracefully stopped","caller":"httpcore.go:385"}
+{"time":"2025-07-29T21:31:01.719801+08:00","level":"DEBUG","group":"main","message":"Config is singleton initialized: true","caller":"proc.go:283"}
+{"time":"2025-07-29T21:31:01.719801+08:00","level":"DEBUG","group":"main","message":"app init","caller":"proc.go:283"}
+{"time":"2025-07-29T21:31:12.5435555+08:00","level":"DEBUG","group":"main","message":"Global 404 handler set","caller":"router_v1.go:24"}
+{"time":"2025-07-29T21:31:12.5435555+08:00","level":"INFO","group":"main","message":"Mapped static path: / -> resources/public","caller":"router_v1.go:38"}
+{"time":"2025-07-29T21:31:12.5435555+08:00","level":"INFO","group":"main","message":"Gin服务启动中","caller":"service_manager.go:113"}
+{"time":"2025-07-29T21:31:12.5435555+08:00","level":"INFO","group":"main","message":"Starting server at :5000","caller":"gin_v1.go:42"}
+{"time":"2025-07-29T21:33:24.8839686+08:00","level":"DEBUG","group":"main","message":"Config is singleton initialized: true","caller":"proc.go:283"}
+{"time":"2025-07-29T21:33:24.8839686+08:00","level":"DEBUG","group":"main","message":"app init","caller":"proc.go:283"}
+{"time":"2025-07-29T21:33:27.241265+08:00","level":"DEBUG","group":"main","message":"Global 404 handler set","caller":"router_v1.go:24"}
+{"time":"2025-07-29T21:33:27.241265+08:00","level":"INFO","group":"main","message":"Mapped static path: / -> resources/public","caller":"router_v1.go:38"}
+{"time":"2025-07-29T21:33:27.241265+08:00","level":"INFO","group":"main","message":"Gin服务启动中","caller":"service_manager.go:113"}
+{"time":"2025-07-29T21:33:27.241265+08:00","level":"INFO","group":"main","message":"Starting server at :5000","caller":"gin_v1.go:42"}
+{"time":"2025-07-29T21:33:55.5495407+08:00","level":"DEBUG","group":"main","message":"Request started: [::1] POST /api/v1/user/register","caller":"httpcore.go:323"}
+{"time":"2025-07-29T21:33:55.5500457+08:00","level":"INFO","group":"main","message":"[af569b26-0231-4038-b3b0-4ec8585f27f2] [::1] /api/v1/user/register 200 505µs","caller":"httpcore.go:291"}
+{"time":"2025-07-29T21:36:30.4393989+08:00","level":"DEBUG","group":"main","message":"Shutting down services...","caller":"proc.go:283"}
+{"time":"2025-07-29T21:36:30.4393989+08:00","level":"INFO","group":"main","message":"Received signal: interrupt, shutting down server...","caller":"httpcore.go:385"}
+{"time":"2025-07-29T21:36:30.4393989+08:00","level":"DEBUG","group":"main","message":"Gracefully shutting down connection pool...","caller":"httpcore.go:385"}
+{"time":"2025-07-29T21:36:30.4393989+08:00","level":"DEBUG","group":"main","message":"Shutting down HTTP server...","caller":"httpcore.go:385"}
+{"time":"2025-07-29T21:36:30.4399097+08:00","level":"INFO","group":"main","message":"Server gracefully stopped","caller":"httpcore.go:385"}
+{"time":"2025-07-29T21:36:44.091677+08:00","level":"DEBUG","group":"main","message":"Config is singleton initialized: true","caller":"proc.go:283"}
+{"time":"2025-07-29T21:36:44.091677+08:00","level":"DEBUG","group":"main","message":"app init","caller":"proc.go:283"}
+{"time":"2025-07-29T21:36:51.3697307+08:00","level":"DEBUG","group":"main","message":"Global 404 handler set","caller":"router_v1.go:24"}
+{"time":"2025-07-29T21:36:51.3697307+08:00","level":"INFO","group":"main","message":"Mapped static path: / -> resources/public","caller":"router_v1.go:38"}
+{"time":"2025-07-29T21:36:51.3697307+08:00","level":"INFO","group":"main","message":"Gin服务启动中","caller":"service_manager.go:113"}
+{"time":"2025-07-29T21:36:51.3702374+08:00","level":"INFO","group":"main","message":"Starting server at :5000","caller":"gin_v1.go:42"}
+{"time":"2025-07-29T21:37:11.9921464+08:00","level":"DEBUG","group":"main","message":"Request started: [::1] POST /api/v1/user/register","caller":"httpcore.go:323"}
+{"time":"2025-07-29T21:37:12.2668244+08:00","level":"INFO","group":"main","message":"[c959ad31-f222-4525-ad3f-a381344218ee] [::1] /api/v1/user/register 200 274.678ms","caller":"httpcore.go:291"}
+{"time":"2025-07-29T21:37:23.2134848+08:00","level":"DEBUG","group":"main","message":"Request started: [::1] POST /api/v1/user/login","caller":"httpcore.go:323"}
+{"time":"2025-07-29T21:37:23.5114179+08:00","level":"INFO","group":"main","message":"[17bea23b-d4a0-43fb-b78d-154bfea08345] [::1] /api/v1/user/login 500 297.9331ms","caller":"httpcore.go:291"}
+{"time":"2025-07-29T21:40:39.3752967+08:00","level":"DEBUG","group":"main","message":"Shutting down services...","caller":"proc.go:283"}
+{"time":"2025-07-29T21:40:39.3752967+08:00","level":"INFO","group":"main","message":"Received signal: interrupt, shutting down server...","caller":"httpcore.go:385"}
+{"time":"2025-07-29T21:40:39.3752967+08:00","level":"DEBUG","group":"main","message":"Gracefully shutting down connection pool...","caller":"httpcore.go:385"}
+{"time":"2025-07-29T21:40:39.3752967+08:00","level":"DEBUG","group":"main","message":"Shutting down HTTP server...","caller":"httpcore.go:385"}
+{"time":"2025-07-29T21:40:39.3752967+08:00","level":"INFO","group":"main","message":"Server gracefully stopped","caller":"httpcore.go:385"}
+{"time":"2025-07-29T21:40:53.3416583+08:00","level":"DEBUG","group":"main","message":"Config is singleton initialized: true","caller":"proc.go:283"}
+{"time":"2025-07-29T21:40:53.3416583+08:00","level":"DEBUG","group":"main","message":"app init","caller":"proc.go:283"}
+{"time":"2025-07-29T21:41:02.7960538+08:00","level":"DEBUG","group":"main","message":"Global 404 handler set","caller":"router_v1.go:24"}
+{"time":"2025-07-29T21:41:02.7960538+08:00","level":"INFO","group":"main","message":"Mapped static path: / -> resources/public","caller":"router_v1.go:38"}
+{"time":"2025-07-29T21:41:02.7965949+08:00","level":"INFO","group":"main","message":"Gin服务启动中","caller":"service_manager.go:113"}
+{"time":"2025-07-29T21:41:02.7965949+08:00","level":"INFO","group":"main","message":"Starting server at :5000","caller":"gin_v1.go:42"}
+{"time":"2025-07-29T21:41:08.8857462+08:00","level":"DEBUG","group":"main","message":"Request started: [::1] POST /api/v1/user/login","caller":"httpcore.go:323"}
+{"time":"2025-07-29T21:41:09.0769274+08:00","level":"INFO","group":"main","message":"[2ed94514-b9e4-4253-899a-43cab3dd98a4] [::1] /api/v1/user/login 200 191.1812ms","caller":"httpcore.go:291"}
+{"time":"2025-07-29T21:41:27.6460508+08:00","level":"DEBUG","group":"main","message":"Shutting down services...","caller":"proc.go:283"}
+{"time":"2025-07-29T21:41:27.6460508+08:00","level":"INFO","group":"main","message":"Received signal: interrupt, shutting down server...","caller":"httpcore.go:385"}
+{"time":"2025-07-29T21:41:27.6460508+08:00","level":"DEBUG","group":"main","message":"Gracefully shutting down connection pool...","caller":"httpcore.go:385"}
+{"time":"2025-07-29T21:41:27.6460508+08:00","level":"DEBUG","group":"main","message":"Shutting down HTTP server...","caller":"httpcore.go:385"}
+{"time":"2025-07-29T21:41:27.6460508+08:00","level":"INFO","group":"main","message":"Server gracefully stopped","caller":"httpcore.go:385"}
+{"time":"2025-07-29T21:41:50.8330232+08:00","level":"DEBUG","group":"main","message":"Config is singleton initialized: true","caller":"proc.go:283"}
+{"time":"2025-07-29T21:41:50.8330232+08:00","level":"DEBUG","group":"main","message":"app init","caller":"proc.go:283"}
+{"time":"2025-07-29T21:41:56.3248805+08:00","level":"DEBUG","group":"main","message":"Global 404 handler set","caller":"router_v1.go:24"}
+{"time":"2025-07-29T21:41:56.3248805+08:00","level":"INFO","group":"main","message":"Mapped static path: / -> resources/public","caller":"router_v1.go:38"}
+{"time":"2025-07-29T21:41:56.3248805+08:00","level":"INFO","group":"main","message":"Gin服务启动中","caller":"service_manager.go:113"}
+{"time":"2025-07-29T21:41:56.3248805+08:00","level":"INFO","group":"main","message":"Starting server at :5000","caller":"gin_v1.go:42"}
+{"time":"2025-07-29T21:41:59.7568685+08:00","level":"INFO","group":"main","message":"Received signal: interrupt, shutting down server...","caller":"httpcore.go:385"}
+{"time":"2025-07-29T21:41:59.7568685+08:00","level":"DEBUG","group":"main","message":"Shutting down services...","caller":"proc.go:283"}
+{"time":"2025-07-29T21:41:59.7568685+08:00","level":"DEBUG","group":"main","message":"Gracefully shutting down connection pool...","caller":"httpcore.go:385"}
+{"time":"2025-07-29T21:41:59.7568685+08:00","level":"DEBUG","group":"main","message":"Shutting down HTTP server...","caller":"httpcore.go:385"}
+{"time":"2025-07-29T21:41:59.7568685+08:00","level":"INFO","group":"main","message":"Server gracefully stopped","caller":"httpcore.go:385"}
+{"time":"2025-07-29T21:42:03.4665611+08:00","level":"DEBUG","group":"main","message":"Config is singleton initialized: true","caller":"proc.go:283"}
+{"time":"2025-07-29T21:42:03.4665611+08:00","level":"DEBUG","group":"main","message":"app init","caller":"proc.go:283"}
+{"time":"2025-07-29T21:42:11.5532332+08:00","level":"DEBUG","group":"main","message":"Global 404 handler set","caller":"router_v1.go:24"}
+{"time":"2025-07-29T21:42:11.5532332+08:00","level":"INFO","group":"main","message":"Mapped static path: / -> resources/public","caller":"router_v1.go:38"}
+{"time":"2025-07-29T21:42:11.5532332+08:00","level":"INFO","group":"main","message":"Gin服务启动中","caller":"service_manager.go:113"}
+{"time":"2025-07-29T21:42:11.5532332+08:00","level":"INFO","group":"main","message":"Starting server at :5000","caller":"gin_v1.go:42"}
+{"time":"2025-07-29T21:42:51.6762613+08:00","level":"DEBUG","group":"main","message":"Request started: [::1] POST /api/v1/user/register","caller":"httpcore.go:323"}
+{"time":"2025-07-29T21:42:51.8091424+08:00","level":"INFO","group":"main","message":"[5a3bea52-31b5-4552-bd1d-48ef84b1e9b8] [::1] /api/v1/user/register 200 132.8811ms","caller":"httpcore.go:291"}
+{"time":"2025-07-29T21:43:12.0625428+08:00","level":"DEBUG","group":"main","message":"Shutting down services...","caller":"proc.go:283"}
+{"time":"2025-07-29T21:43:12.0625428+08:00","level":"INFO","group":"main","message":"Received signal: interrupt, shutting down server...","caller":"httpcore.go:385"}
+{"time":"2025-07-29T21:43:12.0625428+08:00","level":"DEBUG","group":"main","message":"Gracefully shutting down connection pool...","caller":"httpcore.go:385"}
+{"time":"2025-07-29T21:43:12.0630462+08:00","level":"DEBUG","group":"main","message":"Shutting down HTTP server...","caller":"httpcore.go:385"}
+{"time":"2025-07-29T21:43:12.0635598+08:00","level":"INFO","group":"main","message":"Server gracefully stopped","caller":"httpcore.go:385"}
+{"time":"2025-07-29T21:43:19.8675838+08:00","level":"DEBUG","group":"main","message":"Config is singleton initialized: true","caller":"proc.go:283"}
+{"time":"2025-07-29T21:43:19.8675838+08:00","level":"DEBUG","group":"main","message":"app init","caller":"proc.go:283"}
+{"time":"2025-07-29T21:43:21.1969621+08:00","level":"DEBUG","group":"main","message":"Global 404 handler set","caller":"router_v1.go:24"}
+{"time":"2025-07-29T21:43:21.1969621+08:00","level":"INFO","group":"main","message":"Mapped static path: / -> resources/public","caller":"router_v1.go:38"}
+{"time":"2025-07-29T21:43:21.1969621+08:00","level":"INFO","group":"main","message":"Gin服务启动中","caller":"service_manager.go:113"}
+{"time":"2025-07-29T21:43:21.1969621+08:00","level":"INFO","group":"main","message":"Starting server at :5000","caller":"gin_v1.go:42"}
+{"time":"2025-07-29T21:43:52.0760054+08:00","level":"DEBUG","group":"main","message":"Request started: [::1] POST /api/v1/user/register","caller":"httpcore.go:323"}
+{"time":"2025-07-29T21:43:52.8295995+08:00","level":"INFO","group":"main","message":"[c1ebff58-1c0e-4d69-8b0e-0fa8871952df] [::1] /api/v1/user/register 200 753.5941ms","caller":"httpcore.go:291"}
+{"time":"2025-07-29T21:44:03.9821147+08:00","level":"DEBUG","group":"main","message":"Request started: [::1] POST /api/v1/user/login","caller":"httpcore.go:323"}
+{"time":"2025-07-29T21:44:04.1831491+08:00","level":"INFO","group":"main","message":"[5153d825-6d58-4795-9388-1dbb6957037c] [::1] /api/v1/user/login 200 201.0344ms","caller":"httpcore.go:291"}
+{"time":"2025-07-29T21:44:25.5262053+08:00","level":"DEBUG","group":"main","message":"Shutting down services...","caller":"proc.go:283"}
+{"time":"2025-07-29T21:44:25.5262053+08:00","level":"INFO","group":"main","message":"Received signal: interrupt, shutting down server...","caller":"httpcore.go:385"}
+{"time":"2025-07-29T21:44:25.5262053+08:00","level":"DEBUG","group":"main","message":"Gracefully shutting down connection pool...","caller":"httpcore.go:385"}
+{"time":"2025-07-29T21:44:25.5262053+08:00","level":"DEBUG","group":"main","message":"Shutting down HTTP server...","caller":"httpcore.go:385"}
+{"time":"2025-07-29T21:44:25.5267854+08:00","level":"INFO","group":"main","message":"Server gracefully stopped","caller":"httpcore.go:385"}
+{"time":"2025-07-29T21:46:30.1423933+08:00","level":"DEBUG","group":"main","message":"Config is singleton initialized: true","caller":"proc.go:283"}
+{"time":"2025-07-29T21:46:30.1423933+08:00","level":"DEBUG","group":"main","message":"app init","caller":"proc.go:283"}
+{"time":"2025-07-29T21:46:39.6539771+08:00","level":"DEBUG","group":"main","message":"Global 404 handler set","caller":"router_v1.go:24"}
+{"time":"2025-07-29T21:46:39.6539771+08:00","level":"INFO","group":"main","message":"Mapped static path: / -> resources/public","caller":"router_v1.go:38"}
+{"time":"2025-07-29T21:46:39.6539771+08:00","level":"INFO","group":"main","message":"Gin服务启动中","caller":"service_manager.go:113"}
+{"time":"2025-07-29T21:46:39.6539771+08:00","level":"INFO","group":"main","message":"Starting server at :5000","caller":"gin_v1.go:42"}
+{"time":"2025-07-29T21:46:56.6414631+08:00","level":"DEBUG","group":"main","message":"Request started: [::1] POST /api/v1/user/login","caller":"httpcore.go:323"}
+{"time":"2025-07-29T21:46:56.8300804+08:00","level":"INFO","group":"main","message":"[9fc6c10a-9543-4d9d-951b-22a19504c5f8] [::1] /api/v1/user/login 200 188.6173ms","caller":"httpcore.go:291"}
+{"time":"2025-07-29T21:48:02.5976527+08:00","level":"INFO","group":"main","message":"Received signal: interrupt, shutting down server...","caller":"httpcore.go:385"}
+{"time":"2025-07-29T21:48:02.5976527+08:00","level":"DEBUG","group":"main","message":"Gracefully shutting down connection pool...","caller":"httpcore.go:385"}
+{"time":"2025-07-29T21:48:02.5976527+08:00","level":"DEBUG","group":"main","message":"Shutting down services...","caller":"proc.go:283"}
+{"time":"2025-07-29T21:48:02.5976527+08:00","level":"DEBUG","group":"main","message":"Shutting down HTTP server...","caller":"httpcore.go:385"}
+{"time":"2025-07-29T21:48:02.5976527+08:00","level":"INFO","group":"main","message":"Server gracefully stopped","caller":"httpcore.go:385"}
+{"time":"2025-07-29T21:48:13.2376935+08:00","level":"DEBUG","group":"main","message":"Config is singleton initialized: true","caller":"proc.go:283"}
+{"time":"2025-07-29T21:48:13.2376935+08:00","level":"DEBUG","group":"main","message":"app init","caller":"proc.go:283"}
+{"time":"2025-07-29T21:48:19.0003106+08:00","level":"DEBUG","group":"main","message":"Global 404 handler set","caller":"router_v1.go:24"}
+{"time":"2025-07-29T21:48:19.0003106+08:00","level":"INFO","group":"main","message":"Mapped static path: / -> resources/public","caller":"router_v1.go:38"}
+{"time":"2025-07-29T21:48:19.0111424+08:00","level":"INFO","group":"main","message":"Gin服务启动中","caller":"service_manager.go:113"}
+{"time":"2025-07-29T21:48:19.0111424+08:00","level":"INFO","group":"main","message":"Starting server at :5000","caller":"gin_v1.go:42"}
+{"time":"2025-07-29T21:48:27.7418148+08:00","level":"DEBUG","group":"main","message":"Request started: [::1] POST /api/v1/user/login","caller":"httpcore.go:323"}
+{"time":"2025-07-29T21:48:28.432411+08:00","level":"INFO","group":"main","message":"[a4f74a11-6065-4644-840e-824646eb91a0] [::1] /api/v1/user/login 200 690.5962ms","caller":"httpcore.go:291"}
+{"time":"2025-07-29T21:49:26.6918538+08:00","level":"DEBUG","group":"main","message":"Request started: [::1] POST /api/v1/user/login","caller":"httpcore.go:323"}
+{"time":"2025-07-29T21:49:26.7398901+08:00","level":"INFO","group":"main","message":"[1214eff9-1103-447e-8c10-728c6c8591ef] [::1] /api/v1/user/login 200 48.0363ms","caller":"httpcore.go:291"}
+{"time":"2025-07-29T21:49:28.2460253+08:00","level":"DEBUG","group":"main","message":"Request started: [::1] POST /api/v1/user/login","caller":"httpcore.go:323"}
+{"time":"2025-07-29T21:49:28.2938534+08:00","level":"INFO","group":"main","message":"[69e9602d-b1b0-41ac-a98f-1dd98169e8b2] [::1] /api/v1/user/login 200 47.8281ms","caller":"httpcore.go:291"}
+{"time":"2025-07-29T21:49:29.30475+08:00","level":"DEBUG","group":"main","message":"Request started: [::1] POST /api/v1/user/login","caller":"httpcore.go:323"}
+{"time":"2025-07-29T21:49:29.353181+08:00","level":"INFO","group":"main","message":"[69b16dee-9597-4b0a-8a82-386dcb981721] [::1] /api/v1/user/login 200 48.431ms","caller":"httpcore.go:291"}
+{"time":"2025-07-29T21:53:45.4327363+08:00","level":"DEBUG","group":"main","message":"Shutting down services...","caller":"proc.go:283"}
+{"time":"2025-07-29T21:53:45.4327363+08:00","level":"INFO","group":"main","message":"Received signal: interrupt, shutting down server...","caller":"httpcore.go:385"}
+{"time":"2025-07-29T21:53:45.4327363+08:00","level":"DEBUG","group":"main","message":"Gracefully shutting down connection pool...","caller":"httpcore.go:385"}
+{"time":"2025-07-29T21:53:45.4327363+08:00","level":"DEBUG","group":"main","message":"Shutting down HTTP server...","caller":"httpcore.go:385"}
+{"time":"2025-07-29T21:53:45.4327363+08:00","level":"INFO","group":"main","message":"Server gracefully stopped","caller":"httpcore.go:385"}
+{"time":"2025-07-29T21:53:55.8819387+08:00","level":"DEBUG","group":"main","message":"Config is singleton initialized: true","caller":"proc.go:283"}
+{"time":"2025-07-29T21:53:55.8819387+08:00","level":"DEBUG","group":"main","message":"app init","caller":"proc.go:283"}
+{"time":"2025-07-29T21:54:06.4023715+08:00","level":"DEBUG","group":"main","message":"Global 404 handler set","caller":"router_v1.go:24"}
+{"time":"2025-07-29T21:54:06.4023715+08:00","level":"INFO","group":"main","message":"Mapped static path: / -> resources/public","caller":"router_v1.go:38"}
+{"time":"2025-07-29T21:54:06.4023715+08:00","level":"INFO","group":"main","message":"Gin服务启动中","caller":"service_manager.go:113"}
+{"time":"2025-07-29T21:54:06.4029928+08:00","level":"INFO","group":"main","message":"Starting server at :5000","caller":"gin_v1.go:42"}
+{"time":"2025-07-29T21:54:10.2919438+08:00","level":"DEBUG","group":"main","message":"Request started: [::1] POST /api/v1/user/login","caller":"httpcore.go:323"}
+{"time":"2025-07-29T21:54:10.5025736+08:00","level":"INFO","group":"main","message":"[20fe61c5-0ee5-4e98-a4c5-db9c9a8bd5b2] [::1] /api/v1/user/login 200 210.6298ms","caller":"httpcore.go:291"}
+{"time":"2025-07-29T21:55:24.2547526+08:00","level":"DEBUG","group":"main","message":"Shutting down services...","caller":"proc.go:283"}
+{"time":"2025-07-29T21:55:24.2547526+08:00","level":"INFO","group":"main","message":"Received signal: interrupt, shutting down server...","caller":"httpcore.go:385"}
+{"time":"2025-07-29T21:55:24.2547526+08:00","level":"DEBUG","group":"main","message":"Gracefully shutting down connection pool...","caller":"httpcore.go:385"}
+{"time":"2025-07-29T21:55:24.2547526+08:00","level":"DEBUG","group":"main","message":"Shutting down HTTP server...","caller":"httpcore.go:385"}
+{"time":"2025-07-29T21:55:24.2547526+08:00","level":"INFO","group":"main","message":"Server gracefully stopped","caller":"httpcore.go:385"}
+{"time":"2025-07-29T21:55:34.9355909+08:00","level":"DEBUG","group":"main","message":"Config is singleton initialized: true","caller":"proc.go:283"}
+{"time":"2025-07-29T21:55:34.9355909+08:00","level":"DEBUG","group":"main","message":"app init","caller":"proc.go:283"}
+{"time":"2025-07-29T21:55:46.762126+08:00","level":"DEBUG","group":"main","message":"Global 404 handler set","caller":"router_v1.go:24"}
+{"time":"2025-07-29T21:55:46.762126+08:00","level":"INFO","group":"main","message":"Mapped static path: / -> resources/public","caller":"router_v1.go:38"}
+{"time":"2025-07-29T21:55:46.762126+08:00","level":"INFO","group":"main","message":"Gin服务启动中","caller":"service_manager.go:113"}
+{"time":"2025-07-29T21:55:46.762126+08:00","level":"INFO","group":"main","message":"Starting server at :5000","caller":"gin_v1.go:42"}
+{"time":"2025-07-29T21:55:49.1440577+08:00","level":"DEBUG","group":"main","message":"Request started: [::1] POST /api/v1/user/login","caller":"httpcore.go:323"}
+{"time":"2025-07-29T21:55:49.3468454+08:00","level":"INFO","group":"main","message":"[68bffb25-0973-478c-820b-69f02d8f868f] [::1] /api/v1/user/login 200 202.7877ms","caller":"httpcore.go:291"}
+{"time":"2025-07-29T21:56:02.1605187+08:00","level":"DEBUG","group":"main","message":"Shutting down services...","caller":"proc.go:283"}
+{"time":"2025-07-29T21:56:02.1605187+08:00","level":"INFO","group":"main","message":"Received signal: interrupt, shutting down server...","caller":"httpcore.go:385"}
+{"time":"2025-07-29T21:56:02.1605187+08:00","level":"DEBUG","group":"main","message":"Gracefully shutting down connection pool...","caller":"httpcore.go:385"}
+{"time":"2025-07-29T21:56:02.1605187+08:00","level":"DEBUG","group":"main","message":"Shutting down HTTP server...","caller":"httpcore.go:385"}
+{"time":"2025-07-29T21:56:02.1605187+08:00","level":"INFO","group":"main","message":"Server gracefully stopped","caller":"httpcore.go:385"}
+{"time":"2025-07-29T21:56:12.3477272+08:00","level":"DEBUG","group":"main","message":"Config is singleton initialized: true","caller":"proc.go:283"}
+{"time":"2025-07-29T21:56:12.3477272+08:00","level":"DEBUG","group":"main","message":"app init","caller":"proc.go:283"}
+{"time":"2025-07-29T21:56:20.8844877+08:00","level":"DEBUG","group":"main","message":"Global 404 handler set","caller":"router_v1.go:24"}
+{"time":"2025-07-29T21:56:20.8844877+08:00","level":"INFO","group":"main","message":"Mapped static path: / -> resources/public","caller":"router_v1.go:38"}
+{"time":"2025-07-29T21:56:20.8844877+08:00","level":"INFO","group":"main","message":"Gin服务启动中","caller":"service_manager.go:113"}
+{"time":"2025-07-29T21:56:20.8844877+08:00","level":"INFO","group":"main","message":"Starting server at :5000","caller":"gin_v1.go:42"}
+{"time":"2025-07-29T21:56:24.7271228+08:00","level":"DEBUG","group":"main","message":"Request started: [::1] POST /api/v1/user/login","caller":"httpcore.go:323"}
+{"time":"2025-07-29T21:56:24.9433797+08:00","level":"INFO","group":"main","message":"[0cf0934f-a762-411e-ad87-d5021775f9d9] [::1] /api/v1/user/login 200 216.2569ms","caller":"httpcore.go:291"}
+{"time":"2025-07-29T21:57:48.2906202+08:00","level":"DEBUG","group":"main","message":"Shutting down services...","caller":"proc.go:283"}
+{"time":"2025-07-29T21:57:48.2906202+08:00","level":"INFO","group":"main","message":"Received signal: interrupt, shutting down server...","caller":"httpcore.go:385"}
+{"time":"2025-07-29T21:57:48.2906202+08:00","level":"DEBUG","group":"main","message":"Gracefully shutting down connection pool...","caller":"httpcore.go:385"}
+{"time":"2025-07-29T21:57:48.2906202+08:00","level":"DEBUG","group":"main","message":"Shutting down HTTP server...","caller":"httpcore.go:385"}
+{"time":"2025-07-29T21:57:48.2906202+08:00","level":"INFO","group":"main","message":"Server gracefully stopped","caller":"httpcore.go:385"}
+{"time":"2025-07-29T21:58:00.6015664+08:00","level":"DEBUG","group":"main","message":"Config is singleton initialized: true","caller":"proc.go:283"}
+{"time":"2025-07-29T21:58:00.6015664+08:00","level":"DEBUG","group":"main","message":"app init","caller":"proc.go:283"}
+{"time":"2025-07-29T21:58:07.6782192+08:00","level":"DEBUG","group":"main","message":"Global 404 handler set","caller":"router_v1.go:24"}
+{"time":"2025-07-29T21:58:07.6782192+08:00","level":"INFO","group":"main","message":"Mapped static path: / -> resources/public","caller":"router_v1.go:38"}
+{"time":"2025-07-29T21:58:07.6790968+08:00","level":"INFO","group":"main","message":"Gin服务启动中","caller":"service_manager.go:113"}
+{"time":"2025-07-29T21:58:07.6790968+08:00","level":"INFO","group":"main","message":"Starting server at :5000","caller":"gin_v1.go:42"}
+{"time":"2025-07-29T21:58:12.3951144+08:00","level":"DEBUG","group":"main","message":"Request started: [::1] POST /api/v1/user/login","caller":"httpcore.go:323"}
+{"time":"2025-07-29T21:58:12.5797531+08:00","level":"INFO","group":"main","message":"[866d64dc-4678-4c08-a6ba-d9c5b3179e7d] [::1] /api/v1/user/login 200 184.6387ms","caller":"httpcore.go:291"}
+{"time":"2025-07-29T21:59:04.9014698+08:00","level":"DEBUG","group":"main","message":"Shutting down services...","caller":"proc.go:283"}
+{"time":"2025-07-29T21:59:04.9014698+08:00","level":"INFO","group":"main","message":"Received signal: interrupt, shutting down server...","caller":"httpcore.go:385"}
+{"time":"2025-07-29T21:59:04.9014698+08:00","level":"DEBUG","group":"main","message":"Gracefully shutting down connection pool...","caller":"httpcore.go:385"}
+{"time":"2025-07-29T21:59:04.9014698+08:00","level":"DEBUG","group":"main","message":"Shutting down HTTP server...","caller":"httpcore.go:385"}
+{"time":"2025-07-29T21:59:04.9014698+08:00","level":"INFO","group":"main","message":"Server gracefully stopped","caller":"httpcore.go:385"}
+{"time":"2025-07-29T21:59:10.5076749+08:00","level":"DEBUG","group":"main","message":"Config is singleton initialized: true","caller":"proc.go:283"}
+{"time":"2025-07-29T21:59:10.5076749+08:00","level":"DEBUG","group":"main","message":"app init","caller":"proc.go:283"}
+{"time":"2025-07-29T22:00:09.1849572+08:00","level":"DEBUG","group":"main","message":"Config is singleton initialized: true","caller":"proc.go:283"}
+{"time":"2025-07-29T22:00:09.1849572+08:00","level":"DEBUG","group":"main","message":"app init","caller":"proc.go:283"}
+{"time":"2025-07-29T22:00:18.3237003+08:00","level":"DEBUG","group":"main","message":"Global 404 handler set","caller":"router_v1.go:24"}
+{"time":"2025-07-29T22:00:18.3237003+08:00","level":"INFO","group":"main","message":"Mapped static path: / -> resources/public","caller":"router_v1.go:38"}
+{"time":"2025-07-29T22:00:18.3242048+08:00","level":"INFO","group":"main","message":"Gin服务启动中","caller":"service_manager.go:113"}
+{"time":"2025-07-29T22:00:18.3242048+08:00","level":"INFO","group":"main","message":"Starting server at :5000","caller":"gin_v1.go:42"}
+{"time":"2025-07-29T22:00:41.7784942+08:00","level":"DEBUG","group":"main","message":"Request started: [::1] POST /api/v1/user/login","caller":"httpcore.go:323"}
+{"time":"2025-07-29T22:01:30.9560431+08:00","level":"INFO","group":"main","message":"[e8defca4-4f2e-4d00-9e6c-dab4995c26c1] [::1] /api/v1/user/login 200 49.1775489s","caller":"httpcore.go:291"}
+{"time":"2025-07-29T22:01:39.8650095+08:00","level":"DEBUG","group":"main","message":"Request started: [::1] POST /api/v1/user/login","caller":"httpcore.go:323"}
+{"time":"2025-07-29T22:03:05.236112+08:00","level":"INFO","group":"main","message":"[afe0a4ba-8292-47ef-a392-01e3d240b7c1] [::1] /api/v1/user/login 200 1m25.3711025s","caller":"httpcore.go:291"}
+{"time":"2025-07-29T22:03:12.3100301+08:00","level":"INFO","group":"main","message":"Received signal: interrupt, shutting down server...","caller":"httpcore.go:385"}
+{"time":"2025-07-29T22:03:12.3100301+08:00","level":"DEBUG","group":"main","message":"Shutting down services...","caller":"proc.go:283"}
+{"time":"2025-07-29T22:03:12.3100301+08:00","level":"DEBUG","group":"main","message":"Gracefully shutting down connection pool...","caller":"httpcore.go:385"}
+{"time":"2025-07-29T22:03:12.3100301+08:00","level":"DEBUG","group":"main","message":"Shutting down HTTP server...","caller":"httpcore.go:385"}
+{"time":"2025-07-29T22:03:12.3100301+08:00","level":"INFO","group":"main","message":"Server gracefully stopped","caller":"httpcore.go:385"}
+{"time":"2025-07-29T22:03:17.2516894+08:00","level":"DEBUG","group":"main","message":"Config is singleton initialized: true","caller":"proc.go:283"}
+{"time":"2025-07-29T22:03:17.2516894+08:00","level":"DEBUG","group":"main","message":"app init","caller":"proc.go:283"}
+{"time":"2025-07-29T22:03:22.5119492+08:00","level":"DEBUG","group":"main","message":"Global 404 handler set","caller":"router_v1.go:24"}
+{"time":"2025-07-29T22:03:22.5119492+08:00","level":"INFO","group":"main","message":"Mapped static path: / -> resources/public","caller":"router_v1.go:38"}
+{"time":"2025-07-29T22:03:22.5119492+08:00","level":"INFO","group":"main","message":"Gin服务启动中","caller":"service_manager.go:113"}
+{"time":"2025-07-29T22:03:22.5119492+08:00","level":"INFO","group":"main","message":"Starting server at :5000","caller":"gin_v1.go:42"}
+{"time":"2025-07-29T22:03:26.229196+08:00","level":"DEBUG","group":"main","message":"Request started: [::1] POST /api/v1/user/login","caller":"httpcore.go:323"}
+{"time":"2025-07-29T22:03:26.7500084+08:00","level":"INFO","group":"main","message":"[4c0d2aec-fb15-457f-81e9-39820841541a] [::1] /api/v1/user/login 200 520.8124ms","caller":"httpcore.go:291"}
+{"time":"2025-07-29T22:03:58.9949777+08:00","level":"INFO","group":"main","message":"Received signal: interrupt, shutting down server...","caller":"httpcore.go:385"}
+{"time":"2025-07-29T22:03:58.9949777+08:00","level":"DEBUG","group":"main","message":"Shutting down services...","caller":"proc.go:283"}
+{"time":"2025-07-29T22:03:58.9949777+08:00","level":"DEBUG","group":"main","message":"Gracefully shutting down connection pool...","caller":"httpcore.go:385"}
+{"time":"2025-07-29T22:03:58.9949777+08:00","level":"DEBUG","group":"main","message":"Shutting down HTTP server...","caller":"httpcore.go:385"}
+{"time":"2025-07-29T22:03:58.9949777+08:00","level":"INFO","group":"main","message":"Server gracefully stopped","caller":"httpcore.go:385"}
+{"time":"2025-07-29T22:04:02.4459562+08:00","level":"DEBUG","group":"main","message":"Config is singleton initialized: true","caller":"proc.go:283"}
+{"time":"2025-07-29T22:04:02.4459562+08:00","level":"DEBUG","group":"main","message":"app init","caller":"proc.go:283"}
+{"time":"2025-07-29T22:04:09.976489+08:00","level":"DEBUG","group":"main","message":"Global 404 handler set","caller":"router_v1.go:24"}
+{"time":"2025-07-29T22:04:09.976489+08:00","level":"INFO","group":"main","message":"Mapped static path: / -> resources/public","caller":"router_v1.go:38"}
+{"time":"2025-07-29T22:04:09.976489+08:00","level":"INFO","group":"main","message":"Gin服务启动中","caller":"service_manager.go:113"}
+{"time":"2025-07-29T22:04:09.976489+08:00","level":"INFO","group":"main","message":"Starting server at :5000","caller":"gin_v1.go:42"}
+{"time":"2025-07-29T22:04:17.7507802+08:00","level":"DEBUG","group":"main","message":"Request started: [::1] POST /api/v1/user/login","caller":"httpcore.go:323"}
+{"time":"2025-07-29T22:04:18.2799839+08:00","level":"INFO","group":"main","message":"[4578f92d-c14e-4592-9e8f-f0bd43a30257] [::1] /api/v1/user/login 200 529.2037ms","caller":"httpcore.go:291"}
+{"time":"2025-07-29T22:04:24.4673574+08:00","level":"DEBUG","group":"main","message":"Request started: [::1] POST /api/v1/user/login","caller":"httpcore.go:323"}
+{"time":"2025-07-29T22:04:24.9335047+08:00","level":"INFO","group":"main","message":"[ad4fdfcf-8be4-43ba-9ba4-5437fc525022] [::1] /api/v1/user/login 200 466.1473ms","caller":"httpcore.go:291"}
+{"time":"2025-07-29T22:04:37.1549966+08:00","level":"DEBUG","group":"main","message":"Request started: [::1] POST /api/v1/user/login","caller":"httpcore.go:323"}
+{"time":"2025-07-29T22:04:37.6244484+08:00","level":"INFO","group":"main","message":"[0be3da4e-f363-4a5a-a46a-aedb0c9d0517] [::1] /api/v1/user/login 200 469.4518ms","caller":"httpcore.go:291"}
+{"time":"2025-07-29T22:05:01.5281865+08:00","level":"DEBUG","group":"main","message":"Shutting down services...","caller":"proc.go:283"}
+{"time":"2025-07-29T22:05:01.5281865+08:00","level":"INFO","group":"main","message":"Received signal: interrupt, shutting down server...","caller":"httpcore.go:385"}
+{"time":"2025-07-29T22:05:01.5281865+08:00","level":"DEBUG","group":"main","message":"Gracefully shutting down connection pool...","caller":"httpcore.go:385"}
+{"time":"2025-07-29T22:05:01.5281865+08:00","level":"DEBUG","group":"main","message":"Shutting down HTTP server...","caller":"httpcore.go:385"}
+{"time":"2025-07-29T22:05:01.5281865+08:00","level":"INFO","group":"main","message":"Server gracefully stopped","caller":"httpcore.go:385"}
+{"time":"2025-07-29T22:05:12.2827735+08:00","level":"DEBUG","group":"main","message":"Config is singleton initialized: true","caller":"proc.go:283"}
+{"time":"2025-07-29T22:05:12.2827735+08:00","level":"DEBUG","group":"main","message":"app init","caller":"proc.go:283"}
+{"time":"2025-07-29T22:05:21.0992298+08:00","level":"DEBUG","group":"main","message":"Global 404 handler set","caller":"router_v1.go:24"}
+{"time":"2025-07-29T22:05:21.0992298+08:00","level":"INFO","group":"main","message":"Mapped static path: / -> resources/public","caller":"router_v1.go:38"}
+{"time":"2025-07-29T22:05:21.1000133+08:00","level":"INFO","group":"main","message":"Gin服务启动中","caller":"service_manager.go:113"}
+{"time":"2025-07-29T22:05:21.1000133+08:00","level":"INFO","group":"main","message":"Starting server at :5000","caller":"gin_v1.go:42"}
+{"time":"2025-07-29T22:05:40.5851652+08:00","level":"DEBUG","group":"main","message":"Request started: [::1] POST /api/v1/user/login","caller":"httpcore.go:323"}
+{"time":"2025-07-29T22:05:41.1080415+08:00","level":"INFO","group":"main","message":"[ae3c9eac-cac8-4096-b4c9-a2ce8b7e4a32] [::1] /api/v1/user/login 200 522.3549ms","caller":"httpcore.go:291"}
+{"time":"2025-07-29T22:06:15.7168493+08:00","level":"DEBUG","group":"main","message":"Shutting down services...","caller":"proc.go:283"}
+{"time":"2025-07-29T22:06:15.7168493+08:00","level":"INFO","group":"main","message":"Received signal: interrupt, shutting down server...","caller":"httpcore.go:385"}
+{"time":"2025-07-29T22:06:15.7168493+08:00","level":"DEBUG","group":"main","message":"Gracefully shutting down connection pool...","caller":"httpcore.go:385"}
+{"time":"2025-07-29T22:06:15.7168493+08:00","level":"DEBUG","group":"main","message":"Shutting down HTTP server...","caller":"httpcore.go:385"}
+{"time":"2025-07-29T22:06:15.7168493+08:00","level":"INFO","group":"main","message":"Server gracefully stopped","caller":"httpcore.go:385"}
+{"time":"2025-07-29T22:06:26.7482385+08:00","level":"DEBUG","group":"main","message":"Config is singleton initialized: true","caller":"proc.go:283"}
+{"time":"2025-07-29T22:06:26.7482385+08:00","level":"DEBUG","group":"main","message":"app init","caller":"proc.go:283"}
+{"time":"2025-07-29T22:06:33.2932385+08:00","level":"DEBUG","group":"main","message":"Global 404 handler set","caller":"router_v1.go:24"}
+{"time":"2025-07-29T22:06:33.2932385+08:00","level":"INFO","group":"main","message":"Mapped static path: / -> resources/public","caller":"router_v1.go:38"}
+{"time":"2025-07-29T22:06:33.2940143+08:00","level":"INFO","group":"main","message":"Gin服务启动中","caller":"service_manager.go:113"}
+{"time":"2025-07-29T22:06:33.2940143+08:00","level":"INFO","group":"main","message":"Starting server at :5000","caller":"gin_v1.go:42"}
+{"time":"2025-07-29T22:06:37.550178+08:00","level":"DEBUG","group":"main","message":"Request started: [::1] POST /api/v1/user/login","caller":"httpcore.go:323"}
+{"time":"2025-07-29T22:06:38.0772921+08:00","level":"INFO","group":"main","message":"[1bf429d7-d9ea-4988-8c09-6a1df318e674] [::1] /api/v1/user/login 500 527.1141ms","caller":"httpcore.go:291"}
+{"time":"2025-07-29T22:06:57.0071451+08:00","level":"DEBUG","group":"main","message":"Shutting down services...","caller":"proc.go:283"}
+{"time":"2025-07-29T22:06:57.0071451+08:00","level":"INFO","group":"main","message":"Received signal: interrupt, shutting down server...","caller":"httpcore.go:385"}
+{"time":"2025-07-29T22:06:57.0071451+08:00","level":"DEBUG","group":"main","message":"Gracefully shutting down connection pool...","caller":"httpcore.go:385"}
+{"time":"2025-07-29T22:06:57.0071451+08:00","level":"DEBUG","group":"main","message":"Shutting down HTTP server...","caller":"httpcore.go:385"}
+{"time":"2025-07-29T22:06:57.0071451+08:00","level":"INFO","group":"main","message":"Server gracefully stopped","caller":"httpcore.go:385"}
+{"time":"2025-07-29T22:07:14.5517166+08:00","level":"DEBUG","group":"main","message":"Config is singleton initialized: true","caller":"proc.go:283"}
+{"time":"2025-07-29T22:07:14.5517166+08:00","level":"DEBUG","group":"main","message":"app init","caller":"proc.go:283"}
+{"time":"2025-07-29T22:07:21.3077101+08:00","level":"DEBUG","group":"main","message":"Global 404 handler set","caller":"router_v1.go:24"}
+{"time":"2025-07-29T22:07:21.3077101+08:00","level":"INFO","group":"main","message":"Mapped static path: / -> resources/public","caller":"router_v1.go:38"}
+{"time":"2025-07-29T22:07:21.3077101+08:00","level":"INFO","group":"main","message":"Gin服务启动中","caller":"service_manager.go:113"}
+{"time":"2025-07-29T22:07:21.3077101+08:00","level":"INFO","group":"main","message":"Starting server at :5000","caller":"gin_v1.go:42"}
+{"time":"2025-07-29T22:07:42.5823602+08:00","level":"DEBUG","group":"main","message":"Request started: [::1] POST /api/v1/user/login","caller":"httpcore.go:323"}
+{"time":"2025-07-29T22:07:43.1283598+08:00","level":"INFO","group":"main","message":"[fc7f1f4d-9f74-4762-9cf6-ced275e7b5e8] [::1] /api/v1/user/login 200 545.9996ms","caller":"httpcore.go:291"}
+{"time":"2025-07-29T22:07:48.4711248+08:00","level":"INFO","group":"main","message":"Received signal: interrupt, shutting down server...","caller":"httpcore.go:385"}
+{"time":"2025-07-29T22:07:48.4711248+08:00","level":"DEBUG","group":"main","message":"Shutting down services...","caller":"proc.go:283"}
+{"time":"2025-07-29T22:07:48.4711248+08:00","level":"DEBUG","group":"main","message":"Gracefully shutting down connection pool...","caller":"httpcore.go:385"}
+{"time":"2025-07-29T22:07:48.4711248+08:00","level":"DEBUG","group":"main","message":"Shutting down HTTP server...","caller":"httpcore.go:385"}
+{"time":"2025-07-29T22:07:48.4711248+08:00","level":"INFO","group":"main","message":"Server gracefully stopped","caller":"httpcore.go:385"}
+{"time":"2025-07-29T22:08:45.9654938+08:00","level":"DEBUG","group":"main","message":"Config is singleton initialized: true","caller":"proc.go:283"}
+{"time":"2025-07-29T22:08:45.9654938+08:00","level":"DEBUG","group":"main","message":"app init","caller":"proc.go:283"}
+{"time":"2025-07-29T22:08:52.9239847+08:00","level":"DEBUG","group":"main","message":"Global 404 handler set","caller":"router_v1.go:24"}
+{"time":"2025-07-29T22:08:52.9239847+08:00","level":"INFO","group":"main","message":"Mapped static path: / -> resources/public","caller":"router_v1.go:38"}
+{"time":"2025-07-29T22:08:52.9244039+08:00","level":"INFO","group":"main","message":"Gin服务启动中","caller":"service_manager.go:113"}
+{"time":"2025-07-29T22:08:52.9244039+08:00","level":"INFO","group":"main","message":"Starting server at :5000","caller":"gin_v1.go:42"}
+{"time":"2025-07-29T22:11:05.4652722+08:00","level":"DEBUG","group":"main","message":"Shutting down services...","caller":"proc.go:283"}
+{"time":"2025-07-29T22:11:05.4652722+08:00","level":"INFO","group":"main","message":"Received signal: interrupt, shutting down server...","caller":"httpcore.go:385"}
+{"time":"2025-07-29T22:11:05.4652722+08:00","level":"DEBUG","group":"main","message":"Gracefully shutting down connection pool...","caller":"httpcore.go:385"}
+{"time":"2025-07-29T22:11:05.4652722+08:00","level":"DEBUG","group":"main","message":"Shutting down HTTP server...","caller":"httpcore.go:385"}
+{"time":"2025-07-29T22:11:05.4652722+08:00","level":"INFO","group":"main","message":"Server gracefully stopped","caller":"httpcore.go:385"}
+{"time":"2025-07-29T22:11:16.9090062+08:00","level":"DEBUG","group":"main","message":"Config is singleton initialized: true","caller":"proc.go:283"}
+{"time":"2025-07-29T22:11:16.9090062+08:00","level":"DEBUG","group":"main","message":"app init","caller":"proc.go:283"}
+{"time":"2025-07-29T22:11:23.543706+08:00","level":"DEBUG","group":"main","message":"Global 404 handler set","caller":"router_v1.go:24"}
+{"time":"2025-07-29T22:11:23.543706+08:00","level":"INFO","group":"main","message":"Mapped static path: / -> resources/public","caller":"router_v1.go:38"}
+{"time":"2025-07-29T22:11:23.5569617+08:00","level":"INFO","group":"main","message":"Gin服务启动中","caller":"service_manager.go:113"}
+{"time":"2025-07-29T22:11:23.5569617+08:00","level":"INFO","group":"main","message":"Starting server at :5000","caller":"gin_v1.go:42"}
+{"time":"2025-07-29T22:12:17.369415+08:00","level":"DEBUG","group":"main","message":"Request started: [::1] POST /api/v1/user/login","caller":"httpcore.go:323"}
+{"time":"2025-07-29T22:12:18.0301091+08:00","level":"INFO","group":"main","message":"[f6cea9e2-5867-4781-ac86-cebe8f5f2e38] [::1] /api/v1/user/login 200 660.6941ms","caller":"httpcore.go:291"}
+{"time":"2025-07-29T22:12:59.1745956+08:00","level":"DEBUG","group":"main","message":"Shutting down services...","caller":"proc.go:283"}
+{"time":"2025-07-29T22:12:59.1745956+08:00","level":"INFO","group":"main","message":"Received signal: interrupt, shutting down server...","caller":"httpcore.go:385"}
+{"time":"2025-07-29T22:12:59.1745956+08:00","level":"DEBUG","group":"main","message":"Gracefully shutting down connection pool...","caller":"httpcore.go:385"}
+{"time":"2025-07-29T22:12:59.1745956+08:00","level":"DEBUG","group":"main","message":"Shutting down HTTP server...","caller":"httpcore.go:385"}
+{"time":"2025-07-29T22:12:59.1745956+08:00","level":"INFO","group":"main","message":"Server gracefully stopped","caller":"httpcore.go:385"}
+{"time":"2025-07-29T22:13:10.5765047+08:00","level":"DEBUG","group":"main","message":"Config is singleton initialized: true","caller":"proc.go:283"}
+{"time":"2025-07-29T22:13:10.5765047+08:00","level":"DEBUG","group":"main","message":"app init","caller":"proc.go:283"}
+{"time":"2025-07-29T22:13:17.1902433+08:00","level":"DEBUG","group":"main","message":"Global 404 handler set","caller":"router_v1.go:24"}
+{"time":"2025-07-29T22:13:17.1902433+08:00","level":"INFO","group":"main","message":"Mapped static path: / -> resources/public","caller":"router_v1.go:38"}
+{"time":"2025-07-29T22:13:17.1910329+08:00","level":"INFO","group":"main","message":"Gin服务启动中","caller":"service_manager.go:113"}
+{"time":"2025-07-29T22:13:17.1910329+08:00","level":"INFO","group":"main","message":"Starting server at :5000","caller":"gin_v1.go:42"}
+{"time":"2025-07-29T22:14:00.8772254+08:00","level":"DEBUG","group":"main","message":"Shutting down services...","caller":"proc.go:283"}
+{"time":"2025-07-29T22:14:00.8772254+08:00","level":"INFO","group":"main","message":"Received signal: interrupt, shutting down server...","caller":"httpcore.go:385"}
+{"time":"2025-07-29T22:14:00.8772254+08:00","level":"DEBUG","group":"main","message":"Gracefully shutting down connection pool...","caller":"httpcore.go:385"}
+{"time":"2025-07-29T22:14:00.8772254+08:00","level":"DEBUG","group":"main","message":"Shutting down HTTP server...","caller":"httpcore.go:385"}
+{"time":"2025-07-29T22:14:00.8772254+08:00","level":"INFO","group":"main","message":"Server gracefully stopped","caller":"httpcore.go:385"}
+{"time":"2025-07-29T22:15:03.4053009+08:00","level":"DEBUG","group":"main","message":"Config is singleton initialized: true","caller":"proc.go:283"}
+{"time":"2025-07-29T22:15:03.4053009+08:00","level":"DEBUG","group":"main","message":"app init","caller":"proc.go:283"}
+{"time":"2025-07-29T22:15:09.2663342+08:00","level":"DEBUG","group":"main","message":"Global 404 handler set","caller":"router_v1.go:24"}
+{"time":"2025-07-29T22:15:09.2663342+08:00","level":"INFO","group":"main","message":"Mapped static path: / -> resources/public","caller":"router_v1.go:38"}
+{"time":"2025-07-29T22:15:09.2669803+08:00","level":"INFO","group":"main","message":"Gin服务启动中","caller":"service_manager.go:113"}
+{"time":"2025-07-29T22:15:09.2669803+08:00","level":"INFO","group":"main","message":"Starting server at :5000","caller":"gin_v1.go:42"}
+{"time":"2025-07-29T22:15:20.3076316+08:00","level":"DEBUG","group":"main","message":"Request started: [::1] POST /api/v1/user/login","caller":"httpcore.go:323"}
+{"time":"2025-07-29T22:15:20.7431455+08:00","level":"INFO","group":"main","message":"login OK user_id: user-1, platform: qwq, device: web/pc","caller":"authx.go:58"}
+{"time":"2025-07-29T22:15:20.7431455+08:00","level":"INFO","group":"main","message":"[1471e2b8-79df-4b45-ae54-69cc1a548536] [::1] /api/v1/user/login 200 435.5139ms","caller":"httpcore.go:291"}
+{"time":"2025-07-29T22:17:16.6420563+08:00","level":"DEBUG","group":"main","message":"Shutting down services...","caller":"proc.go:283"}
+{"time":"2025-07-29T22:17:16.6420563+08:00","level":"INFO","group":"main","message":"Received signal: interrupt, shutting down server...","caller":"httpcore.go:385"}
+{"time":"2025-07-29T22:17:16.6420563+08:00","level":"DEBUG","group":"main","message":"Gracefully shutting down connection pool...","caller":"httpcore.go:385"}
+{"time":"2025-07-29T22:17:16.6420563+08:00","level":"DEBUG","group":"main","message":"Shutting down HTTP server...","caller":"httpcore.go:385"}
+{"time":"2025-07-29T22:17:16.6420563+08:00","level":"INFO","group":"main","message":"Server gracefully stopped","caller":"httpcore.go:385"}
+{"time":"2025-07-29T22:17:26.7347385+08:00","level":"DEBUG","group":"main","message":"Config is singleton initialized: true","caller":"proc.go:283"}
+{"time":"2025-07-29T22:17:26.7347385+08:00","level":"DEBUG","group":"main","message":"app init","caller":"proc.go:283"}
+{"time":"2025-07-29T22:17:33.858161+08:00","level":"DEBUG","group":"main","message":"Global 404 handler set","caller":"router_v1.go:24"}
+{"time":"2025-07-29T22:17:33.858161+08:00","level":"INFO","group":"main","message":"Mapped static path: / -> resources/public","caller":"router_v1.go:38"}
+{"time":"2025-07-29T22:17:33.858161+08:00","level":"INFO","group":"main","message":"Gin服务启动中","caller":"service_manager.go:113"}
+{"time":"2025-07-29T22:17:33.858161+08:00","level":"INFO","group":"main","message":"Starting server at :5000","caller":"gin_v1.go:42"}
+{"time":"2025-07-29T22:17:47.2238986+08:00","level":"DEBUG","group":"main","message":"Request started: [::1] POST /api/v1/user/login","caller":"httpcore.go:323"}
+{"time":"2025-07-29T22:17:47.6692854+08:00","level":"INFO","group":"main","message":"login OK user_id: user-1, platform: qwq, device: web/pc","caller":"authx.go:58"}
+{"time":"2025-07-29T22:17:47.6692854+08:00","level":"INFO","group":"main","message":"[46d8e349-3d64-4c56-96b5-ff009fc59af3] [::1] /api/v1/user/login 200 445.3868ms","caller":"httpcore.go:291"}
+{"time":"2025-07-29T22:18:42.1665669+08:00","level":"DEBUG","group":"main","message":"Request started: [::1] POST /api/v1/user/login","caller":"httpcore.go:323"}
+{"time":"2025-07-29T22:18:42.4553635+08:00","level":"INFO","group":"main","message":"login OK user_id: user-1, platform: qwq, device: web/pc","caller":"authx.go:58"}
+{"time":"2025-07-29T22:18:42.4553635+08:00","level":"INFO","group":"main","message":"[e57805c3-e662-4179-ad1c-a4e2928c22cf] [::1] /api/v1/user/login 200 288.7966ms","caller":"httpcore.go:291"}
+{"time":"2025-07-29T22:20:06.3851051+08:00","level":"DEBUG","group":"main","message":"Shutting down services...","caller":"proc.go:283"}
+{"time":"2025-07-29T22:20:06.3851051+08:00","level":"INFO","group":"main","message":"Received signal: interrupt, shutting down server...","caller":"httpcore.go:385"}
+{"time":"2025-07-29T22:20:06.3851051+08:00","level":"DEBUG","group":"main","message":"Gracefully shutting down connection pool...","caller":"httpcore.go:385"}
+{"time":"2025-07-29T22:20:06.3851051+08:00","level":"DEBUG","group":"main","message":"Shutting down HTTP server...","caller":"httpcore.go:385"}
+{"time":"2025-07-29T22:20:06.3851051+08:00","level":"INFO","group":"main","message":"Server gracefully stopped","caller":"httpcore.go:385"}
