@@ -4,7 +4,7 @@ setlocal
 
 :: 配置区（请修改为你的仓库地址）
 set "REPO_URL=https://github.com/qwqxl/qwq-server.git"
-set "BRANCH=main"
+set "BRANCH=master"
 
 :: 输入版本号作为标签（例如 v1.0.0）
 set /p "TAG=请输入标签名称（如 v1.0.0，留空跳过打标签）: "
