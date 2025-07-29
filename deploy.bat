@@ -2,7 +2,7 @@
 chcp 65001 >nul
 setlocal ENABLEEXTENSIONS
 
-:: 默认配置
+:: 默认值
 set "COMMIT_MSG=更新内容"
 set "BRANCH=main"
 set "TAG="
@@ -20,8 +20,6 @@ if "%~1"=="-m" (
 ) else if "%~1"=="-b" (
     shift
     set "BRANCH=%~1"
-) else if "%~1"=="-h" (
-    goto help
 ) else (
     echo ❌ 未知参数: %~1
     goto help
@@ -39,7 +37,7 @@ if not "%TAG%"=="" (
     echo 🏷️ 标签名称: %TAG%
 )
 
-:: 初始化并推送
+:: 执行 Git 操作
 git init
 git add .
 git commit -m "%COMMIT_MSG%"
@@ -57,10 +55,6 @@ goto end
 
 :help
 echo.
-echo 用法: deploy.bat [-m "提交说明"] [-t v1.0.0] [-b 分支名]
-echo 示例: deploy.bat -m "修复Bug" -t v1.2.3 -b main
-goto end
-
-:end
-endlocal
-pause
+echo 用法: deploy.bat -m "提交说明" -b 分支名 -t 标签
+echo 示例: deploy.bat -m "更新首页样式" -b main -t v1.0.0
+got
