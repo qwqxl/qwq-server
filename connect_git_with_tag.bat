@@ -1,4 +1,5 @@
 @echo off
+chcp 65001 >nul
 setlocal
 
 :: 配置区（请修改为你的仓库地址）
